@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <SelfContained>false</SelfContained>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <AssemblyName>Meowize</AssemblyName>
+    <RootNamespace>AioOptimize</RootNamespace>
+    <AssemblyTitle>Meowize</AssemblyTitle>
+    <Product>Meowize</Product>
+    <ApplicationIcon>Assets\Meowize.ico</ApplicationIcon>
+    <Copyright>Copyright (c) 2026 Lê Hiếu Trung (FuryZ)</Copyright>
+    <Version>1.3.0</Version>
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="WPF-UI" Version="4.3.0" />
+    <EmbeddedResource Include="Catalog.json" />
+    <EmbeddedResource Include="Localization\*.json" />
+    <Resource Include="Assets\**\*.png;Assets\Meowize.ico" />
+    <EmbeddedResource Include="Backend\*.ps1" />
+    <Content Include="Backend\*.ps1" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <None Include="..\LICENSE" Link="LICENSE" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <None Include="..\THIRD-PARTY-NOTICES.txt" Link="THIRD-PARTY-NOTICES.txt"
+          CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>

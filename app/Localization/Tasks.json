@@ -1,0 +1,2180 @@
+{
+  "RestorePoint": {
+    "title": [
+      "System snapshot",
+      "システムスナップショット",
+      "시스템 스냅샷",
+      "系统快照"
+    ],
+    "description": [
+      "Create a restore point and a Registry snapshot.",
+      "復元ポイントとレジストリのスナップショットを作成します。",
+      "복원 지점과 레지스트리 스냅샷을 만듭니다.",
+      "创建还原点和注册表快照。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.management/checkpoint-computer?view=powershell-5.1"
+  },
+  "btnSystemSnapshot": {
+    "title": [
+      "System snapshot",
+      "システムスナップショット",
+      "시스템 스냅샷",
+      "系统快照"
+    ],
+    "description": [
+      "Create a restore point and a Registry snapshot.",
+      "復元ポイントとレジストリのスナップショットを作成します。",
+      "복원 지점과 레지스트리 스냅샷을 만듭니다.",
+      "创建还原点和注册表快照。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.management/checkpoint-computer?view=powershell-5.1"
+  },
+  "BackupReg": {
+    "title": [
+      "Registry branch backup",
+      "レジストリ分岐のバックアップ",
+      "레지스트리 분기 백업",
+      "注册表分支备份"
+    ],
+    "description": [
+      "Export two Registry branches to the backup drive.",
+      "レジストリの 2 つの分岐をバックアップ先に出力します。",
+      "레지스트리 분기 두 개를 백업 드라이브로 내보냅니다.",
+      "将两个注册表分支导出到备份驱动器。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/reg-export"
+  },
+  "KillBloat": {
+    "title": [
+      "Close background processes",
+      "バックグラウンドプロセスを終了",
+      "백그라운드 프로세스 종료",
+      "关闭后台进程"
+    ],
+    "description": [
+      "Stop selected background processes.",
+      "対象のバックグラウンドプロセスを停止します。",
+      "지정된 백그라운드 프로세스를 중지합니다.",
+      "停止指定的后台进程。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.management/stop-process",
+    "riskNote": [
+      "Save your work before closing background processes.",
+      "バックグラウンドプロセスを終了する前に作業内容を保存してください。",
+      "백그라운드 프로세스를 닫기 전에 작업을 저장하세요.",
+      "关闭后台进程前请保存工作。"
+    ]
+  },
+  "btnKillBloat": {
+    "title": [
+      "Close background processes",
+      "バックグラウンドプロセスを終了",
+      "백그라운드 프로세스 종료",
+      "关闭后台进程"
+    ],
+    "description": [
+      "Stop selected background processes.",
+      "対象のバックグラウンドプロセスを停止します。",
+      "지정된 백그라운드 프로세스를 중지합니다.",
+      "停止指定的后台进程。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.management/stop-process",
+    "riskNote": [
+      "Save your work before closing background processes.",
+      "バックグラウンドプロセスを終了する前に作業内容を保存してください。",
+      "백그라운드 프로세스를 닫기 전에 작업을 저장하세요.",
+      "关闭后台进程前请保存工作。"
+    ]
+  },
+  "Hibernate": {
+    "title": [
+      "Fast Startup and hibernation",
+      "高速スタートアップと休止状態",
+      "빠른 시작 및 최대 절전",
+      "快速启动和休眠"
+    ],
+    "description": [
+      "Turn off Fast Startup and hibernation.",
+      "高速スタートアップと休止状態を無効にします。",
+      "빠른 시작과 최대 절전 모드를 끕니다.",
+      "关闭快速启动与休眠。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/powercfg-command-line-options",
+    "riskNote": [
+      "Changes hibernation or the way Windows starts.",
+      "休止状態や Windows の起動方法を変更します。",
+      "최대 절전 또는 Windows 시작 방식을 변경합니다.",
+      "更改休眠或 Windows 启动方式。"
+    ]
+  },
+  "btnFastStartup": {
+    "title": [
+      "Fast Startup and hibernation",
+      "高速スタートアップと休止状態",
+      "빠른 시작 및 최대 절전",
+      "快速启动和休眠"
+    ],
+    "description": [
+      "Turn off Fast Startup and hibernation.",
+      "高速スタートアップと休止状態を無効にします。",
+      "빠른 시작과 최대 절전 모드를 끕니다.",
+      "关闭快速启动与休眠。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/powercfg-command-line-options",
+    "riskNote": [
+      "Changes hibernation or the way Windows starts.",
+      "休止状態や Windows の起動方法を変更します。",
+      "최대 절전 또는 Windows 시작 방식을 변경합니다.",
+      "更改休眠或 Windows 启动方式。"
+    ]
+  },
+  "Defender": {
+    "title": [
+      "Real-time protection",
+      "リアルタイム保護",
+      "실시간 보호",
+      "实时防护"
+    ],
+    "description": [
+      "Review Microsoft Defender real-time protection.",
+      "Microsoft Defender のリアルタイム保護を確認します。",
+      "Microsoft Defender 실시간 보호를 검토합니다.",
+      "检查 Microsoft Defender 实时防护。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/windows/security/operating-system-security/system-security/windows-defender-security-center/windows-defender-security-center",
+    "riskNote": [
+      "Turning off real-time protection reduces malware detection.",
+      "リアルタイム保護を無効にすると、マルウェアの検出能力が低下します。",
+      "실시간 보호를 끄면 악성 코드 탐지 기능이 약해집니다.",
+      "关闭实时防护会降低恶意软件检测能力。"
+    ]
+  },
+  "btnDisableDefender": {
+    "title": [
+      "Real-time protection",
+      "リアルタイム保護",
+      "실시간 보호",
+      "实时防护"
+    ],
+    "description": [
+      "Review Microsoft Defender real-time protection.",
+      "Microsoft Defender のリアルタイム保護を確認します。",
+      "Microsoft Defender 실시간 보호를 검토합니다.",
+      "检查 Microsoft Defender 实时防护。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/windows/security/operating-system-security/system-security/windows-defender-security-center/windows-defender-security-center",
+    "riskNote": [
+      "Turning off real-time protection reduces malware detection.",
+      "リアルタイム保護を無効にすると、マルウェアの検出能力が低下します。",
+      "실시간 보호를 끄면 악성 코드 탐지 기능이 약해집니다.",
+      "关闭实时防护会降低恶意软件检测能力。"
+    ]
+  },
+  "WinUpdate": {
+    "title": [
+      "Windows Update",
+      "Windows Update",
+      "Windows Update",
+      "Windows 更新"
+    ],
+    "description": [
+      "Review Windows Update settings.",
+      "Windows Update の設定を確認します。",
+      "Windows Update 설정을 검토합니다.",
+      "检查 Windows 更新设置。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/windows/deployment/update/waas-manage-updates-wufb",
+    "riskNote": [
+      "Pausing updates can delay security fixes.",
+      "更新を一時停止すると、セキュリティ修正の適用が遅れる場合があります。",
+      "업데이트를 일시 중지하면 보안 패치가 늦어질 수 있습니다.",
+      "暂停更新可能延迟安装安全修复。"
+    ]
+  },
+  "btnWinUpdate": {
+    "title": [
+      "Windows Update",
+      "Windows Update",
+      "Windows Update",
+      "Windows 更新"
+    ],
+    "description": [
+      "Review Windows Update settings.",
+      "Windows Update の設定を確認します。",
+      "Windows Update 설정을 검토합니다.",
+      "检查 Windows 更新设置。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/windows/deployment/update/waas-manage-updates-wufb",
+    "riskNote": [
+      "Pausing updates can delay security fixes.",
+      "更新を一時停止すると、セキュリティ修正の適用が遅れる場合があります。",
+      "업데이트를 일시 중지하면 보안 패치가 늦어질 수 있습니다.",
+      "暂停更新可能延迟安装安全修复。"
+    ]
+  },
+  "DefenderCpu": {
+    "title": [
+      "Defender scan priority",
+      "Defender のスキャン優先度",
+      "Defender 검사 우선순위",
+      "Defender 扫描优先级"
+    ],
+    "description": [
+      "Limit CPU usage during Microsoft Defender scans.",
+      "Microsoft Defender スキャン時の CPU 使用量を制限します。",
+      "Microsoft Defender 검사 중 CPU 사용량을 제한합니다.",
+      "限制 Microsoft Defender 扫描时的 CPU 用量。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/defender-endpoint/mdav-scan-best-practices"
+  },
+  "btnDefenderCpu": {
+    "title": [
+      "Defender scan priority",
+      "Defender のスキャン優先度",
+      "Defender 검사 우선순위",
+      "Defender 扫描优先级"
+    ],
+    "description": [
+      "Limit CPU usage during Microsoft Defender scans.",
+      "Microsoft Defender スキャン時の CPU 使用量を制限します。",
+      "Microsoft Defender 검사 중 CPU 사용량을 제한합니다.",
+      "限制 Microsoft Defender 扫描时的 CPU 用量。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/defender-endpoint/mdav-scan-best-practices"
+  },
+  "SysMain": {
+    "title": [
+      "SysMain service",
+      "SysMain サービス",
+      "SysMain 서비스",
+      "SysMain 服务"
+    ],
+    "description": [
+      "Disable SysMain.",
+      "SysMain を無効にします。",
+      "SysMain을 비활성화합니다.",
+      "禁用 SysMain。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.management/set-service"
+  },
+  "btnSysMain": {
+    "title": [
+      "SysMain service",
+      "SysMain サービス",
+      "SysMain 서비스",
+      "SysMain 服务"
+    ],
+    "description": [
+      "Disable SysMain.",
+      "SysMain を無効にします。",
+      "SysMain을 비활성화합니다.",
+      "禁用 SysMain。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.management/set-service"
+  },
+  "Telemetry": {
+    "title": [
+      "Diagnostics and telemetry",
+      "診断とテレメトリ",
+      "진단 및 원격 분석",
+      "诊断与遥测"
+    ],
+    "description": [
+      "Adjust selected diagnostic services.",
+      "指定された診断サービスを調整します。",
+      "지정된 진단 서비스를 조정합니다.",
+      "调整指定的诊断服务。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/windows/privacy/configure-windows-diagnostic-data-in-your-organization"
+  },
+  "btnTelemetry": {
+    "title": [
+      "Diagnostics and telemetry",
+      "診断とテレメトリ",
+      "진단 및 원격 분석",
+      "诊断与遥测"
+    ],
+    "description": [
+      "Adjust selected diagnostic services.",
+      "指定された診断サービスを調整します。",
+      "지정된 진단 서비스를 조정합니다.",
+      "调整指定的诊断服务。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/windows/privacy/configure-windows-diagnostic-data-in-your-organization"
+  },
+  "DebloatUWP": {
+    "title": [
+      "Remove built-in apps",
+      "組み込みアプリを削除",
+      "기본 제공 앱 제거",
+      "移除内置应用"
+    ],
+    "description": [
+      "Remove selected bundled Windows apps.",
+      "対象の Windows 標準アプリを削除します。",
+      "지정된 Windows 기본 앱을 제거합니다.",
+      "移除指定的 Windows 内置应用。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/powershell/module/appx/remove-appxpackage",
+    "riskNote": [
+      "Removing Windows apps may require reinstalling them to restore features.",
+      "Windows アプリを削除すると、機能の復元に再インストールが必要な場合があります。",
+      "Windows 앱을 제거하면 기능을 복원하기 위해 다시 설치해야 할 수 있습니다.",
+      "移除 Windows 应用后，可能需要重新安装才能恢复相关功能。"
+    ]
+  },
+  "btnRemoveBloat": {
+    "title": [
+      "Remove built-in apps",
+      "組み込みアプリを削除",
+      "기본 제공 앱 제거",
+      "移除内置应用"
+    ],
+    "description": [
+      "Remove selected bundled Windows apps.",
+      "対象の Windows 標準アプリを削除します。",
+      "지정된 Windows 기본 앱을 제거합니다.",
+      "移除指定的 Windows 内置应用。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/powershell/module/appx/remove-appxpackage",
+    "riskNote": [
+      "Removing Windows apps may require reinstalling them to restore features.",
+      "Windows アプリを削除すると、機能の復元に再インストールが必要な場合があります。",
+      "Windows 앱을 제거하면 기능을 복원하기 위해 다시 설치해야 할 수 있습니다.",
+      "移除 Windows 应用后，可能需要重新安装才能恢复相关功能。"
+    ]
+  },
+  "InputQueue": {
+    "title": [
+      "Mouse and keyboard buffers",
+      "マウスとキーボードのバッファー",
+      "마우스 및 키보드 버퍼",
+      "鼠标和键盘缓冲区"
+    ],
+    "description": [
+      "Tune input queues and enable Game Mode and HAGS.",
+      "入力キューを調整し、ゲームモードと HAGS を有効にします。",
+      "입력 대기열을 조정하고 게임 모드와 HAGS를 켭니다.",
+      "调整输入队列并启用游戏模式和 HAGS。"
+    ],
+    "kind": "Docs",
+    "source": "https://support.xbox.com/en-US/help/games-apps/game-setup-and-play/use-game-mode-gaming-on-pc"
+  },
+  "btnInputQueue": {
+    "title": [
+      "Mouse and keyboard buffers",
+      "マウスとキーボードのバッファー",
+      "마우스 및 키보드 버퍼",
+      "鼠标和键盘缓冲区"
+    ],
+    "description": [
+      "Tune input queues and enable Game Mode and HAGS.",
+      "入力キューを調整し、ゲームモードと HAGS を有効にします。",
+      "입력 대기열을 조정하고 게임 모드와 HAGS를 켭니다.",
+      "调整输入队列并启用游戏模式和 HAGS。"
+    ],
+    "kind": "Docs",
+    "source": "https://support.xbox.com/en-US/help/games-apps/game-setup-and-play/use-game-mode-gaming-on-pc"
+  },
+  "DisableVBS": {
+    "title": [
+      "VBS and Memory integrity",
+      "VBS とメモリ整合性",
+      "VBS 및 메모리 무결성",
+      "VBS 与内存完整性"
+    ],
+    "description": [
+      "Review Windows virtualization-based protection.",
+      "Windows の仮想化ベースの保護を確認します。",
+      "Windows 가상화 기반 보호를 검토합니다.",
+      "检查 Windows 虚拟化防护。"
+    ],
+    "kind": "Docs",
+    "source": "https://support.microsoft.com/en-us/windows/security/windows-security/device-security-in-the-windows-security-app",
+    "riskNote": [
+      "Changing Memory integrity can reduce Windows isolation protections.",
+      "メモリ整合性を変更すると、Windows の分離による保護が弱まることがあります。",
+      "메모리 무결성을 변경하면 Windows 격리 보호가 약해질 수 있습니다.",
+      "更改内存完整性可能削弱 Windows 隔离防护。"
+    ]
+  },
+  "btnDisableVBS": {
+    "title": [
+      "VBS and Memory integrity",
+      "VBS とメモリ整合性",
+      "VBS 및 메모리 무결성",
+      "VBS 与内存完整性"
+    ],
+    "description": [
+      "Review Windows virtualization-based protection.",
+      "Windows の仮想化ベースの保護を確認します。",
+      "Windows 가상화 기반 보호를 검토합니다.",
+      "检查 Windows 虚拟化防护。"
+    ],
+    "kind": "Docs",
+    "source": "https://support.microsoft.com/en-us/windows/security/windows-security/device-security-in-the-windows-security-app",
+    "riskNote": [
+      "Changing Memory integrity can reduce Windows isolation protections.",
+      "メモリ整合性を変更すると、Windows の分離による保護が弱まることがあります。",
+      "메모리 무결성을 변경하면 Windows 격리 보호가 약해질 수 있습니다.",
+      "更改内存完整性可能削弱 Windows 隔离防护。"
+    ]
+  },
+  "FlipModel": {
+    "title": [
+      "DirectX Flip Model",
+      "DirectX フリップモデル",
+      "DirectX 플립 모델",
+      "DirectX 翻转模型"
+    ],
+    "description": [
+      "Tune presentation for windowed games.",
+      "ウィンドウ表示のゲーム向けに描画を調整します。",
+      "창 모드 게임의 화면 표시를 조정합니다.",
+      "调整窗口模式游戏的呈现方式。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/windows/win32/direct3ddxgi/dxgi-flip-model"
+  },
+  "btnFlipModel": {
+    "title": [
+      "DirectX Flip Model",
+      "DirectX フリップモデル",
+      "DirectX 플립 모델",
+      "DirectX 翻转模型"
+    ],
+    "description": [
+      "Tune presentation for windowed games.",
+      "ウィンドウ表示のゲーム向けに描画を調整します。",
+      "창 모드 게임의 화면 표시를 조정합니다.",
+      "调整窗口模式游戏的呈现方式。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/windows/win32/direct3ddxgi/dxgi-flip-model"
+  },
+  "BlockPresence": {
+    "title": [
+      "Game Bar Presence",
+      "Game Bar Presence",
+      "Game Bar Presence",
+      "Game Bar Presence"
+    ],
+    "description": [
+      "Review Xbox Game Bar overlay settings.",
+      "Xbox Game Bar のオーバーレイ設定を確認します。",
+      "Xbox Game Bar 오버레이 설정을 검토합니다.",
+      "检查 Xbox Game Bar 叠加层设置。"
+    ],
+    "kind": "Docs",
+    "source": "https://support.xbox.com/en-US/help/games-apps/game-setup-and-play/get-to-know-game-bar-on-windows-10"
+  },
+  "btnBlockPresence": {
+    "title": [
+      "Game Bar Presence",
+      "Game Bar Presence",
+      "Game Bar Presence",
+      "Game Bar Presence"
+    ],
+    "description": [
+      "Review Xbox Game Bar overlay settings.",
+      "Xbox Game Bar のオーバーレイ設定を確認します。",
+      "Xbox Game Bar 오버레이 설정을 검토합니다.",
+      "检查 Xbox Game Bar 叠加层设置。"
+    ],
+    "kind": "Docs",
+    "source": "https://support.xbox.com/en-US/help/games-apps/game-setup-and-play/get-to-know-game-bar-on-windows-10"
+  },
+  "PriorityGame": {
+    "title": [
+      "Game CPU priority",
+      "ゲームの CPU 優先度",
+      "게임 CPU 우선순위",
+      "游戏 CPU 优先级"
+    ],
+    "description": [
+      "Set CPU priority for a predefined list of games.",
+      "指定されたゲームの CPU 優先度を設定します。",
+      "지정된 게임의 CPU 우선순위를 설정합니다.",
+      "为预设列表中的游戏设置 CPU 优先级。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/windows/win32/procthread/scheduling-priorities"
+  },
+  "btnGamePriority": {
+    "title": [
+      "Game CPU priority",
+      "ゲームの CPU 優先度",
+      "게임 CPU 우선순위",
+      "游戏 CPU 优先级"
+    ],
+    "description": [
+      "Set CPU priority for a predefined list of games.",
+      "指定されたゲームの CPU 優先度を設定します。",
+      "지정된 게임의 CPU 우선순위를 설정합니다.",
+      "为预设列表中的游戏设置 CPU 优先级。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/windows/win32/procthread/scheduling-priorities"
+  },
+  "HPET": {
+    "title": [
+      "HPET timer",
+      "HPET タイマー",
+      "HPET 타이머",
+      "HPET 定时器"
+    ],
+    "description": [
+      "Change HPET and boot timer settings.",
+      "HPET と起動時のタイマー設定を変更します。",
+      "HPET 및 부팅 타이머 설정을 변경합니다.",
+      "更改 HPET 和启动计时器设置。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/windows-hardware/drivers/devtest/bcdedit--set",
+    "riskNote": [
+      "Changes hardware timer and boot settings.",
+      "ハードウェアタイマーと起動設定に影響します。",
+      "하드웨어 타이머와 부팅 설정에 영향을 줍니다.",
+      "影响硬件计时器和启动设置。"
+    ]
+  },
+  "btnHPETDevMgr": {
+    "title": [
+      "HPET timer",
+      "HPET タイマー",
+      "HPET 타이머",
+      "HPET 定时器"
+    ],
+    "description": [
+      "Change HPET and boot timer settings.",
+      "HPET と起動時のタイマー設定を変更します。",
+      "HPET 및 부팅 타이머 설정을 변경합니다.",
+      "更改 HPET 和启动计时器设置。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/windows-hardware/drivers/devtest/bcdedit--set",
+    "riskNote": [
+      "Changes hardware timer and boot settings.",
+      "ハードウェアタイマーと起動設定に影響します。",
+      "하드웨어 타이머와 부팅 설정에 영향을 줍니다.",
+      "影响硬件计时器和启动设置。"
+    ]
+  },
+  "Win32Pri": {
+    "title": [
+      "CPU priority and BCD",
+      "CPU 優先度と BCD",
+      "CPU 우선순위 및 BCD",
+      "CPU 优先级与 BCD"
+    ],
+    "description": [
+      "Adjust CPU scheduling and boot timer settings.",
+      "CPU スケジューリングと起動タイマーを調整します。",
+      "CPU 스케줄링과 부팅 타이머를 조정합니다.",
+      "调整 CPU 调度和启动计时器。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/windows-hardware/drivers/devtest/bcdedit--set",
+    "riskNote": [
+      "Changes BCD boot settings. Verify after restarting.",
+      "BCD の起動設定を変更します。再起動後に確認してください。",
+      "BCD 부팅 설정이 변경됩니다. 다시 시작한 후 확인하세요.",
+      "更改 BCD 启动设置。请在重启后验证。"
+    ]
+  },
+  "MPO": {
+    "title": [
+      "Multiplane Overlay",
+      "マルチプレーンオーバーレイ",
+      "멀티플레인 오버레이",
+      "多平面叠加"
+    ],
+    "description": [
+      "Configure the Windows graphics overlay.",
+      "Windows のグラフィックスオーバーレイを設定します。",
+      "Windows 그래픽 오버레이를 설정합니다.",
+      "配置 Windows 图形叠加。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/windows-hardware/drivers/display/multiplane-overlay-support"
+  },
+  "btnMPO": {
+    "title": [
+      "Multiplane Overlay",
+      "マルチプレーンオーバーレイ",
+      "멀티플레인 오버레이",
+      "多平面叠加"
+    ],
+    "description": [
+      "Configure the Windows graphics overlay.",
+      "Windows のグラフィックスオーバーレイを設定します。",
+      "Windows 그래픽 오버레이를 설정합니다.",
+      "配置 Windows 图形叠加。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/windows-hardware/drivers/display/multiplane-overlay-support"
+  },
+  "Fullscreen": {
+    "title": [
+      "Fullscreen Optimizations",
+      "全画面表示の最適化",
+      "전체 화면 최적화",
+      "全屏优化"
+    ],
+    "description": [
+      "Adjust Fullscreen Optimizations and Game DVR.",
+      "全画面表示の最適化と Game DVR を調整します。",
+      "전체 화면 최적화와 Game DVR을 조정합니다.",
+      "调整全屏优化和 Game DVR。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/windows/win32/direct3ddxgi/dxgi-flip-model"
+  },
+  "btnFullscreenOpt": {
+    "title": [
+      "Fullscreen Optimizations",
+      "全画面表示の最適化",
+      "전체 화면 최적화",
+      "全屏优化"
+    ],
+    "description": [
+      "Adjust Fullscreen Optimizations and Game DVR.",
+      "全画面表示の最適化と Game DVR を調整します。",
+      "전체 화면 최적화와 Game DVR을 조정합니다.",
+      "调整全屏优化和 Game DVR。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/windows/win32/direct3ddxgi/dxgi-flip-model"
+  },
+  "MSIMode": {
+    "title": [
+      "MSI interrupt mode",
+      "MSI 割り込みモード",
+      "MSI 인터럽트 모드",
+      "MSI 中断模式"
+    ],
+    "description": [
+      "Change interrupt settings for GPUs and network adapters.",
+      "GPU とネットワークアダプターの割り込みを変更します。",
+      "GPU와 네트워크 어댑터의 인터럽트 설정을 변경합니다.",
+      "更改 GPU 和网络适配器的中断设置。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/windows-hardware/drivers/kernel/introduction-to-message-signaled-interrupts",
+    "riskNote": [
+      "Changing GPU or network adapter interrupts may cause instability.",
+      "GPU やネットワークアダプターの割り込みを変更すると不安定になることがあります。",
+      "GPU 또는 네트워크 어댑터의 인터럽트 변경으로 불안정해질 수 있습니다.",
+      "更改 GPU 或网络适配器中断可能导致不稳定。"
+    ]
+  },
+  "btnMSIMode": {
+    "title": [
+      "MSI interrupt mode",
+      "MSI 割り込みモード",
+      "MSI 인터럽트 모드",
+      "MSI 中断模式"
+    ],
+    "description": [
+      "Change interrupt settings for GPUs and network adapters.",
+      "GPU とネットワークアダプターの割り込みを変更します。",
+      "GPU와 네트워크 어댑터의 인터럽트 설정을 변경합니다.",
+      "更改 GPU 和网络适配器的中断设置。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/windows-hardware/drivers/kernel/introduction-to-message-signaled-interrupts",
+    "riskNote": [
+      "Changing GPU or network adapter interrupts may cause instability.",
+      "GPU やネットワークアダプターの割り込みを変更すると不安定になることがあります。",
+      "GPU 또는 네트워크 어댑터의 인터럽트 변경으로 불안정해질 수 있습니다.",
+      "更改 GPU 或网络适配器中断可能导致不稳定。"
+    ]
+  },
+  "HAGS": {
+    "title": [
+      "Hardware GPU scheduling",
+      "ハードウェア GPU スケジューリング",
+      "하드웨어 GPU 스케줄링",
+      "硬件加速 GPU 调度"
+    ],
+    "description": [
+      "Enable Hardware-accelerated GPU scheduling.",
+      "ハードウェアアクセラレータによる GPU スケジューリングを有効にします。",
+      "하드웨어 가속 GPU 스케줄링을 켭니다.",
+      "启用硬件加速 GPU 调度。"
+    ],
+    "kind": "Docs",
+    "source": "https://devblogs.microsoft.com/directx/hardware-accelerated-gpu-scheduling/"
+  },
+  "btnHAGS": {
+    "title": [
+      "Hardware GPU scheduling",
+      "ハードウェア GPU スケジューリング",
+      "하드웨어 GPU 스케줄링",
+      "硬件加速 GPU 调度"
+    ],
+    "description": [
+      "Enable Hardware-accelerated GPU scheduling.",
+      "ハードウェアアクセラレータによる GPU スケジューリングを有効にします。",
+      "하드웨어 가속 GPU 스케줄링을 켭니다.",
+      "启用硬件加速 GPU 调度。"
+    ],
+    "kind": "Docs",
+    "source": "https://devblogs.microsoft.com/directx/hardware-accelerated-gpu-scheduling/"
+  },
+  "PowerPlan": {
+    "title": [
+      "FPS Boost profile",
+      "FPS Boost プロファイル",
+      "FPS Boost 프로필",
+      "FPS Boost 配置"
+    ],
+    "description": [
+      "Apply the full profile, including power and boot settings.",
+      "電源設定と起動設定を含む一括プロファイルを適用します。",
+      "전원과 부팅 설정을 포함한 전체 프로필을 적용합니다.",
+      "应用完整配置，包括电源和启动设置。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/powercfg-command-line-options",
+    "riskNote": [
+      "Applies multiple changes together, including BCD boot settings.",
+      "BCD の起動設定を含む複数の変更を一括適用します。",
+      "BCD 부팅 설정을 포함해 여러 변경 사항을 한꺼번에 적용합니다.",
+      "一次应用多项更改，包括 BCD 启动设置。"
+    ]
+  },
+  "btnFpsBoost": {
+    "title": [
+      "FPS Boost profile",
+      "FPS Boost プロファイル",
+      "FPS Boost 프로필",
+      "FPS Boost 配置"
+    ],
+    "description": [
+      "Apply the full profile, including power and boot settings.",
+      "電源設定と起動設定を含む一括プロファイルを適用します。",
+      "전원과 부팅 설정을 포함한 전체 프로필을 적용합니다.",
+      "应用完整配置，包括电源和启动设置。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/powercfg-command-line-options",
+    "riskNote": [
+      "Applies multiple changes together, including BCD boot settings.",
+      "BCD の起動設定を含む複数の変更を一括適用します。",
+      "BCD 부팅 설정을 포함해 여러 변경 사항을 한꺼번에 적용합니다.",
+      "一次应用多项更改，包括 BCD 启动设置。"
+    ]
+  },
+  "UnparkCore": {
+    "title": [
+      "Unpark CPU cores",
+      "CPU コアパーキングを解除",
+      "CPU 코어 파킹 해제",
+      "取消 CPU 核心停放"
+    ],
+    "description": [
+      "Adjust core parking on the current power plan.",
+      "現在の電源プランのコアパーキングを調整します。",
+      "현재 전원 관리 옵션의 코어 파킹을 조정합니다.",
+      "调整当前电源计划的核心停放设置。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/windows-hardware/customize/power-settings/static-configuration-options-for-core-parking"
+  },
+  "btnUnparkCore": {
+    "title": [
+      "Unpark CPU cores",
+      "CPU コアパーキングを解除",
+      "CPU 코어 파킹 해제",
+      "取消 CPU 核心停放"
+    ],
+    "description": [
+      "Adjust core parking on the current power plan.",
+      "現在の電源プランのコアパーキングを調整します。",
+      "현재 전원 관리 옵션의 코어 파킹을 조정합니다.",
+      "调整当前电源计划的核心停放设置。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/windows-hardware/customize/power-settings/static-configuration-options-for-core-parking"
+  },
+  "DisableULPS": {
+    "title": [
+      "ULPS and PCIe",
+      "ULPS と PCIe",
+      "ULPS 및 PCIe",
+      "ULPS 与 PCIe"
+    ],
+    "description": [
+      "Tune ULPS and related GPU or PCIe power settings.",
+      "ULPS 関連の GPU や PCIe の電源設定を調整します。",
+      "ULPS와 관련된 GPU 또는 PCIe 전원 설정을 조정합니다.",
+      "调整 ULPS 及相关 GPU 或 PCIe 电源设置。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/powercfg-command-line-options"
+  },
+  "btnDisableULPS": {
+    "title": [
+      "ULPS and PCIe",
+      "ULPS と PCIe",
+      "ULPS 및 PCIe",
+      "ULPS 与 PCIe"
+    ],
+    "description": [
+      "Tune ULPS and related GPU or PCIe power settings.",
+      "ULPS 関連の GPU や PCIe の電源設定を調整します。",
+      "ULPS와 관련된 GPU 또는 PCIe 전원 설정을 조정합니다.",
+      "调整 ULPS 及相关 GPU 或 PCIe 电源设置。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/powercfg-command-line-options"
+  },
+  "MouseAim": {
+    "title": [
+      "Mouse acceleration",
+      "マウス加速",
+      "마우스 가속",
+      "鼠标加速"
+    ],
+    "description": [
+      "Turn off pointer acceleration.",
+      "ポインターの加速を無効にします。",
+      "포인터 가속을 끕니다.",
+      "关闭指针加速。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-systemparametersinfow"
+  },
+  "btnMouseFix": {
+    "title": [
+      "Mouse acceleration",
+      "マウス加速",
+      "마우스 가속",
+      "鼠标加速"
+    ],
+    "description": [
+      "Turn off pointer acceleration.",
+      "ポインターの加速を無効にします。",
+      "포인터 가속을 끕니다.",
+      "关闭指针加速。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-systemparametersinfow"
+  },
+  "TscSync": {
+    "title": [
+      "TSC synchronization",
+      "TSC 同期",
+      "TSC 동기화",
+      "TSC 同步"
+    ],
+    "description": [
+      "Change the TSC boot timer configuration.",
+      "起動時の TSC タイマー設定を変更します。",
+      "TSC 부팅 타이머 설정을 변경합니다.",
+      "更改 TSC 启动计时器配置。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/windows-hardware/drivers/devtest/bcdedit--set",
+    "riskNote": [
+      "Changes BCD boot settings. Verify after restarting.",
+      "BCD の起動設定を変更します。再起動後に確認してください。",
+      "BCD 부팅 설정이 변경됩니다. 다시 시작한 후 확인하세요.",
+      "更改 BCD 启动设置。请在重启后验证。"
+    ]
+  },
+  "btnTscSync": {
+    "title": [
+      "TSC synchronization",
+      "TSC 同期",
+      "TSC 동기화",
+      "TSC 同步"
+    ],
+    "description": [
+      "Change the TSC boot timer configuration.",
+      "起動時の TSC タイマー設定を変更します。",
+      "TSC 부팅 타이머 설정을 변경합니다.",
+      "更改 TSC 启动计时器配置。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/windows-hardware/drivers/devtest/bcdedit--set",
+    "riskNote": [
+      "Changes BCD boot settings. Verify after restarting.",
+      "BCD の起動設定を変更します。再起動後に確認してください。",
+      "BCD 부팅 설정이 변경됩니다. 다시 시작한 후 확인하세요.",
+      "更改 BCD 启动设置。请在重启后验证。"
+    ]
+  },
+  "KernelRam": {
+    "title": [
+      "Kernel paging",
+      "カーネルページング",
+      "커널 페이징",
+      "内核分页"
+    ],
+    "description": [
+      "Adjust Windows kernel paging settings.",
+      "Windows カーネルのページング設定を調整します。",
+      "Windows 커널 페이징 설정을 조정합니다.",
+      "调整 Windows 内核分页设置。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/windows/win32/memory/memory-management"
+  },
+  "btnKernelRam": {
+    "title": [
+      "Kernel paging",
+      "カーネルページング",
+      "커널 페이징",
+      "内核分页"
+    ],
+    "description": [
+      "Adjust Windows kernel paging settings.",
+      "Windows カーネルのページング設定を調整します。",
+      "Windows 커널 페이징 설정을 조정합니다.",
+      "调整 Windows 内核分页设置。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/windows/win32/memory/memory-management"
+  },
+  "Multimedia": {
+    "title": [
+      "Multimedia Scheduler",
+      "マルチメディアスケジューラー",
+      "멀티미디어 스케줄러",
+      "多媒体调度器"
+    ],
+    "description": [
+      "Adjust multimedia scheduling and game task priorities.",
+      "マルチメディアのスケジューリングとゲームの優先度を調整します。",
+      "멀티미디어 스케줄링과 게임 작업 우선순위를 조정합니다.",
+      "调整多媒体调度和游戏任务优先级。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/windows/win32/procthread/multimedia-class-scheduler-service"
+  },
+  "TdrDelay": {
+    "title": [
+      "GPU recovery delay",
+      "GPU 回復の待機時間",
+      "GPU 복구 지연",
+      "GPU 恢复延迟"
+    ],
+    "description": [
+      "Change the Windows GPU timeout and recovery delay.",
+      "Windows の GPU タイムアウトと回復待機時間を変更します。",
+      "Windows GPU 시간 제한과 복구 지연을 변경합니다.",
+      "更改 Windows GPU 超时与恢复延迟。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/windows-hardware/drivers/display/timeout-detection-and-recovery"
+  },
+  "StickyFix": {
+    "title": [
+      "Sticky, Toggle, and Filter Keys",
+      "固定キー、切り替えキー、フィルターキー",
+      "고정 키, 토글 키 및 필터 키",
+      "粘滞键、切换键与筛选键"
+    ],
+    "description": [
+      "Adjust keyboard accessibility shortcuts.",
+      "キーボードのアクセシビリティショートカットを調整します。",
+      "키보드 접근성 단축키를 조정합니다.",
+      "调整键盘辅助功能快捷键。"
+    ],
+    "kind": "Docs",
+    "source": "https://support.microsoft.com/en-us/windows/windows-keyboard-shortcuts-for-accessibility-021bcb62-45c8-e4ef-1e4f-41b8c1fc87fd"
+  },
+  "btnStickyFix": {
+    "title": [
+      "Sticky, Toggle, and Filter Keys",
+      "固定キー、切り替えキー、フィルターキー",
+      "고정 키, 토글 키 및 필터 키",
+      "粘滞键、切换键与筛选键"
+    ],
+    "description": [
+      "Adjust keyboard accessibility shortcuts.",
+      "キーボードのアクセシビリティショートカットを調整します。",
+      "키보드 접근성 단축키를 조정합니다.",
+      "调整键盘辅助功能快捷键。"
+    ],
+    "kind": "Docs",
+    "source": "https://support.microsoft.com/en-us/windows/windows-keyboard-shortcuts-for-accessibility-021bcb62-45c8-e4ef-1e4f-41b8c1fc87fd"
+  },
+  "Talon1": {
+    "title": [
+      "Diagnostic data",
+      "診断データ",
+      "진단 데이터",
+      "诊断数据"
+    ],
+    "description": [
+      "Adjust Windows diagnostics, activity history, and WPBT.",
+      "Windows の診断、アクティビティ履歴、WPBT を調整します。",
+      "Windows 진단, 활동 기록 및 WPBT를 조정합니다.",
+      "调整 Windows 诊断、活动历史和 WPBT。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/windows/privacy/configure-windows-diagnostic-data-in-your-organization"
+  },
+  "Talon2": {
+    "title": [
+      "Windows AI apps",
+      "Windows の AI アプリ",
+      "Windows AI 앱",
+      "Windows AI 应用"
+    ],
+    "description": [
+      "Remove or adjust selected Copilot and AI features.",
+      "指定の Copilot と AI 機能を削除または調整します。",
+      "지정된 Copilot과 AI 기능을 제거하거나 조정합니다.",
+      "移除或调整指定的 Copilot 和 AI 功能。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/powershell/module/appx/remove-appxpackage",
+    "riskNote": [
+      "Removing Windows apps may require reinstalling them to restore features.",
+      "Windows アプリを削除すると、機能の復元に再インストールが必要な場合があります。",
+      "Windows 앱을 제거하면 기능을 복원하기 위해 다시 설치해야 할 수 있습니다.",
+      "移除 Windows 应用后，可能需要重新安装才能恢复相关功能。"
+    ]
+  },
+  "Talon3": {
+    "title": [
+      "Promotions and update delivery",
+      "おすすめと更新プログラムの配信",
+      "프로모션 및 업데이트 배달",
+      "推荐内容与更新传递"
+    ],
+    "description": [
+      "Adjust consumer features and Delivery Optimization.",
+      "コンシューマー機能と配信の最適化を調整します。",
+      "소비자 기능과 배달 최적화를 조정합니다.",
+      "调整面向消费者的功能及传递优化。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/windows/deployment/do/waas-delivery-optimization"
+  },
+  "Talon4": {
+    "title": [
+      "Classic context menu",
+      "従来のコンテキストメニュー",
+      "클래식 상황에 맞는 메뉴",
+      "经典右键菜单"
+    ],
+    "description": [
+      "Apply the classic File Explorer right-click menu tweak.",
+      "エクスプローラーの右クリックメニューを従来の表示に調整します。",
+      "파일 탐색기 우클릭 메뉴를 클래식 형태로 조정합니다.",
+      "将文件资源管理器的右键菜单调整为经典样式。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_registry_provider"
+  },
+  "btnClassicMenu": {
+    "title": [
+      "Classic context menu",
+      "従来のコンテキストメニュー",
+      "클래식 상황에 맞는 메뉴",
+      "经典右键菜单"
+    ],
+    "description": [
+      "Apply the classic File Explorer right-click menu tweak.",
+      "エクスプローラーの右クリックメニューを従来の表示に調整します。",
+      "파일 탐색기 우클릭 메뉴를 클래식 형태로 조정합니다.",
+      "将文件资源管理器的右键菜单调整为经典样式。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_registry_provider"
+  },
+  "Talon5": {
+    "title": [
+      "File Explorer settings",
+      "エクスプローラーの設定",
+      "파일 탐색기 설정",
+      "文件资源管理器设置"
+    ],
+    "description": [
+      "Adjust This PC, Gallery, and Home.",
+      "PC、ギャラリー、ホームの表示を調整します。",
+      "내 PC, 갤러리 및 홈을 조정합니다.",
+      "调整此电脑、库与主页。"
+    ],
+    "kind": "Docs",
+    "source": "https://support.microsoft.com/en-us/windows/file-explorer-in-windows-ef370130-1cca-9dc5-e0df-2f7416fe1cb1"
+  },
+  "Talon6": {
+    "title": [
+      "Start and Widgets",
+      "スタートとウィジェット",
+      "시작 메뉴 및 위젯",
+      "开始菜单与小组件"
+    ],
+    "description": [
+      "Adjust Start recommendations, Bing search, and Widgets.",
+      "スタートのおすすめ、Bing 検索、ウィジェットを調整します。",
+      "시작 추천, Bing 검색 및 위젯을 조정합니다.",
+      "调整开始菜单推荐、Bing 搜索和小组件。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/windows/configuration/start/"
+  },
+  "Talon7": {
+    "title": [
+      "Scheduled tasks",
+      "スケジュールされたタスク",
+      "예약된 작업",
+      "计划任务"
+    ],
+    "description": [
+      "Disable a predefined list of scheduled tasks.",
+      "指定されたスケジュールタスクを無効にします。",
+      "지정된 예약 작업을 비활성화합니다.",
+      "禁用预设列表中的计划任务。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/powershell/module/scheduledtasks/disable-scheduledtask",
+    "riskNote": [
+      "Disabling scheduled tasks can affect related Windows maintenance.",
+      "スケジュールタスクを無効にすると、関連する Windows のメンテナンスに影響します。",
+      "예약 작업을 비활성화하면 관련 Windows 유지 관리에 영향을 줄 수 있습니다.",
+      "禁用计划任务可能影响相关的 Windows 维护。"
+    ]
+  },
+  "Talon8": {
+    "title": [
+      "Windows services",
+      "Windows サービス",
+      "Windows 서비스",
+      "Windows 服务"
+    ],
+    "description": [
+      "Adjust diagnostics, SysMain, and Windows Search.",
+      "診断、SysMain、Windows Search を調整します。",
+      "진단, SysMain 및 Windows Search를 조정합니다.",
+      "调整诊断、SysMain 与 Windows Search。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.management/set-service"
+  },
+  "Talon9": {
+    "title": [
+      "Talon app list",
+      "Talon のアプリ一覧",
+      "Talon 앱 목록",
+      "Talon 应用列表"
+    ],
+    "description": [
+      "Remove the bundled apps selected by Talon.",
+      "Talon の対象一覧にある標準アプリを削除します。",
+      "Talon이 지정한 기본 제공 앱을 제거합니다.",
+      "移除 Talon 列出的内置应用。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/powershell/module/appx/remove-appxpackage",
+    "riskNote": [
+      "Removing Windows apps may require reinstalling them to restore features.",
+      "Windows アプリを削除すると、機能の復元に再インストールが必要な場合があります。",
+      "Windows 앱을 제거하면 기능을 복원하기 위해 다시 설치해야 할 수 있습니다.",
+      "移除 Windows 应用后，可能需要重新安装才能恢复相关功能。"
+    ]
+  },
+  "SpeedUI": {
+    "title": [
+      "Menu delay and End task",
+      "メニューの遅延とタスクの終了",
+      "메뉴 지연 및 작업 끝내기",
+      "菜单延迟与结束任务"
+    ],
+    "description": [
+      "Tune menu delay and the taskbar End task option.",
+      "メニューの表示遅延とタスクバーのタスク終了を調整します。",
+      "메뉴 지연과 작업 표시줄의 작업 끝내기 옵션을 조정합니다.",
+      "调整菜单延迟和任务栏的结束任务选项。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_registry_provider"
+  },
+  "NetLatency": {
+    "title": [
+      "Large Send Offload",
+      "Large Send Offload",
+      "대용량 전송 오프로드",
+      "大型发送卸载"
+    ],
+    "description": [
+      "Adjust LSO and Green Ethernet settings.",
+      "LSO と Green Ethernet の設定を調整します。",
+      "LSO 및 Green Ethernet을 조정합니다.",
+      "调整 LSO 和绿色以太网设置。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/powershell/module/netadapter/set-netadapteradvancedproperty"
+  },
+  "btnNetLatency": {
+    "title": [
+      "Large Send Offload",
+      "Large Send Offload",
+      "대용량 전송 오프로드",
+      "大型发送卸载"
+    ],
+    "description": [
+      "Adjust LSO and Green Ethernet settings.",
+      "LSO と Green Ethernet の設定を調整します。",
+      "LSO 및 Green Ethernet을 조정합니다.",
+      "调整 LSO 和绿色以太网设置。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/powershell/module/netadapter/set-netadapteradvancedproperty"
+  },
+  "TCPGaming": {
+    "title": [
+      "TCP/IP tuning",
+      "TCP/IP の調整",
+      "TCP/IP 조정",
+      "TCP/IP 调整"
+    ],
+    "description": [
+      "Adjust TCP settings on network interfaces.",
+      "ネットワークインターフェイスの TCP 設定を調整します。",
+      "네트워크 인터페이스의 TCP 설정을 조정합니다.",
+      "调整网络接口的 TCP 设置。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/windows-server/networking/technologies/network-subsystem/net-sub-performance-tuning-nics"
+  },
+  "btnDeepPing": {
+    "title": [
+      "TCP/IP tuning",
+      "TCP/IP の調整",
+      "TCP/IP 조정",
+      "TCP/IP 调整"
+    ],
+    "description": [
+      "Adjust TCP settings on network interfaces.",
+      "ネットワークインターフェイスの TCP 設定を調整します。",
+      "네트워크 인터페이스의 TCP 설정을 조정합니다.",
+      "调整网络接口的 TCP 设置。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/windows-server/networking/technologies/network-subsystem/net-sub-performance-tuning-nics"
+  },
+  "NetPower": {
+    "title": [
+      "Network power saving",
+      "ネットワークの省電力",
+      "네트워크 절전",
+      "网络节能"
+    ],
+    "description": [
+      "Adjust network adapter power management.",
+      "ネットワークアダプターの電源管理を調整します。",
+      "네트워크 어댑터 전원 관리를 조정합니다.",
+      "调整网络适配器电源管理。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/powershell/module/netadapter/set-netadapterpowermanagement"
+  },
+  "btnNetPowerOpt": {
+    "title": [
+      "Network power saving",
+      "ネットワークの省電力",
+      "네트워크 절전",
+      "网络节能"
+    ],
+    "description": [
+      "Adjust network adapter power management.",
+      "ネットワークアダプターの電源管理を調整します。",
+      "네트워크 어댑터 전원 관리를 조정합니다.",
+      "调整网络适配器电源管理。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/powershell/module/netadapter/set-netadapterpowermanagement"
+  },
+  "DnsCloud": {
+    "title": [
+      "Cloudflare DNS",
+      "Cloudflare DNS",
+      "Cloudflare DNS",
+      "Cloudflare DNS"
+    ],
+    "description": [
+      "Set Cloudflare DNS on active network adapters.",
+      "有効なネットワークアダプターに Cloudflare DNS を設定します。",
+      "활성 네트워크 어댑터에 Cloudflare DNS를 설정합니다.",
+      "为活动网络适配器设置 Cloudflare DNS。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/powershell/module/dnsclient/set-dnsclientserveraddress",
+    "riskNote": [
+      "Changes DNS for active network adapters.",
+      "有効なネットワークアダプターの DNS を変更します。",
+      "활성 네트워크 어댑터의 DNS를 변경합니다.",
+      "更改活动网络适配器的 DNS。"
+    ]
+  },
+  "ResetNet": {
+    "title": [
+      "Reset network",
+      "ネットワークをリセット",
+      "네트워크 재설정",
+      "重置网络"
+    ],
+    "description": [
+      "Flush DNS and reset Winsock and TCP/IP.",
+      "DNS を消去し、Winsock と TCP/IP をリセットします。",
+      "DNS 캐시를 지우고 Winsock과 TCP/IP를 재설정합니다.",
+      "清除 DNS 缓存并重置 Winsock 和 TCP/IP。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/netsh-winsock",
+    "riskNote": [
+      "May disconnect the network or change its configuration.",
+      "ネットワークが切断されたり、設定が変更されたりする場合があります。",
+      "네트워크 연결이 끊어지거나 구성이 바뀔 수 있습니다.",
+      "可能中断网络连接或更改网络配置。"
+    ]
+  },
+  "CleanSystem": {
+    "title": [
+      "Clear temporary files",
+      "一時ファイルを削除",
+      "임시 파일 정리",
+      "清理临时文件"
+    ],
+    "description": [
+      "Clean user and Windows Temp folders and Prefetch.",
+      "ユーザーと Windows の Temp フォルダー、Prefetch を整理します。",
+      "사용자 및 Windows Temp 폴더와 Prefetch를 정리합니다.",
+      "清理用户与 Windows Temp 文件夹和 Prefetch。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/cleanmgr",
+    "riskNote": [
+      "Some temporary files might still be in use.",
+      "使用中の一時ファイルが含まれている場合があります。",
+      "일부 임시 파일이 사용 중일 수 있습니다.",
+      "部分临时文件可能仍在使用。"
+    ]
+  },
+  "btnClearTemp": {
+    "title": [
+      "Clear temporary files",
+      "一時ファイルを削除",
+      "임시 파일 정리",
+      "清理临时文件"
+    ],
+    "description": [
+      "Clean user and Windows Temp folders and Prefetch.",
+      "ユーザーと Windows の Temp フォルダー、Prefetch を整理します。",
+      "사용자 및 Windows Temp 폴더와 Prefetch를 정리합니다.",
+      "清理用户与 Windows Temp 文件夹和 Prefetch。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/cleanmgr",
+    "riskNote": [
+      "Some temporary files might still be in use.",
+      "使用中の一時ファイルが含まれている場合があります。",
+      "일부 임시 파일이 사용 중일 수 있습니다.",
+      "部分临时文件可能仍在使用。"
+    ]
+  },
+  "CleanRiot": {
+    "title": [
+      "Clear Riot client cache",
+      "Riot クライアントのキャッシュを削除",
+      "Riot 클라이언트 캐시 정리",
+      "清理 Riot 客户端缓存"
+    ],
+    "description": [
+      "Clean selected Riot cache, logs, and local client data.",
+      "Riot の指定キャッシュ、ログ、ローカルデータを整理します。",
+      "지정된 Riot 캐시, 로그 및 로컬 데이터를 정리합니다.",
+      "清理指定的 Riot 缓存、日志及本地数据。"
+    ],
+    "kind": "Vendor",
+    "source": "https://support-valorant.riotgames.com/",
+    "riskNote": [
+      "Deletes cache, logs, and some local Riot Client data.",
+      "キャッシュ、ログ、一部の Riot Client ローカルデータを削除します。",
+      "캐시, 로그 및 일부 로컬 Riot Client 데이터를 삭제합니다.",
+      "删除缓存、日志以及部分 Riot 客户端本地数据。"
+    ]
+  },
+  "btnClearRiotLog": {
+    "title": [
+      "Clear Riot client cache",
+      "Riot クライアントのキャッシュを削除",
+      "Riot 클라이언트 캐시 정리",
+      "清理 Riot 客户端缓存"
+    ],
+    "description": [
+      "Clean selected Riot cache, logs, and local client data.",
+      "Riot の指定キャッシュ、ログ、ローカルデータを整理します。",
+      "지정된 Riot 캐시, 로그 및 로컬 데이터를 정리합니다.",
+      "清理指定的 Riot 缓存、日志及本地数据。"
+    ],
+    "kind": "Vendor",
+    "source": "https://support-valorant.riotgames.com/",
+    "riskNote": [
+      "Deletes cache, logs, and some local Riot Client data.",
+      "キャッシュ、ログ、一部の Riot Client ローカルデータを削除します。",
+      "캐시, 로그 및 일부 로컬 Riot Client 데이터를 삭제합니다.",
+      "删除缓存、日志以及部分 Riot 客户端本地数据。"
+    ]
+  },
+  "ShaderCache": {
+    "title": [
+      "Clear shader cache",
+      "シェーダーキャッシュを削除",
+      "셰이더 캐시 정리",
+      "清理着色器缓存"
+    ],
+    "description": [
+      "Clean NVIDIA, AMD, and Direct3D shader caches.",
+      "NVIDIA、AMD、Direct3D のシェーダーキャッシュを整理します。",
+      "NVIDIA, AMD 및 Direct3D 셰이더 캐시를 정리합니다.",
+      "清理 NVIDIA、AMD 和 Direct3D 着色器缓存。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/cleanmgr",
+    "riskNote": [
+      "Graphics apps may need to rebuild their shader caches.",
+      "グラフィックスアプリでシェーダーキャッシュが再生成される場合があります。",
+      "그래픽 앱에서 셰이더 캐시를 다시 만들어야 할 수 있습니다.",
+      "图形应用可能需要重新生成着色器缓存。"
+    ]
+  },
+  "btnShaderCache": {
+    "title": [
+      "Clear shader cache",
+      "シェーダーキャッシュを削除",
+      "셰이더 캐시 정리",
+      "清理着色器缓存"
+    ],
+    "description": [
+      "Clean NVIDIA, AMD, and Direct3D shader caches.",
+      "NVIDIA、AMD、Direct3D のシェーダーキャッシュを整理します。",
+      "NVIDIA, AMD 및 Direct3D 셰이더 캐시를 정리합니다.",
+      "清理 NVIDIA、AMD 和 Direct3D 着色器缓存。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/cleanmgr",
+    "riskNote": [
+      "Graphics apps may need to rebuild their shader caches.",
+      "グラフィックスアプリでシェーダーキャッシュが再生成される場合があります。",
+      "그래픽 앱에서 셰이더 캐시를 다시 만들어야 할 수 있습니다.",
+      "图形应用可能需要重新生成着色器缓存。"
+    ]
+  },
+  "PurgeRAM": {
+    "title": [
+      "Trim working sets",
+      "ワーキングセットを整理",
+      "작업 집합 정리",
+      "精简工作集"
+    ],
+    "description": [
+      "Release eligible memory pages from application working sets.",
+      "アプリのワーキングセットから解放可能なメモリを解放します。",
+      "앱의 작업 집합에서 반환 가능한 메모리를 해제합니다.",
+      "释放应用工作集中可回收的内存页。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/windows/win32/api/psapi/nf-psapi-emptyworkingset"
+  },
+  "btnClearRam": {
+    "title": [
+      "Trim working sets",
+      "ワーキングセットを整理",
+      "작업 집합 정리",
+      "精简工作集"
+    ],
+    "description": [
+      "Release eligible memory pages from application working sets.",
+      "アプリのワーキングセットから解放可能なメモリを解放します。",
+      "앱의 작업 집합에서 반환 가능한 메모리를 해제합니다.",
+      "释放应用工作集中可回收的内存页。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/windows/win32/api/psapi/nf-psapi-emptyworkingset"
+  },
+  "WingetApps": {
+    "title": [
+      "Install six apps with WinGet",
+      "WinGet で 6 本のアプリを導入",
+      "WinGet으로 앱 6개 설치",
+      "用 WinGet 安装 6 个应用"
+    ],
+    "description": [
+      "Install Chrome, Discord, 7-Zip, UniKey, UltraViewer, and Zalo.",
+      "Chrome、Discord、7-Zip、UniKey、UltraViewer、Zalo を導入します。",
+      "Chrome, Discord, 7-Zip, UniKey, UltraViewer 및 Zalo를 설치합니다.",
+      "安装 Chrome、Discord、7-Zip、UniKey、UltraViewer 和 Zalo。"
+    ],
+    "kind": "Source",
+    "source": "https://github.com/microsoft/winget-cli",
+    "riskNote": [
+      "Downloads or runs tools and installers from external sources.",
+      "外部の配布元からツールやインストーラーをダウンロードまたは実行します。",
+      "외부 출처의 도구나 설치 프로그램을 다운로드하거나 실행합니다.",
+      "从外部来源下载或运行工具和安装程序。"
+    ]
+  },
+  "SfcDism": {
+    "title": [
+      "Repair Windows with DISM and SFC",
+      "DISM と SFC で Windows を修復",
+      "DISM 및 SFC로 Windows 복구",
+      "使用 DISM 和 SFC 修复 Windows"
+    ],
+    "description": [
+      "Run DISM RestoreHealth, followed by System File Checker.",
+      "DISM RestoreHealth の後にシステムファイルチェッカーを実行します。",
+      "DISM RestoreHealth 실행 후 시스템 파일 검사기를 실행합니다.",
+      "运行 DISM RestoreHealth，再运行系统文件检查器。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/sfc",
+    "riskNote": [
+      "DISM and SFC may repair system files and take some time.",
+      "DISM と SFC がシステムファイルを修復する場合があり、時間がかかります。",
+      "DISM과 SFC가 시스템 파일을 복구할 수 있으며 시간이 걸립니다.",
+      "DISM 和 SFC 可能修复系统文件，需要一定时间。"
+    ]
+  },
+  "btnRepair": {
+    "title": [
+      "Repair Windows with DISM and SFC",
+      "DISM と SFC で Windows を修復",
+      "DISM 및 SFC로 Windows 복구",
+      "使用 DISM 和 SFC 修复 Windows"
+    ],
+    "description": [
+      "Run DISM RestoreHealth, followed by System File Checker.",
+      "DISM RestoreHealth の後にシステムファイルチェッカーを実行します。",
+      "DISM RestoreHealth 실행 후 시스템 파일 검사기를 실행합니다.",
+      "运行 DISM RestoreHealth，再运行系统文件检查器。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/sfc",
+    "riskNote": [
+      "DISM and SFC may repair system files and take some time.",
+      "DISM と SFC がシステムファイルを修復する場合があり、時間がかかります。",
+      "DISM과 SFC가 시스템 파일을 복구할 수 있으며 시간이 걸립니다.",
+      "DISM 和 SFC 可能修复系统文件，需要一定时间。"
+    ]
+  },
+  "btnTimerRes": {
+    "title": [
+      "Timer and multimedia settings",
+      "タイマーとマルチメディア設定",
+      "타이머 및 멀티미디어 설정",
+      "计时器与多媒体设置"
+    ],
+    "description": [
+      "Tune timer settings and multimedia scheduling.",
+      "タイマー設定とマルチメディアスケジューリングを調整します。",
+      "타이머와 멀티미디어 스케줄링을 조정합니다.",
+      "调整计时器设置和多媒体调度。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/windows/win32/api/timeapi/nf-timeapi-timebeginperiod"
+  },
+  "btnTalonFull": {
+    "title": [
+      "Talon Suite",
+      "Talon Suite",
+      "Talon Suite",
+      "Talon Suite"
+    ],
+    "description": [
+      "Run nine stages covering apps, services, and system tasks.",
+      "アプリ、サービス、システムタスクを対象に 9 段階の処理を実行します。",
+      "앱, 서비스 및 시스템 작업을 포함한 9단계를 실행합니다.",
+      "运行涵盖应用、服务和系统任务的九个阶段。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/powershell/module/appx/remove-appxpackage",
+    "riskNote": [
+      "Changes several apps, services, and system tasks at once.",
+      "アプリ、サービス、システムタスクを一括で変更します。",
+      "앱, 서비스 및 시스템 작업을 한꺼번에 변경합니다.",
+      "同时更改多个应用、服务和系统任务。"
+    ]
+  },
+  "btnEnableDefender": {
+    "title": [
+      "Re-enable Defender",
+      "Defender を再有効化",
+      "Defender 다시 켜기",
+      "重新启用 Defender"
+    ],
+    "description": [
+      "Enable real-time protection and verify the result.",
+      "リアルタイム保護を有効にし、結果を確認します。",
+      "실시간 보호를 켜고 결과를 확인합니다.",
+      "启用实时防护并验证结果。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/windows/security/operating-system-security/system-security/windows-defender-security-center/windows-defender-security-center"
+  },
+  "btnDiskCleanAdv": {
+    "title": [
+      "Advanced disk cleanup",
+      "ディスクの詳細クリーンアップ",
+      "고급 디스크 정리",
+      "高级磁盘清理"
+    ],
+    "description": [
+      "Clean selected caches, system logs, and diagnostic files.",
+      "選択されたキャッシュ、システムログ、診断ファイルを整理します。",
+      "지정된 캐시, 시스템 로그 및 진단 파일을 정리합니다.",
+      "清理指定缓存、系统日志和诊断文件。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/cleanmgr",
+    "riskNote": [
+      "Deletes update caches, system logs, and diagnostic files.",
+      "更新プログラムのキャッシュ、システムログ、診断ファイルを削除します。",
+      "업데이트 캐시, 시스템 로그 및 진단 파일을 삭제합니다.",
+      "删除更新缓存、系统日志和诊断文件。"
+    ]
+  },
+  "btnHibernate": {
+    "title": [
+      "Toggle hibernation",
+      "休止状態の切り替え",
+      "최대 절전 전환",
+      "切换休眠"
+    ],
+    "description": [
+      "Turn Windows hibernation on or off.",
+      "Windows の休止状態を有効または無効にします。",
+      "Windows 최대 절전 모드를 켜거나 끕니다.",
+      "开启或关闭 Windows 休眠。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/powercfg-command-line-options",
+    "riskNote": [
+      "Changes hibernation or the way Windows starts.",
+      "休止状態や Windows の起動方法を変更します。",
+      "최대 절전 또는 Windows 시작 방식을 변경합니다.",
+      "更改休眠或 Windows 启动方式。"
+    ]
+  },
+  "btnStartupMgr": {
+    "title": [
+      "Startup apps",
+      "スタートアップアプリ",
+      "시작 앱",
+      "启动应用"
+    ],
+    "description": [
+      "Review Startup Registry entries and remove selected items.",
+      "レジストリのスタートアップ項目を確認し、指定した項目を削除します。",
+      "레지스트리의 시작 항목을 검토하고 선택한 항목을 제거합니다.",
+      "查看注册表启动项并移除选定条目。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/windows/win32/setupapi/run-and-runonce-registry-keys",
+    "riskNote": [
+      "May remove selected Startup Registry entries.",
+      "選択したスタートアップ項目をレジストリから削除する場合があります。",
+      "선택한 시작 항목을 레지스트리에서 제거할 수 있습니다.",
+      "可能移除选定的注册表启动项。"
+    ]
+  },
+  "btnApplyDns": {
+    "title": [
+      "DNS address",
+      "DNS アドレス",
+      "DNS 주소",
+      "DNS 地址"
+    ],
+    "description": [
+      "Apply the selected DNS to active adapters and flush the cache.",
+      "有効なアダプターに選択した DNS を適用してキャッシュを消去します。",
+      "활성 어댑터에 선택한 DNS를 적용하고 캐시를 비웁니다.",
+      "将所选 DNS 应用于活动适配器并清除缓存。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/powershell/module/dnsclient/set-dnsclientserveraddress",
+    "riskNote": [
+      "Changes DNS for active network adapters.",
+      "有効なネットワークアダプターの DNS を変更します。",
+      "활성 네트워크 어댑터의 DNS를 변경합니다.",
+      "更改活动网络适配器的 DNS。"
+    ]
+  },
+  "btnFlushDns": {
+    "title": [
+      "Flush the DNS cache",
+      "DNS キャッシュを消去",
+      "DNS 캐시 비우기",
+      "清除 DNS 缓存"
+    ],
+    "description": [
+      "Clear locally cached DNS records.",
+      "ローカルに保存された DNS レコードを消去します。",
+      "로컬에 캐시된 DNS 레코드를 지웁니다.",
+      "清理本地缓存的 DNS 记录。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/ipconfig"
+  },
+  "btnResetNetwork": {
+    "title": [
+      "Reset network",
+      "ネットワークをリセット",
+      "네트워크 재설정",
+      "重置网络"
+    ],
+    "description": [
+      "Reset Winsock and TCP/IP, and renew network addressing.",
+      "Winsock と TCP/IP をリセットし、ネットワークアドレスを更新します。",
+      "Winsock과 TCP/IP를 재설정하고 네트워크 주소를 갱신합니다.",
+      "重置 Winsock 和 TCP/IP 并续订网络地址。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/netsh-winsock",
+    "riskNote": [
+      "May disconnect the network or change its configuration.",
+      "ネットワークが切断されたり、設定が変更されたりする場合があります。",
+      "네트워크 연결이 끊어지거나 구성이 바뀔 수 있습니다.",
+      "可能中断网络连接或更改网络配置。"
+    ]
+  },
+  "btnDDU": {
+    "title": [
+      "Display Driver Uninstaller",
+      "Display Driver Uninstaller",
+      "Display Driver Uninstaller",
+      "Display Driver Uninstaller"
+    ],
+    "description": [
+      "Download and open DDU 18.0.8.6.",
+      "DDU 18.0.8.6 をダウンロードして開きます。",
+      "DDU 18.0.8.6을 다운로드하여 엽니다.",
+      "下载并打开 DDU 18.0.8.6。"
+    ],
+    "kind": "Vendor",
+    "source": "https://www.wagnardsoft.com/",
+    "riskNote": [
+      "DDU removes display drivers. A restart may be needed.",
+      "DDU はディスプレイドライバーを削除します。再起動が必要な場合があります。",
+      "DDU는 디스플레이 드라이버를 제거합니다. 다시 시작해야 할 수 있습니다.",
+      "DDU 用于移除显示驱动，可能需要重启。"
+    ]
+  },
+  "btnBios": {
+    "title": [
+      "Restart into UEFI",
+      "UEFI で再起動",
+      "UEFI로 다시 시작",
+      "重启进入 UEFI"
+    ],
+    "description": [
+      "Restart Windows into firmware settings after confirmation.",
+      "確認後にファームウェアの設定画面へ再起動します。",
+      "확인 후 펌웨어 설정으로 다시 시작합니다.",
+      "确认后重启到固件设置。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/shutdown",
+    "riskNote": [
+      "Restarts the computer into UEFI immediately. Save your work first.",
+      "すぐに UEFI へ再起動します。作業内容を先に保存してください。",
+      "즉시 UEFI로 다시 시작합니다. 먼저 작업을 저장하세요.",
+      "立即重启到 UEFI。请先保存工作。"
+    ]
+  },
+  "btnDriverNvidia581": {
+    "title": [
+      "NVIDIA 581.80 WHQL",
+      "NVIDIA 581.80 WHQL",
+      "NVIDIA 581.80 WHQL",
+      "NVIDIA 581.80 WHQL"
+    ],
+    "description": [
+      "Download and install driver 581.80 WHQL.",
+      "ドライバー 581.80 WHQL をダウンロードしてインストールします。",
+      "581.80 WHQL 드라이버를 다운로드하고 설치합니다.",
+      "下载并安装 581.80 WHQL 驱动。"
+    ],
+    "kind": "Vendor",
+    "source": "https://www.nvidia.com/en-us/drivers/",
+    "riskNote": [
+      "The display may flicker. Windows may need to restart.",
+      "画面がちらつく場合があります。Windows の再起動が必要になることがあります。",
+      "화면이 깜박일 수 있습니다. Windows를 다시 시작해야 할 수 있습니다.",
+      "屏幕可能闪烁，Windows 可能需要重启。"
+    ]
+  },
+  "btnDriverNvidia566": {
+    "title": [
+      "NVIDIA 566.36 WHQL",
+      "NVIDIA 566.36 WHQL",
+      "NVIDIA 566.36 WHQL",
+      "NVIDIA 566.36 WHQL"
+    ],
+    "description": [
+      "Download and install driver 566.36 WHQL.",
+      "ドライバー 566.36 WHQL をダウンロードしてインストールします。",
+      "566.36 WHQL 드라이버를 다운로드하고 설치합니다.",
+      "下载并安装 566.36 WHQL 驱动。"
+    ],
+    "kind": "Vendor",
+    "source": "https://www.nvidia.com/en-us/drivers/",
+    "riskNote": [
+      "The display may flicker. Windows may need to restart.",
+      "画面がちらつく場合があります。Windows の再起動が必要になることがあります。",
+      "화면이 깜박일 수 있습니다. Windows를 다시 시작해야 할 수 있습니다.",
+      "屏幕可能闪烁，Windows 可能需要重启。"
+    ]
+  },
+  "btnAppsDesktop": {
+    "title": [
+      "CPU-Z and HWMonitor",
+      "CPU-Z と HWMonitor",
+      "CPU-Z 및 HWMonitor",
+      "CPU-Z 与 HWMonitor"
+    ],
+    "description": [
+      "Download, extract, and open the x64 tools.",
+      "x64 ツールをダウンロード、展開して開きます。",
+      "x64 도구를 다운로드하고 압축을 풀어 엽니다.",
+      "下载、解压并打开 x64 工具。"
+    ],
+    "kind": "Vendor",
+    "source": "https://www.cpuid.com/",
+    "riskNote": [
+      "Downloads or runs tools and installers from external sources.",
+      "外部の配布元からツールやインストーラーをダウンロードまたは実行します。",
+      "외부 출처의 도구나 설치 프로그램을 다운로드하거나 실행합니다.",
+      "从外部来源下载或运行工具和安装程序。"
+    ]
+  },
+  "btnUnparkApp": {
+    "title": [
+      "Unpark CPU App",
+      "Unpark CPU App",
+      "Unpark CPU App",
+      "Unpark CPU App"
+    ],
+    "description": [
+      "Download, extract, and open the CPU unpark utility.",
+      "CPU コアパーキング用のツールをダウンロード、展開して開きます。",
+      "CPU 코어 파킹 도구를 다운로드하고 압축을 풀어 엽니다.",
+      "下载、解压并打开 CPU 核心停放工具。"
+    ],
+    "kind": "Vendor",
+    "source": "https://coderbag.com/product/quickcpu",
+    "riskNote": [
+      "Downloads or runs tools and installers from external sources.",
+      "外部の配布元からツールやインストーラーをダウンロードまたは実行します。",
+      "외부 출처의 도구나 설치 프로그램을 다운로드하거나 실행합니다.",
+      "从外部来源下载或运行工具和安装程序。"
+    ]
+  },
+  "btnInstallCpp": {
+    "title": [
+      "Visual C++ x64",
+      "Visual C++ x64",
+      "Visual C++ x64",
+      "Visual C++ x64"
+    ],
+    "description": [
+      "Download and install the Visual C++ x64 Redistributable.",
+      "Visual C++ x64 再頒布可能パッケージをダウンロードしてインストールします。",
+      "Visual C++ x64 재배포 가능 패키지를 다운로드하고 설치합니다.",
+      "下载并安装 Visual C++ x64 可再发行组件。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist",
+    "riskNote": [
+      "Downloads or runs tools and installers from external sources.",
+      "外部の配布元からツールやインストーラーをダウンロードまたは実行します。",
+      "외부 출처의 도구나 설치 프로그램을 다운로드하거나 실행합니다.",
+      "从外部来源下载或运行工具和安装程序。"
+    ]
+  },
+  "btnPostInstall": {
+    "title": [
+      "Install three apps with WinGet",
+      "WinGet で 3 本のアプリを導入",
+      "WinGet으로 앱 3개 설치",
+      "用 WinGet 安装 3 个应用"
+    ],
+    "description": [
+      "Install Chrome, Discord, and 7-Zip.",
+      "Chrome、Discord、7-Zip を導入します。",
+      "Chrome, Discord 및 7-Zip을 설치합니다.",
+      "安装 Chrome、Discord 和 7-Zip。"
+    ],
+    "kind": "Source",
+    "source": "https://github.com/microsoft/winget-cli",
+    "riskNote": [
+      "Downloads or runs tools and installers from external sources.",
+      "外部の配布元からツールやインストーラーをダウンロードまたは実行します。",
+      "외부 출처의 도구나 설치 프로그램을 다운로드하거나 실행합니다.",
+      "从外部来源下载或运行工具和安装程序。"
+    ]
+  },
+  "btnOfficeTools": {
+    "title": [
+      "Office deployment settings",
+      "Office の展開設定",
+      "Office 배포 설정",
+      "Office 部署设置"
+    ],
+    "description": [
+      "Open the Office customization tool.",
+      "Office カスタマイズツールを開きます。",
+      "Office 사용자 지정 도구를 엽니다.",
+      "打开 Office 自定义工具。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/microsoft-365-apps/deploy/overview-office-deployment-tool"
+  },
+  "btnScanHardware": {
+    "title": [
+      "Hardware information",
+      "ハードウェア情報",
+      "하드웨어 정보",
+      "硬件信息"
+    ],
+    "description": [
+      "Inspect the processor, graphics, memory, and system drive.",
+      "プロセッサ、グラフィックス、メモリ、システムドライブを確認します。",
+      "프로세서, 그래픽, 메모리 및 시스템 드라이브를 확인합니다.",
+      "查看处理器、显卡、内存和系统驱动器。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/windows/win32/cimwin32prov/operating-system-classes"
+  },
+  "btnSmartCheck": {
+    "title": [
+      "Physical disk health",
+      "物理ディスクの状態",
+      "물리 디스크 상태",
+      "物理磁盘健康"
+    ],
+    "description": [
+      "List physical disks with their types, sizes, and health.",
+      "物理ディスクの種類、容量、状態を一覧表示します。",
+      "물리 디스크의 유형, 용량 및 상태를 표시합니다.",
+      "列出物理磁盘的类型、容量和健康状况。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/powershell/module/storage/get-physicaldisk"
+  },
+  "btnTempCheck": {
+    "title": [
+      "ACPI temperatures",
+      "ACPI 温度",
+      "ACPI 온도",
+      "ACPI 温度"
+    ],
+    "description": [
+      "Read thermal-zone temperatures available from ACPI/WMI.",
+      "ACPI/WMI で取得可能な温度ゾーンの値を読み取ります。",
+      "ACPI/WMI에서 제공되는 열 영역 온도를 읽습니다.",
+      "读取 ACPI/WMI 提供的热区温度。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/thermal-management-in-windows"
+  },
+  "btnLicenseCheck": {
+    "title": [
+      "Windows activation",
+      "Windows のライセンス認証",
+      "Windows 정품 인증",
+      "Windows 激活"
+    ],
+    "description": [
+      "Read activation status and partial product key information.",
+      "認証状態とプロダクトキーの一部を表示します。",
+      "인증 상태와 제품 키 일부를 확인합니다.",
+      "读取激活状态和部分产品密钥信息。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/previous-versions/windows/desktop/sppwmi/softwarelicensingproduct"
+  },
+  "btnRunHealthCheck": {
+    "title": [
+      "Disk and memory check",
+      "ディスクとメモリの確認",
+      "디스크 및 메모리 검사",
+      "磁盘与内存检查"
+    ],
+    "description": [
+      "Check system drive space and memory usage.",
+      "システムドライブの空き容量とメモリ使用量を確認します。",
+      "시스템 드라이브 공간과 메모리 사용량을 확인합니다.",
+      "检查系统驱动器空间和内存用量。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/systeminfo"
+  },
+  "btnHardwareCompat": {
+    "title": [
+      "Hardware compatibility",
+      "ハードウェアの互換性",
+      "하드웨어 호환성",
+      "硬件兼容性"
+    ],
+    "description": [
+      "Identify Intel, Ryzen, and Xeon systems and show notes.",
+      "Intel、Ryzen、Xeon のシステムを識別して注意事項を表示します。",
+      "Intel, Ryzen 및 Xeon 시스템을 식별하고 참고 사항을 표시합니다.",
+      "识别 Intel、Ryzen 和 Xeon 系统并显示说明。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/windows/win32/cimwin32prov/win32-processor"
+  },
+  "btnCreatePoint": {
+    "title": [
+      "Create a restore point",
+      "復元ポイントを作成",
+      "복원 지점 만들기",
+      "创建还原点"
+    ],
+    "description": [
+      "Create a Windows restore point.",
+      "Windows の復元ポイントを作成します。",
+      "Windows 복원 지점을 만듭니다.",
+      "创建 Windows 还原点。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.management/checkpoint-computer?view=powershell-5.1"
+  },
+  "btnBackupSys": {
+    "title": [
+      "Back up the Registry",
+      "レジストリをバックアップ",
+      "레지스트리 백업",
+      "备份注册表"
+    ],
+    "description": [
+      "Export a manual Registry snapshot.",
+      "レジストリの手動スナップショットを出力します。",
+      "수동 레지스트리 스냅샷을 내보냅니다.",
+      "导出手动注册表快照。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/reg-export"
+  },
+  "btnRestoreReg": {
+    "title": [
+      "Restore the Registry",
+      "レジストリを復元",
+      "레지스트리 복원",
+      "还原注册表"
+    ],
+    "description": [
+      "Import a compatible snapshot after confirmation.",
+      "確認後に互換性のあるスナップショットを取り込みます。",
+      "확인 후 호환되는 스냅샷을 가져옵니다.",
+      "确认后导入兼容的快照。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/reg-import",
+    "riskNote": [
+      "Imports machine or account Registry settings from a backup.",
+      "バックアップからコンピューターまたはアカウントのレジストリ設定を取り込みます。",
+      "백업에서 컴퓨터 또는 계정의 레지스트리 설정을 가져옵니다.",
+      "从备份导入计算机或账户的注册表设置。"
+    ]
+  },
+  "btnExportHtml": {
+    "title": [
+      "HTML system report",
+      "HTML システムレポート",
+      "HTML 시스템 보고서",
+      "HTML 系统报告"
+    ],
+    "description": [
+      "Create and open a hardware report in your browser.",
+      "ハードウェアレポートを作成し、ブラウザーで開きます。",
+      "하드웨어 보고서를 만들고 브라우저로 엽니다.",
+      "创建硬件报告并在浏览器中打开。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/convertto-html"
+  },
+  "btnExportLog": {
+    "title": [
+      "Export the activity log",
+      "ログを出力",
+      "활동 로그 내보내기",
+      "导出活动日志"
+    ],
+    "description": [
+      "Save the current log as a text file.",
+      "現在のログをテキストファイルに保存します。",
+      "현재 로그를 텍스트 파일로 저장합니다.",
+      "将当前日志保存为文本文件。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/out-file"
+  },
+  "btnCopyLog": {
+    "title": [
+      "Copy the log",
+      "ログをコピー",
+      "로그 복사",
+      "复制日志"
+    ],
+    "description": [
+      "Copy the current log to the clipboard.",
+      "現在のログをクリップボードにコピーします。",
+      "현재 로그를 클립보드에 복사합니다.",
+      "将当前日志复制到剪贴板。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/dotnet/api/system.windows.clipboard.settext"
+  },
+  "btnDiagZip": {
+    "title": [
+      "Diagnostic ZIP",
+      "診断 ZIP",
+      "진단 ZIP",
+      "诊断 ZIP"
+    ],
+    "description": [
+      "Save system information, network configuration, and the log in a ZIP.",
+      "システム情報、ネットワーク構成、ログを ZIP に保存します。",
+      "시스템 정보, 네트워크 설정 및 로그를 ZIP으로 저장합니다.",
+      "将系统信息、网络配置和日志保存到 ZIP。"
+    ],
+    "kind": "Docs",
+    "source": "https://learn.microsoft.com/en-us/dotnet/api/system.io.compression.ziparchive",
+    "riskNote": [
+      "Review network configuration and log contents before sharing the archive.",
+      "共有する前にネットワーク構成とログの内容を確認してください。",
+      "공유 전에 네트워크 설정과 로그 내용을 확인하세요.",
+      "分享压缩包前请检查网络配置和日志内容。"
+    ]
+  }
+}

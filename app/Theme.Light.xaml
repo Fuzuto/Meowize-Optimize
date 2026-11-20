@@ -1,0 +1,45 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <LinearGradientBrush x:Key="AppBackground" StartPoint="0,0" EndPoint="0.85,1">
+        <GradientStop Color="#F9EFDD" Offset="0" />
+        <GradientStop Color="#EEDCCD" Offset="0.5" />
+        <GradientStop Color="#E4C9B8" Offset="1" />
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="SidebarBackground" Color="#F0E0D3" />
+    <SolidColorBrush x:Key="Surface" Color="#F8EEE5" />
+    <SolidColorBrush x:Key="SurfaceRaised" Color="#E9D6C7" />
+    <SolidColorBrush x:Key="GlassInset" Color="#9AFFF8EE" />
+    <LinearGradientBrush x:Key="GlassSurface" StartPoint="0,0" EndPoint="0.9,1">
+        <GradientStop Color="#D4FFF8EE" Offset="0" />
+        <GradientStop Color="#B5F7E7D9" Offset="0.62" />
+        <GradientStop Color="#B9EDD9CB" Offset="1" />
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="GlassHighlight" StartPoint="0,0" EndPoint="1,1">
+        <GradientStop Color="#EAFFFBF2" Offset="0" />
+        <GradientStop Color="#C5F5E2D1" Offset="0.50" />
+        <GradientStop Color="#C6E8CDBC" Offset="1" />
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="GlassRim" StartPoint="0,0" EndPoint="0.6,1">
+        <GradientStop Color="#F0FFFDF6" Offset="0" />
+        <GradientStop Color="#88BA927C" Offset="1" />
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="Stroke" Color="#AC8F7F" />
+    <SolidColorBrush x:Key="TextMain" Color="#2D231D" />
+    <SolidColorBrush x:Key="TextMuted" Color="#59453B" />
+    <SolidColorBrush x:Key="Accent" Color="#67432E" />
+    <SolidColorBrush x:Key="AccentSurface" Color="#E4CCBA" />
+    <SolidColorBrush x:Key="AccentText" Color="#FFF9F2" />
+    <SolidColorBrush x:Key="AccentButtonBackground" Color="#67432E" />
+    <SolidColorBrush x:Key="AccentButtonBackgroundPointerOver" Color="#78533D" />
+    <SolidColorBrush x:Key="AccentButtonBackgroundPressed" Color="#593B27" />
+    <SolidColorBrush x:Key="AccentButtonForeground" Color="#FFF9F2" />
+    <SolidColorBrush x:Key="AccentButtonForegroundPointerOver" Color="#FFF9F2" />
+    <SolidColorBrush x:Key="Warning" Color="#78500B" />
+    <SolidColorBrush x:Key="Error" Color="#98382D" />
+    <SolidColorBrush x:Key="RiskSafe" Color="#226047" />
+    <SolidColorBrush x:Key="RiskSafeFill" Color="#E2F1E5" />
+    <SolidColorBrush x:Key="RiskCaution" Color="#704A0B" />
+    <SolidColorBrush x:Key="RiskCautionFill" Color="#F7E8C5" />
+    <SolidColorBrush x:Key="RiskWarning" Color="#8F352C" />
+    <SolidColorBrush x:Key="RiskWarningFill" Color="#F6DDD5" />
+</ResourceDictionary>

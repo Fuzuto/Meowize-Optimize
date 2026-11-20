@@ -1,0 +1,5 @@
+/upstream/
+/app/bin/
+/app/obj/
+/artifacts/
+keygate.json

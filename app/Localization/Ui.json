@@ -1,0 +1,1500 @@
+{
+  "CatalogReadError": [
+    "Meowize could not load the task catalog.",
+    "Meowize はタスク一覧を読み込めませんでした。",
+    "Meowize에서 작업 목록을 불러올 수 없습니다.",
+    "Meowize không đọc được danh mục tác vụ.",
+    "Meowize 无法加载任务目录。"
+  ],
+  "ChooseLanguage": [
+    "Choose your region to start",
+    "地域を選択して開始",
+    "시작할 지역을 선택하세요",
+    "Chọn khu vực để bắt đầu",
+    "选择地区以开始"
+  ],
+  "Continue": [
+    "Continue",
+    "続ける",
+    "계속",
+    "Tiếp tục",
+    "继续"
+  ],
+  "Language": [
+    "Language",
+    "言語",
+    "언어",
+    "Ngôn ngữ",
+    "语言"
+  ],
+  "Support": [
+    "Support",
+    "サポート",
+    "지원",
+    "Hỗ trợ",
+    "支持"
+  ],
+  "Settings": [
+    "Settings",
+    "設定",
+    "설정",
+    "Cài đặt",
+    "设置"
+  ],
+  "Navigation": [
+    "Main navigation",
+    "メインナビゲーション",
+    "기본 탐색",
+    "Điều hướng chính",
+    "主导航"
+  ],
+  "Admin": [
+    "Administrator",
+    "管理者",
+    "관리자",
+    "Quản trị viên",
+    "管理员"
+  ],
+  "AdminShort": [
+    "Admin",
+    "管理者",
+    "관리",
+    "Quản trị",
+    "管理"
+  ],
+  "AdminEnabled": [
+    "Running as administrator",
+    "管理者として実行中",
+    "관리자 권한으로 실행 중",
+    "Đang chạy với quyền quản trị",
+    "正在以管理员身份运行"
+  ],
+  "OpenAdmin": [
+    "Open as administrator",
+    "管理者として開く",
+    "관리자 권한으로 열기",
+    "Mở với quyền quản trị",
+    "以管理员身份打开"
+  ],
+  "Preview": [
+    "Preview",
+    "プレビュー",
+    "미리 보기",
+    "Xem thử",
+    "预览"
+  ],
+  "PreviewMode": [
+    "Simulation mode",
+    "シミュレーションモード",
+    "시뮬레이션 모드",
+    "Chế độ mô phỏng",
+    "模拟模式"
+  ],
+  "Session": [
+    "Current session",
+    "現在のセッション",
+    "현재 세션",
+    "Phiên hiện tại",
+    "当前会话"
+  ],
+  "Log": [
+    "Activity log",
+    "アクティビティログ",
+    "활동 로그",
+    "Nhật ký",
+    "活动日志"
+  ],
+  "ToggleLog": [
+    "Show or hide the log",
+    "ログの表示を切り替え",
+    "로그 표시 전환",
+    "Hiện hoặc ẩn nhật ký",
+    "显示或隐藏日志"
+  ],
+  "ShowLogKey": [
+    "Show log · Ctrl+L",
+    "ログを表示 · Ctrl+L",
+    "로그 표시 · Ctrl+L",
+    "Hiện nhật ký · Ctrl+L",
+    "显示日志 · Ctrl+L"
+  ],
+  "HideLogKey": [
+    "Hide log · Ctrl+L",
+    "ログを非表示 · Ctrl+L",
+    "로그 숨기기 · Ctrl+L",
+    "Ẩn nhật ký · Ctrl+L",
+    "隐藏日志 · Ctrl+L"
+  ],
+  "HideLog": [
+    "Hide log",
+    "ログを非表示",
+    "로그 숨기기",
+    "Ẩn nhật ký",
+    "隐藏日志"
+  ],
+  "CopyLog": [
+    "Copy log",
+    "ログをコピー",
+    "로그 복사",
+    "Sao chép nhật ký",
+    "复制日志"
+  ],
+  "LogKey": [
+    "Ctrl+L toggles the log",
+    "Ctrl+L でログを切り替え",
+    "Ctrl+L로 로그 전환",
+    "Ctrl+L để hiện hoặc ẩn nhật ký",
+    "按 Ctrl+L 切换日志"
+  ],
+  "Ready": [
+    "Ready",
+    "準備完了",
+    "준비됨",
+    "Sẵn sàng",
+    "就绪"
+  ],
+  "Progress": [
+    "Task progress",
+    "タスクの進行状況",
+    "작업 진행률",
+    "Tiến độ tác vụ",
+    "任务进度"
+  ],
+  "Search": [
+    "Find tasks on this page",
+    "このページのタスクを検索",
+    "이 페이지에서 작업 찾기",
+    "Tìm tác vụ trong trang",
+    "在此页查找任务"
+  ],
+  "SearchKey": [
+    "Find tasks · Ctrl+F",
+    "タスクを検索 · Ctrl+F",
+    "작업 찾기 · Ctrl+F",
+    "Tìm tác vụ · Ctrl+F",
+    "查找任务 · Ctrl+F"
+  ],
+  "FilterRisk": [
+    "Filter by risk",
+    "リスクで絞り込む",
+    "위험도별 필터",
+    "Lọc theo mức độ",
+    "按风险筛选"
+  ],
+  "AllRisks": [
+    "All risk levels",
+    "すべてのリスク",
+    "모든 위험도",
+    "Mọi mức độ",
+    "所有风险级别"
+  ],
+  "Safe": [
+    "Safe",
+    "安全",
+    "안전",
+    "An toàn",
+    "安全"
+  ],
+  "Caution": [
+    "Caution",
+    "注意",
+    "주의",
+    "Cẩn trọng",
+    "注意"
+  ],
+  "Warning": [
+    "Warning",
+    "警告",
+    "경고",
+    "Cảnh báo",
+    "警告"
+  ],
+  "SafeHelp": [
+    "Low impact, such as reading information, backing up, or exporting files.",
+    "情報の読み取り、バックアップ、ファイルの出力など、影響の少ない操作です。",
+    "정보 확인, 백업, 파일 내보내기 등 영향이 적은 작업입니다.",
+    "Tác động thấp, như đọc thông tin, sao lưu hoặc xuất tệp.",
+    "影响较低，例如读取信息、备份或导出文件。"
+  ],
+  "CautionHelp": [
+    "May change settings, files, or apps. Review the scope before running.",
+    "設定、ファイル、アプリを変更する場合があります。実行前に範囲を確認してください。",
+    "설정, 파일 또는 앱을 변경할 수 있습니다. 실행 범위를 확인하세요.",
+    "Có thể đổi thiết lập, tệp hoặc ứng dụng. Xem phạm vi trước khi chạy.",
+    "可能更改设置、文件或应用。运行前请检查范围。"
+  ],
+  "WarningHelp": [
+    "May affect security, hardware, connectivity, or your current session.",
+    "セキュリティ、機器、接続、現在のセッションに影響する場合があります。",
+    "보안, 장치, 연결 또는 현재 세션에 영향을 줄 수 있습니다.",
+    "Có thể ảnh hưởng đến bảo mật, thiết bị, kết nối hoặc phiên làm việc.",
+    "可能影响安全、设备、连接或当前会话。"
+  ],
+  "ReviewRun": [
+    "Review and run",
+    "確認して実行",
+    "검토 후 실행",
+    "Xem và chạy",
+    "检查并运行"
+  ],
+  "StopAfter": [
+    "Stop after this step",
+    "この手順の後で停止",
+    "이 단계 후 중지",
+    "Dừng sau bước này",
+    "完成此步骤后停止"
+  ],
+  "AutoShutdown": [
+    "Shut down when finished",
+    "完了後にシャットダウン",
+    "완료 후 종료",
+    "Tự tắt máy sau khi hoàn tất",
+    "完成后关机"
+  ],
+  "AutoShutdownHelp": [
+    "Windows shuts down after a countdown.",
+    "カウントダウン後に Windows がシャットダウンします。",
+    "카운트다운 후 Windows가 종료됩니다.",
+    "Windows sẽ tắt máy sau thời gian đếm ngược.",
+    "倒计时结束后 Windows 将关机。"
+  ],
+  "SelectedTasks": [
+    "Selected tasks",
+    "選択中のタスク",
+    "선택한 작업",
+    "Tác vụ đã chọn",
+    "已选任务"
+  ],
+  "SelectionCount": [
+    "Selected: {0}",
+    "{0} 件を選択",
+    "{0}개 선택",
+    "{0} mục đã chọn",
+    "已选 {0} 项"
+  ],
+  "OutsideFilter": [
+    "{0} outside the filter",
+    "フィルター対象外 {0} 件",
+    "필터 외 {0}개",
+    "{0} mục ngoài bộ lọc",
+    "{0} 项不在筛选结果中"
+  ],
+  "Working": [
+    "Working…",
+    "処理中…",
+    "처리 중…",
+    "Đang xử lý tác vụ",
+    "正在处理…"
+  ],
+  "SelectAll": [
+    "Select all",
+    "すべて選択",
+    "모두 선택",
+    "Tất cả",
+    "全选"
+  ],
+  "Clear": [
+    "Clear",
+    "選択を解除",
+    "선택 해제",
+    "Bỏ chọn",
+    "取消全选"
+  ],
+  "Technician": [
+    "Technician",
+    "技術者向け",
+    "기술자용",
+    "Chuẩn KTV",
+    "技术员"
+  ],
+  "NoMatches": [
+    "No matching tasks. Try another search or risk level.",
+    "該当するタスクがありません。検索語やリスクを変更してください。",
+    "일치하는 작업이 없습니다. 검색어나 위험도를 바꿔 보세요.",
+    "Không tìm thấy tác vụ phù hợp. Thử từ khóa hoặc mức độ khác.",
+    "没有匹配的任务。请尝试其他关键词或风险级别。"
+  ],
+  "OpenWindows": [
+    "Open Windows settings",
+    "Windows の設定を開く",
+    "Windows 설정 열기",
+    "Mở cài đặt Windows",
+    "打开 Windows 设置"
+  ],
+  "OpenSettings": [
+    "Open settings",
+    "設定を開く",
+    "설정 열기",
+    "Mở cài đặt",
+    "打开设置"
+  ],
+  "WindowsSettings": [
+    "Windows settings",
+    "Windows の設定",
+    "Windows 설정",
+    "Cài đặt Windows",
+    "Windows 设置"
+  ],
+  "WindowsSettingsDetail": [
+    "Review this setting in Windows.",
+    "Windows の設定で確認できます。",
+    "Windows 설정에서 검토할 수 있습니다.",
+    "Xem trong cài đặt Windows.",
+    "在 Windows 设置中查看。"
+  ],
+  "Docs": [
+    "Documentation",
+    "ドキュメント",
+    "문서",
+    "Tài liệu",
+    "文档"
+  ],
+  "Source": [
+    "Source code",
+    "ソースコード",
+    "소스 코드",
+    "Mã nguồn",
+    "源代码"
+  ],
+  "Vendor": [
+    "Vendor site",
+    "提供元のサイト",
+    "제공사 웹사이트",
+    "Trang nhà cung cấp",
+    "厂商网站"
+  ],
+  "OpenReference": [
+    "Open reference for {0}",
+    "{0} の参照先を開く",
+    "{0} 참고 링크 열기",
+    "Mở tài liệu về {0}",
+    "打开 {0} 的参考链接"
+  ],
+  "ReferenceError": [
+    "Could not open the reference: {0}",
+    "参照先を開けませんでした: {0}",
+    "참고 링크를 열 수 없습니다: {0}",
+    "Không mở được tài liệu: {0}",
+    "无法打开参考链接：{0}"
+  ],
+  "ReferenceTip": [
+    "Click a task name to open its reference.",
+    "タスク名をクリックすると参照先が開きます。",
+    "작업 이름을 누르면 참고 자료가 열립니다.",
+    "Nhấn tên tác vụ để mở tài liệu tham khảo.",
+    "点击任务名称可打开参考资料。"
+  ],
+  "Apply": [
+    "Apply",
+    "適用",
+    "적용",
+    "Áp dụng",
+    "应用"
+  ],
+  "ApplyDns": [
+    "Apply DNS",
+    "DNS を適用",
+    "DNS 적용",
+    "Áp dụng DNS",
+    "应用 DNS"
+  ],
+  "DnsProvider": [
+    "DNS provider",
+    "DNS プロバイダー",
+    "DNS 제공업체",
+    "Nhà cung cấp DNS",
+    "DNS 提供商"
+  ],
+  "DnsAddress": [
+    "DNS address",
+    "DNS アドレス",
+    "DNS 주소",
+    "Địa chỉ DNS",
+    "DNS 地址"
+  ],
+  "Cpu": [
+    "Processor",
+    "プロセッサ",
+    "프로세서",
+    "Bộ xử lý",
+    "处理器"
+  ],
+  "Gpu": [
+    "Graphics",
+    "グラフィックス",
+    "그래픽",
+    "Card đồ họa",
+    "显卡"
+  ],
+  "Ram": [
+    "Memory",
+    "メモリ",
+    "메모리",
+    "Bộ nhớ",
+    "内存"
+  ],
+  "NoData": [
+    "No data available",
+    "データがありません",
+    "데이터 없음",
+    "Chưa có dữ liệu",
+    "暂无数据"
+  ],
+  "Reading": [
+    "Reading…",
+    "読み取り中…",
+    "읽는 중…",
+    "Đang đọc…",
+    "正在读取…"
+  ],
+  "Open": [
+    "Open",
+    "開く",
+    "열기",
+    "Mở",
+    "打开"
+  ],
+  "Check": [
+    "Check",
+    "確認",
+    "확인",
+    "Kiểm tra",
+    "检查"
+  ],
+  "Export": [
+    "Export",
+    "出力",
+    "내보내기",
+    "Xuất",
+    "导出"
+  ],
+  "Copy": [
+    "Copy",
+    "コピー",
+    "복사",
+    "Sao chép",
+    "复制"
+  ],
+  "DownloadOpen": [
+    "Download and open",
+    "ダウンロードして開く",
+    "다운로드 후 열기",
+    "Tải và mở",
+    "下载并打开"
+  ],
+  "Install": [
+    "Install",
+    "インストール",
+    "설치",
+    "Cài đặt",
+    "安装"
+  ],
+  "Create": [
+    "Create",
+    "作成",
+    "만들기",
+    "Tạo",
+    "创建"
+  ],
+  "Backup": [
+    "Back up",
+    "バックアップ",
+    "백업",
+    "Sao lưu",
+    "备份"
+  ],
+  "Restore": [
+    "Restore",
+    "復元",
+    "복원",
+    "Khôi phục",
+    "还原"
+  ],
+  "Run": [
+    "Run",
+    "実行",
+    "실행",
+    "Chạy",
+    "运行"
+  ],
+  "LightTheme": [
+    "Switch to light theme",
+    "ライトテーマに切り替え",
+    "밝은 테마로 전환",
+    "Đổi sang giao diện sáng",
+    "切换到浅色主题"
+  ],
+  "DarkTheme": [
+    "Switch to dark theme",
+    "ダークテーマに切り替え",
+    "어두운 테마로 전환",
+    "Đổi sang giao diện tối",
+    "切换到深色主题"
+  ],
+  "BatchTitle": [
+    "One-click optimization",
+    "ワンクリック最適化",
+    "원클릭 최적화",
+    "Tối ưu toàn diện",
+    "一键优化"
+  ],
+  "BatchDesc": [
+    "Pick a preset or individual tasks, then review before running.",
+    "プリセットまたはタスクを選択し、実行前に内容を確認できます。",
+    "프리셋이나 개별 작업을 선택한 뒤 실행 전에 검토하세요.",
+    "Chọn preset hoặc từng tác vụ rồi xem lại trước khi chạy.",
+    "选择预设或单个任务，然后在运行前检查。"
+  ],
+  "GamingTitle": [
+    "Gaming & FPS",
+    "ゲームと FPS",
+    "게임 및 FPS",
+    "Gaming & FPS",
+    "游戏与 FPS"
+  ],
+  "GamingDesc": [
+    "Tune graphics, input latency, and resources for games.",
+    "グラフィックス、入力遅延、ゲーム向けリソースを調整します。",
+    "그래픽, 입력 지연 및 게임 리소스를 조정합니다.",
+    "Tinh chỉnh đồ họa, độ trễ đầu vào và tài nguyên game.",
+    "调整图形、输入延迟和游戏资源。"
+  ],
+  "SystemTitle": [
+    "System & Talon",
+    "システムと Talon",
+    "시스템 및 Talon",
+    "Hệ thống & Talon",
+    "系统与 Talon"
+  ],
+  "SystemDesc": [
+    "Manage Windows services, startup apps, and tweaks.",
+    "Windows のサービス、スタートアップアプリ、設定を管理します。",
+    "Windows 서비스, 시작 앱 및 조정을 관리합니다.",
+    "Quản lý dịch vụ, ứng dụng khởi động và tinh chỉnh Windows.",
+    "管理 Windows 服务、启动应用和调整选项。"
+  ],
+  "NetworkTitle": [
+    "Network & drivers",
+    "ネットワークとドライバー",
+    "네트워크 및 드라이버",
+    "Mạng & Driver",
+    "网络与驱动"
+  ],
+  "NetworkDesc": [
+    "Manage DNS, network adapters, and driver utilities.",
+    "DNS、ネットワークアダプター、ドライバーツールを管理します。",
+    "DNS, 네트워크 어댑터 및 드라이버 도구를 관리합니다.",
+    "Quản lý DNS, card mạng và công cụ driver.",
+    "管理 DNS、网络适配器和驱动工具。"
+  ],
+  "AppsTitle": [
+    "Apps & tools",
+    "アプリとツール",
+    "앱 및 도구",
+    "Ứng dụng & Công cụ",
+    "应用与工具"
+  ],
+  "AppsDesc": [
+    "Download installers, diagnostic tools, and selected driver versions.",
+    "インストーラー、診断ツール、指定のドライバーをダウンロードします。",
+    "설치 프로그램, 진단 도구 및 선택한 드라이버 버전을 다운로드합니다.",
+    "Tải bộ cài, công cụ chẩn đoán và phiên bản driver đã chọn.",
+    "下载安装程序、诊断工具和选定的驱动版本。"
+  ],
+  "Diagnostics": [
+    "Diagnostics",
+    "診断",
+    "진단",
+    "Chẩn đoán",
+    "诊断"
+  ],
+  "DiagnosticsTitle": [
+    "Device diagnostics",
+    "デバイス診断",
+    "장치 진단",
+    "Chẩn đoán thiết bị",
+    "设备诊断"
+  ],
+  "DiagnosticsDesc": [
+    "View hardware, storage, memory, and Windows status.",
+    "ハードウェア、ストレージ、メモリ、Windows の状態を表示します。",
+    "하드웨어, 저장소, 메모리 및 Windows 상태를 확인합니다.",
+    "Xem phần cứng, ổ đĩa, bộ nhớ và trạng thái Windows.",
+    "查看硬件、存储、内存和 Windows 状态。"
+  ],
+  "RepairTitle": [
+    "Recovery & reports",
+    "回復とレポート",
+    "복구 및 보고서",
+    "Cứu hộ & Báo cáo",
+    "恢复与报告"
+  ],
+  "RepairDesc": [
+    "Back up, restore, repair Windows, and export diagnostics.",
+    "バックアップ、復元、Windows の修復、診断情報の出力を行います。",
+    "백업, 복원, Windows 복구 및 진단 정보 내보내기를 수행합니다.",
+    "Sao lưu, khôi phục, sửa Windows và xuất dữ liệu chẩn đoán.",
+    "备份、还原、修复 Windows 并导出诊断信息。"
+  ],
+  "CoreGroup": [
+    "Safety and system",
+    "保護とシステム",
+    "안전 및 시스템",
+    "An toàn và hệ thống",
+    "安全与系统"
+  ],
+  "GamingGroup": [
+    "Gaming and latency",
+    "ゲームと遅延",
+    "게임 및 지연 시간",
+    "Gaming và độ trễ",
+    "游戏与延迟"
+  ],
+  "NetworkGroup": [
+    "Network and cleanup",
+    "ネットワークとクリーンアップ",
+    "네트워크 및 정리",
+    "Mạng và dọn dẹp",
+    "网络与清理"
+  ],
+  "PreviewStarted": [
+    "Preview opened. Tasks will be simulated.",
+    "プレビューを開始しました。タスクはシミュレーションされます。",
+    "미리 보기를 열었습니다. 작업은 시뮬레이션됩니다.",
+    "Đã mở chế độ xem thử. Các tác vụ sẽ được mô phỏng.",
+    "已打开预览。任务将以模拟方式运行。"
+  ],
+  "CatalogLoaded": [
+    "Task catalog loaded.",
+    "タスク一覧を読み込みました。",
+    "작업 목록을 불러왔습니다.",
+    "Đã nạp danh mục tác vụ.",
+    "已加载任务目录。"
+  ],
+  "PreviewReview": [
+    "These steps will be simulated. Your system and files will stay as they are.",
+    "手順をシミュレーションします。システムやファイルには影響しません。",
+    "단계를 시뮬레이션합니다. 시스템과 파일에는 변화가 없습니다.",
+    "Các bước sẽ được mô phỏng. Hệ thống và tệp sẽ không thay đổi.",
+    "以下步骤将以模拟方式运行。系统与文件不会被更改。"
+  ],
+  "LiveReview": [
+    "Tasks run in the order below. Save work in other apps before continuing.",
+    "以下の順序で実行します。続行前に他のアプリの作業を保存してください。",
+    "아래 순서로 실행됩니다. 계속하기 전에 다른 앱의 작업을 저장하세요.",
+    "Tác vụ chạy theo thứ tự bên dưới. Hãy lưu công việc trong các ứng dụng khác.",
+    "任务按以下顺序运行。继续之前请保存其他应用中的工作。"
+  ],
+  "WarningCount": [
+    "Warnings: {0}. Review their impact below.",
+    "警告 {0} 件。以下で影響を確認してください。",
+    "경고 {0}개. 아래에서 영향을 검토하세요.",
+    "{0} mục cảnh báo. Xem tác động bên dưới.",
+    "{0} 项警告。请查看下方影响。"
+  ],
+  "CountdownReview": [
+    "A 45-second shutdown countdown starts if the batch is eligible.",
+    "条件を満たすと、45 秒のシャットダウンカウントダウンが始まります。",
+    "조건이 충족되면 45초 종료 카운트다운을 시작합니다.",
+    "Nếu batch đủ điều kiện, máy sẽ đếm ngược 45 giây trước khi tắt.",
+    "批处理满足条件后将开始 45 秒关机倒计时。"
+  ],
+  "MayRestart": [
+    "Some changes may require a restart.",
+    "一部の変更には再起動が必要な場合があります。",
+    "일부 변경은 다시 시작해야 적용될 수 있습니다.",
+    "Một số thay đổi có thể cần khởi động lại.",
+    "部分更改可能需要重启。"
+  ],
+  "BackupFallback": [
+    "Drive D: is unavailable. Backups will use {0}.",
+    "D: ドライブがないため、{0} にバックアップします。",
+    "D: 드라이브를 사용할 수 없어 {0}에 백업합니다.",
+    "Không có ổ D. Bản sao lưu sẽ dùng {0}.",
+    "D: 盘不可用。备份将保存到 {0}。"
+  ],
+  "AdminBatch": [
+    "Administrator access is required. Review the batch again after UAC.",
+    "管理者権限が必要です。UAC の後でもう一度確認してください。",
+    "관리자 권한이 필요합니다. UAC 이후 일괄 작업을 다시 검토하세요.",
+    "Cần quyền quản trị. Hãy xem lại batch sau UAC.",
+    "需要管理员权限。完成 UAC 后请重新检查批处理。"
+  ],
+  "ReviewTasks": [
+    "Review tasks",
+    "タスクを確認",
+    "작업 검토",
+    "Xem lại tác vụ",
+    "检查任务"
+  ],
+  "RunTasks": [
+    "Run {0} tasks",
+    "{0} 件のタスクを実行",
+    "작업 {0}개 실행",
+    "Chạy {0} tác vụ",
+    "运行 {0} 项任务"
+  ],
+  "TaskCount": [
+    "Tasks: {0}",
+    "タスク {0} 件",
+    "작업 {0}개",
+    "{0} tác vụ",
+    "任务 {0} 项"
+  ],
+  "Simulate": [
+    "Simulate",
+    "シミュレーション",
+    "시뮬레이션",
+    "Mô phỏng",
+    "模拟"
+  ],
+  "RunSelected": [
+    "Run tasks",
+    "タスクを実行",
+    "작업 실행",
+    "Chạy tác vụ",
+    "运行任务"
+  ],
+  "ManualAction": [
+    "This item is managed in Windows settings.",
+    "Windows の設定で管理する項目です。",
+    "Windows 설정에서 관리하는 항목입니다.",
+    "Mục này được quản lý trong cài đặt Windows.",
+    "此项由 Windows 设置管理。"
+  ],
+  "BackupCheck": [
+    "Review the backup before continuing.",
+    "続行前にバックアップを確認してください。",
+    "계속하기 전에 백업을 확인하세요.",
+    "Kiểm tra bản sao lưu trước khi tiếp tục.",
+    "继续之前请检查备份。"
+  ],
+  "BackupReview": [
+    "Review backup",
+    "バックアップを確認",
+    "백업 검토",
+    "Kiểm tra sao lưu",
+    "检查备份"
+  ],
+  "ContinueTasks": [
+    "Continue remaining tasks",
+    "残りのタスクを続行",
+    "남은 작업 계속",
+    "Tiếp tục các mục sau",
+    "继续剩余任务"
+  ],
+  "Stop": [
+    "Stop",
+    "停止",
+    "중지",
+    "Dừng",
+    "停止"
+  ],
+  "Stopped": [
+    "Stopped",
+    "停止しました",
+    "중지됨",
+    "Đã dừng",
+    "已停止"
+  ],
+  "PreviewDone": [
+    "Simulation complete",
+    "シミュレーションが完了しました",
+    "시뮬레이션 완료",
+    "Mô phỏng hoàn tất",
+    "模拟完成"
+  ],
+  "Completed": [
+    "Complete",
+    "完了",
+    "완료",
+    "Hoàn tất",
+    "完成"
+  ],
+  "CompletedNotices": [
+    "Complete with notices",
+    "注意事項ありで完了",
+    "참고 사항과 함께 완료",
+    "Hoàn tất có lưu ý",
+    "完成，含提示"
+  ],
+  "Error": [
+    "Error",
+    "エラー",
+    "오류",
+    "Lỗi",
+    "错误"
+  ],
+  "CheckResult": [
+    "Review result",
+    "結果を確認",
+    "결과 검토",
+    "Cần kiểm tra",
+    "检查结果"
+  ],
+  "Processed": [
+    "Processed {0}/{1} items.",
+    "{0}/{1} 件を処理しました。",
+    "{0}/{1}개 항목을 처리했습니다.",
+    "Đã xử lý {0}/{1} mục.",
+    "已处理 {0}/{1} 项。"
+  ],
+  "CheckCount": [
+    "Review {0} results in the activity log.",
+    "ログで {0} 件の結果を確認してください。",
+    "활동 로그에서 결과 {0}개를 검토하세요.",
+    "Có {0} mục cần kiểm tra. Xem nhật ký.",
+    "请在活动日志中检查 {0} 项结果。"
+  ],
+  "RestartNeeded": [
+    "Some changes need a restart.",
+    "再起動が必要な変更があります。",
+    "일부 변경을 적용하려면 다시 시작해야 합니다.",
+    "Một số thay đổi cần khởi động lại.",
+    "部分更改需要重启。"
+  ],
+  "ShutdownBatch": [
+    "Shut down after batch",
+    "一括処理後にシャットダウン",
+    "일괄 작업 후 종료",
+    "Tắt máy sau batch",
+    "批处理后关机"
+  ],
+  "ShutdownPartial": [
+    "Some results need review. Start the shutdown countdown?",
+    "確認が必要な結果があります。シャットダウンのカウントダウンを始めますか？",
+    "검토가 필요한 결과가 있습니다. 종료 카운트다운을 시작할까요?",
+    "Một số mục cần kiểm tra. Bắt đầu đếm ngược tắt máy?",
+    "部分结果需要检查。开始关机倒计时吗？"
+  ],
+  "Countdown": [
+    "Start countdown",
+    "カウントダウンを開始",
+    "카운트다운 시작",
+    "Bắt đầu đếm ngược",
+    "开始倒计时"
+  ],
+  "Permissions": [
+    "Administrator access required",
+    "管理者権限が必要です",
+    "관리자 권한 필요",
+    "Cần quyền quản trị",
+    "需要管理员权限"
+  ],
+  "AdminForTask": [
+    "Open as administrator to run {0}.",
+    "{0} を実行するには管理者として開いてください。",
+    "{0} 작업을 실행하려면 관리자 권한으로 여세요.",
+    "Mở app với quyền quản trị để chạy {0}.",
+    "请以管理员身份打开以运行 {0}。"
+  ],
+  "DnsForAdapters": [
+    "Apply {0} to all active adapters.",
+    "有効なすべてのアダプターに {0} を適用します。",
+    "활성 어댑터 모두에 {0}을 적용합니다.",
+    "Áp dụng {0} cho mọi card mạng đang hoạt động.",
+    "将 {0} 应用到所有活动适配器。"
+  ],
+  "RestoreConfirm": [
+    "Restore the backup {0}.",
+    "バックアップ {0} を復元します。",
+    "백업 {0}을 복원합니다.",
+    "Khôi phục bản sao lưu {0}.",
+    "还原备份 {0}。"
+  ],
+  "SnapshotBefore": [
+    "A snapshot will be made before import.",
+    "インポート前にスナップショットを作成します。",
+    "가져오기 전에 스냅샷을 만듭니다.",
+    "Ứng dụng sẽ tạo snapshot trước khi nhập.",
+    "导入前将创建快照。"
+  ],
+  "ZipPrivacy": [
+    "The archive contains network configuration and the activity log.",
+    "アーカイブにはネットワーク構成とログが含まれます。",
+    "압축 파일에는 네트워크 설정과 활동 로그가 포함됩니다.",
+    "Gói ZIP có cấu hình mạng và nhật ký.",
+    "压缩包包含网络配置和活动日志。"
+  ],
+  "LookingUpBackup": [
+    "Looking for a backup…",
+    "バックアップを検索中…",
+    "백업을 찾는 중…",
+    "Đang tìm bản sao lưu…",
+    "正在查找备份…"
+  ],
+  "RestoreRegistry": [
+    "Restore Registry",
+    "レジストリを復元",
+    "레지스트리 복원",
+    "Khôi phục Registry",
+    "还原注册表"
+  ],
+  "BackupMissing": [
+    "No compatible Registry backup was found.",
+    "互換性のあるレジストリのバックアップが見つかりません。",
+    "호환되는 레지스트리 백업이 없습니다.",
+    "Chưa tìm thấy bản sao lưu Registry tương thích.",
+    "未找到兼容的注册表备份。"
+  ],
+  "SimulatedTask": [
+    "Simulation finished for {0}.",
+    "{0} のシミュレーションが完了しました。",
+    "{0} 시뮬레이션을 완료했습니다.",
+    "Đã mô phỏng xong {0}.",
+    "{0} 模拟完成。"
+  ],
+  "OtherSession": [
+    "Another Meowize session is changing Windows.",
+    "別の Meowize セッションが Windows を変更しています。",
+    "다른 Meowize 세션이 Windows를 변경하고 있습니다.",
+    "Một phiên Meowize khác đang thay đổi Windows.",
+    "另一个 Meowize 会话正在更改 Windows。"
+  ],
+  "LockUnavailable": [
+    "Windows could not lock this task session. Check for other Meowize windows.",
+    "タスクセッションをロックできません。他の Meowize ウィンドウを確認してください。",
+    "작업 세션을 잠글 수 없습니다. 다른 Meowize 창을 확인하세요.",
+    "Windows không cho khóa phiên tác vụ. Kiểm tra các cửa sổ Meowize khác.",
+    "Windows 无法锁定任务会话。请检查其他 Meowize 窗口。"
+  ],
+  "Stopping": [
+    "Stopping after the current step.",
+    "現在の手順の後で停止します。",
+    "현재 단계가 끝나면 중지합니다.",
+    "Sẽ dừng sau bước hiện tại.",
+    "将在当前步骤结束后停止。"
+  ],
+  "SimulateSettings": [
+    "Simulated opening settings for {0}.",
+    "{0} の設定を開く処理をシミュレーションしました。",
+    "{0} 설정 열기를 시뮬레이션했습니다.",
+    "Mô phỏng mở cài đặt cho {0}.",
+    "已模拟打开 {0} 的设置。"
+  ],
+  "OpenedSettings": [
+    "Opened settings for {0}.",
+    "{0} の設定を開きました。",
+    "{0} 설정을 열었습니다.",
+    "Đã mở cài đặt cho {0}.",
+    "已打开 {0} 的设置。"
+  ],
+  "SettingsError": [
+    "Could not open settings: {0}",
+    "設定を開けませんでした: {0}",
+    "설정을 열 수 없습니다: {0}",
+    "Không mở được cài đặt: {0}",
+    "无法打开设置：{0}"
+  ],
+  "ManualItems": [
+    "Review these items in Windows settings.",
+    "以下の項目は Windows の設定で確認してください。",
+    "다음 항목은 Windows 설정에서 확인하세요.",
+    "Xem các mục sau trong cài đặt Windows.",
+    "请在 Windows 设置中检查以下项目。"
+  ],
+  "OfficeOpened": [
+    "Opened the Office customization tool.",
+    "Office カスタマイズツールを開きました。",
+    "Office 사용자 지정 도구를 열었습니다.",
+    "Đã mở công cụ cấu hình Office.",
+    "已打开 Office 自定义工具。"
+  ],
+  "EmptyLog": [
+    "The log is empty.",
+    "ログは空です。",
+    "로그가 비어 있습니다.",
+    "Nhật ký trống.",
+    "日志为空。"
+  ],
+  "ClipboardCopied": [
+    "Copied to the clipboard.",
+    "クリップボードにコピーしました。",
+    "클립보드에 복사했습니다.",
+    "Đã sao chép vào Clipboard.",
+    "已复制到剪贴板。"
+  ],
+  "ClipboardBusy": [
+    "The clipboard is busy. Try again.",
+    "クリップボードが使用中です。もう一度お試しください。",
+    "클립보드 사용 중입니다. 다시 시도하세요.",
+    "Clipboard đang bận. Hãy thử lại.",
+    "剪贴板正忙。请重试。"
+  ],
+  "DesktopMissing": [
+    "The Desktop folder could not be found.",
+    "デスクトップフォルダーが見つかりません。",
+    "바탕 화면 폴더를 찾을 수 없습니다.",
+    "Không tìm thấy thư mục Desktop.",
+    "找不到桌面文件夹。"
+  ],
+  "ZipFile": [
+    "ZIP archive",
+    "ZIP アーカイブ",
+    "ZIP 압축 파일",
+    "Gói ZIP",
+    "ZIP 压缩包"
+  ],
+  "TextLog": [
+    "Text log",
+    "テキストログ",
+    "텍스트 로그",
+    "Nhật ký văn bản",
+    "文本日志"
+  ],
+  "ExportCanceled": [
+    "Export canceled.",
+    "出力をキャンセルしました。",
+    "내보내기를 취소했습니다.",
+    "Đã hủy xuất tệp.",
+    "已取消导出。"
+  ],
+  "FixtureMachine": [
+    "Meowize — simulated device information",
+    "Meowize — テスト用のデバイス情報",
+    "Meowize — 시뮬레이션 장치 정보",
+    "Meowize — dữ liệu máy mô phỏng",
+    "Meowize — 模拟设备信息"
+  ],
+  "FixtureNetwork": [
+    "Meowize — simulated network data",
+    "Meowize — テスト用のネットワーク情報",
+    "Meowize — 시뮬레이션 네트워크 정보",
+    "Meowize — dữ liệu mạng mô phỏng",
+    "Meowize — 模拟网络数据"
+  ],
+  "SavedFile": [
+    "Saved {0}",
+    "{0} を保存しました",
+    "{0}을 저장했습니다",
+    "Đã lưu {0}",
+    "已保存 {0}"
+  ],
+  "ReadingStartup": [
+    "Reading startup entries…",
+    "スタートアップ項目を読み取り中…",
+    "시작 항목 읽는 중…",
+    "Đang đọc mục khởi động…",
+    "正在读取启动项…"
+  ],
+  "StartupApps": [
+    "Startup apps",
+    "スタートアップアプリ",
+    "시작 앱",
+    "Ứng dụng khởi động",
+    "启动应用"
+  ],
+  "NoStartup": [
+    "No Registry Run entries were returned by Windows.",
+    "Windows からレジストリの Run 項目が返されませんでした。",
+    "Windows에서 레지스트리 Run 항목을 반환하지 않았습니다.",
+    "Windows không trả mục nào trong Registry Run.",
+    "Windows 未返回注册表 Run 项。"
+  ],
+  "UncheckStartup": [
+    "Uncheck the entries you want to remove from startup.",
+    "スタートアップから削除する項目のチェックを外してください。",
+    "시작 목록에서 제거할 항목의 선택을 해제하세요.",
+    "Bỏ chọn các mục muốn xóa khỏi danh sách khởi động.",
+    "取消选中要从启动列表中移除的项目。"
+  ],
+  "ScopeUser": [
+    "User",
+    "ユーザー",
+    "사용자",
+    "Người dùng",
+    "用户"
+  ],
+  "ScopeMachine": [
+    "Machine",
+    "コンピューター",
+    "컴퓨터",
+    "Máy",
+    "计算机"
+  ],
+  "ReviewUnchecked": [
+    "Review unchecked entries",
+    "チェックを外した項目を確認",
+    "선택 해제한 항목 검토",
+    "Kiểm tra mục đã bỏ chọn",
+    "检查未选中的项目"
+  ],
+  "RemoveStartup": [
+    "Remove from startup",
+    "スタートアップから削除",
+    "시작 목록에서 제거",
+    "Xóa khỏi Startup",
+    "从启动列表移除"
+  ],
+  "RemoveItems": [
+    "Remove entries",
+    "項目を削除",
+    "항목 제거",
+    "Xóa các mục",
+    "移除项目"
+  ],
+  "ApplyingStartup": [
+    "Applying startup changes…",
+    "スタートアップの変更を適用中…",
+    "시작 설정 변경 적용 중…",
+    "Đang áp dụng thay đổi khởi động…",
+    "正在应用启动项更改…"
+  ],
+  "SimulatedCount": [
+    "Simulated {0} entries.",
+    "{0} 件の処理をシミュレーションしました。",
+    "항목 {0}개를 시뮬레이션했습니다.",
+    "Đã mô phỏng {0} mục.",
+    "已模拟 {0} 项。"
+  ],
+  "CancelShutdown": [
+    "Cancel shutdown",
+    "シャットダウンを取り消す",
+    "종료 취소",
+    "Hủy tắt máy",
+    "取消关机"
+  ],
+  "ShutdownIn": [
+    "Shutting down in {0} seconds",
+    "{0} 秒後にシャットダウン",
+    "{0}초 후 종료",
+    "Tắt máy sau {0} giây",
+    "将在 {0} 秒后关机"
+  ],
+  "SimulatedShutdown": [
+    "Simulated a shutdown countdown.",
+    "シャットダウンをシミュレーションしました。",
+    "종료 카운트다운을 시뮬레이션했습니다.",
+    "Đã mô phỏng lịch tắt máy.",
+    "已模拟关机倒计时。"
+  ],
+  "ShutdownScheduled": [
+    "Shutdown scheduled in 45 seconds.",
+    "45 秒後のシャットダウンを予約しました。",
+    "45초 후 종료가 예약되었습니다.",
+    "Đã lên lịch tắt máy sau 45 giây.",
+    "已安排 45 秒后关机。"
+  ],
+  "ShutdownCanceled": [
+    "Shutdown canceled.",
+    "シャットダウンを取り消しました。",
+    "종료를 취소했습니다.",
+    "Đã hủy lịch tắt máy.",
+    "已取消关机。"
+  ],
+  "WaitCurrentTask": [
+    "Wait for the current task or stop after this step.",
+    "現在のタスクが終わるまで待つか、この手順の後で停止してください。",
+    "현재 작업이 끝날 때까지 기다리거나 이 단계 후 중지하세요.",
+    "Chờ tác vụ hiện tại hoặc chọn dừng sau bước này.",
+    "请等待当前任务完成，或选择在此步骤后停止。"
+  ],
+  "ShutdownClosing": [
+    "Shutdown countdown",
+    "シャットダウンのカウントダウン",
+    "종료 카운트다운",
+    "Đang đếm ngược tắt máy",
+    "关机倒计时"
+  ],
+  "ShutdownContinues": [
+    "The Windows shutdown countdown continues after the app closes.",
+    "アプリを閉じても Windows のシャットダウン予約は続きます。",
+    "앱을 닫아도 Windows 종료 카운트다운은 계속됩니다.",
+    "Lịch tắt máy Windows sẽ tiếp tục sau khi đóng ứng dụng.",
+    "关闭应用后 Windows 关机倒计时仍将继续。"
+  ],
+  "CloseApp": [
+    "Close app",
+    "アプリを閉じる",
+    "앱 닫기",
+    "Đóng ứng dụng",
+    "关闭应用"
+  ],
+  "UacCanceled": [
+    "The UAC request was canceled.",
+    "UAC の要求をキャンセルしました。",
+    "UAC 요청을 취소했습니다.",
+    "Yêu cầu UAC đã bị hủy.",
+    "已取消 UAC 请求。"
+  ],
+  "HidePopups": [
+    "Hide completion pop-ups",
+    "完了時のポップアップを非表示",
+    "완료 팝업 숨기기",
+    "Ẩn thông báo kết quả",
+    "隐藏完成弹窗"
+  ],
+  "AskAtExit": [
+    "Ask about saving when closing",
+    "終了時に保存を確認する",
+    "닫을 때 저장 여부 확인",
+    "Hỏi lưu lựa chọn khi đóng",
+    "关闭时询问是否保存"
+  ],
+  "Save": [
+    "Save",
+    "保存",
+    "저장",
+    "Lưu",
+    "保存"
+  ],
+  "Close": [
+    "Close",
+    "閉じる",
+    "닫기",
+    "Đóng",
+    "关闭"
+  ],
+  "Back": [
+    "Back",
+    "戻る",
+    "뒤로",
+    "Quay lại",
+    "返回"
+  ],
+  "Cancel": [
+    "Cancel",
+    "キャンセル",
+    "취소",
+    "Hủy",
+    "取消"
+  ],
+  "SaveExitTitle": [
+    "Save your choices?",
+    "選択内容を保存しますか？",
+    "선택을 저장할까요?",
+    "Lưu các lựa chọn?",
+    "保存当前选择吗？"
+  ],
+  "SaveExitBody": [
+    "Keep your selected tasks, theme, and other settings for next time.",
+    "選択したタスク、テーマ、設定を次回も使用できます。",
+    "선택한 작업, 테마 및 설정을 다음에도 사용합니다.",
+    "Lưu tác vụ đã chọn, giao diện và thiết lập cho lần mở sau.",
+    "保留已选任务、主题和其他设置供下次使用。"
+  ],
+  "SaveClose": [
+    "Save and close",
+    "保存して閉じる",
+    "저장 후 닫기",
+    "Lưu và đóng",
+    "保存并关闭"
+  ],
+  "DiscardClose": [
+    "Close without saving",
+    "保存せず閉じる",
+    "저장하지 않고 닫기",
+    "Đóng không lưu",
+    "不保存并关闭"
+  ],
+  "DontAsk": [
+    "Remember this choice",
+    "この選択を今後も使用",
+    "이 선택 기억하기",
+    "Không nhắc lại",
+    "记住此选择"
+  ],
+  "SettingsSaveError": [
+    "Could not save settings: {0}",
+    "設定を保存できませんでした: {0}",
+    "설정을 저장할 수 없습니다: {0}",
+    "Không lưu được thiết lập: {0}",
+    "无法保存设置：{0}"
+  ],
+  "Maintainer": [
+    "Maintainer",
+    "メンテナー",
+    "관리자",
+    "Người bảo trì",
+    "维护者"
+  ],
+  "OpenGithub": [
+    "Open GitHub",
+    "GitHub を開く",
+    "GitHub 열기",
+    "Mở GitHub",
+    "打开 GitHub"
+  ],
+  "CopyLink": [
+    "Copy link",
+    "リンクをコピー",
+    "링크 복사",
+    "Sao chép liên kết",
+    "复制链接"
+  ],
+  "GithubError": [
+    "Could not open GitHub. Copy the link to open it in a browser.",
+    "GitHub を開けませんでした。リンクをコピーしてブラウザーで開いてください。",
+    "GitHub를 열 수 없습니다. 링크를 복사해 브라우저에서 여세요.",
+    "Không mở được GitHub. Sao chép liên kết để mở trong trình duyệt.",
+    "无法打开 GitHub。请复制链接后在浏览器中打开。"
+  ],
+  "FreeLicense": [
+    "Free to use. New code is licensed under MIT.",
+    "無料で利用できます。新規コードは MIT ライセンスです。",
+    "무료로 사용할 수 있습니다. 새 코드는 MIT 라이선스입니다.",
+    "Miễn phí sử dụng. Phần mã mới theo giấy phép MIT.",
+    "免费使用。新增代码采用 MIT 许可证。"
+  ],
+  "KeyGate": [
+    "Meowize authentication",
+    "Meowize の認証",
+    "Meowize 인증",
+    "Xác thực Meowize",
+    "Meowize 身份验证"
+  ],
+  "KeyGateTooLarge": [
+    "The KeyGate configuration is too large.",
+    "KeyGate の設定が大きすぎます。",
+    "KeyGate 구성의 크기가 너무 큽니다.",
+    "Cấu hình KeyGate vượt giới hạn.",
+    "KeyGate 配置过大。"
+  ],
+  "KeyGateInvalid": [
+    "KeyGate needs a valid offline verifier.",
+    "KeyGate には有効なオフライン認証情報が必要です。",
+    "KeyGate에 유효한 오프라인 인증 정보가 필요합니다.",
+    "KeyGate thiếu cấu hình xác thực ngoại tuyến hợp lệ.",
+    "KeyGate 需要有效的离线验证配置。"
+  ],
+  "KeyOffline": [
+    "Using offline configuration.",
+    "オフラインの設定を使用しています。",
+    "오프라인 구성을 사용합니다.",
+    "Dùng cấu hình ngoại tuyến.",
+    "正在使用离线配置。"
+  ],
+  "KeyOnline": [
+    "Online configuration loaded.",
+    "オンラインの設定を読み込みました。",
+    "온라인 구성을 불러왔습니다.",
+    "Đã đọc cấu hình trực tuyến.",
+    "已加载在线配置。"
+  ],
+  "ShowPassword": [
+    "Show password",
+    "パスワードを表示",
+    "비밀번호 표시",
+    "Hiện mật khẩu",
+    "显示密码"
+  ],
+  "RememberDevice": [
+    "Remember on this device",
+    "このデバイスに記憶する",
+    "이 장치에 저장",
+    "Ghi nhớ trên máy này",
+    "在此设备上记住"
+  ],
+  "Password": [
+    "Password",
+    "パスワード",
+    "비밀번호",
+    "Mật khẩu",
+    "密码"
+  ],
+  "Verify": [
+    "Verify",
+    "認証",
+    "인증",
+    "Xác thực",
+    "验证"
+  ],
+  "EnterPassword": [
+    "Enter a password.",
+    "パスワードを入力してください。",
+    "비밀번호를 입력하세요.",
+    "Hãy nhập mật khẩu.",
+    "请输入密码。"
+  ],
+  "PasswordAttempts": [
+    "Incorrect password ({0}/5).",
+    "パスワードが正しくありません ({0}/5)。",
+    "비밀번호가 올바르지 않습니다 ({0}/5).",
+    "Mật khẩu chưa đúng ({0}/5).",
+    "密码错误（{0}/5）。"
+  ],
+  "OutOfAttempts": [
+    "All five attempts were used.",
+    "試行回数の上限 (5 回) に達しました。",
+    "시도 횟수 5회를 모두 사용했습니다.",
+    "Đã hết 5 lần thử.",
+    "五次尝试机会已用完。"
+  ],
+  "WorkerMissing": [
+    "Task backend or Windows PowerShell 5.1 is unavailable.",
+    "タスク処理エンジンまたは Windows PowerShell 5.1 を利用できません。",
+    "작업 백엔드 또는 Windows PowerShell 5.1을 사용할 수 없습니다.",
+    "Thiếu bộ xử lý tác vụ hoặc Windows PowerShell 5.1.",
+    "任务后端或 Windows PowerShell 5.1 不可用。"
+  ],
+  "BackendMissing": [
+    "Missing backend file {0}.",
+    "バックエンドファイル {0} がありません。",
+    "백엔드 파일 {0}이 없습니다.",
+    "Thiếu tệp backend {0}.",
+    "缺少后端文件 {0}。"
+  ],
+  "BackendChanged": [
+    "File {0} does not match this build.",
+    "ファイル {0} がこのビルドと一致しません。",
+    "파일 {0}이 이 빌드와 일치하지 않습니다.",
+    "Tệp {0} khác với bản build.",
+    "文件 {0} 与此构建版本不一致。"
+  ],
+  "TaskDataLimit": [
+    "The task request is too large.",
+    "タスクの要求データが大きすぎます。",
+    "작업 요청의 크기가 너무 큽니다.",
+    "Dữ liệu tác vụ vượt giới hạn.",
+    "任务请求过大。"
+  ],
+  "PowerShellStart": [
+    "Windows PowerShell could not start.",
+    "Windows PowerShell を起動できませんでした。",
+    "Windows PowerShell을 시작할 수 없습니다.",
+    "Không khởi động được PowerShell.",
+    "无法启动 Windows PowerShell。"
+  ],
+  "WorkerReadError": [
+    "A worker response could not be read.",
+    "処理エンジンの応答を読み取れませんでした。",
+    "백엔드 응답을 읽을 수 없습니다.",
+    "Không đọc được một phản hồi từ PowerShell.",
+    "无法读取一条后端响应。"
+  ],
+  "MissingResult": [
+    "PowerShell ended before returning a result (exit code {0}).",
+    "PowerShell が結果を返す前に終了しました (コード {0})。",
+    "PowerShell이 결과를 반환하기 전에 종료되었습니다(코드 {0}).",
+    "PowerShell kết thúc khi chưa trả kết quả (mã {0}).",
+    "PowerShell 在返回结果前已退出（退出码 {0}）。"
+  ],
+  "WorkerDone": [
+    "PowerShell processed the request.",
+    "PowerShell が要求を処理しました。",
+    "PowerShell이 요청을 처리했습니다.",
+    "PowerShell đã xử lý yêu cầu.",
+    "PowerShell 已处理请求。"
+  ],
+  "OpenFileError": [
+    "Could not open {0}.",
+    "{0} を開けませんでした。",
+    "{0}을 열 수 없습니다.",
+    "Không mở được {0}.",
+    "无法打开 {0}。"
+  ],
+  "WorkerErrors": [
+    "Some commands failed or Windows rejected the changes. See the log.",
+    "一部のコマンドが失敗したか、Windows が変更を拒否しました。ログを確認してください。",
+    "일부 명령이 실패했거나 Windows가 변경을 거부했습니다. 로그를 확인하세요.",
+    "Có lệnh không hoàn tất hoặc Windows từ chối thay đổi. Xem nhật ký.",
+    "部分命令失败或 Windows 拒绝更改。请查看日志。"
+  ],
+  "WorkerVerify": [
+    "Task ran. Verify the setting in Windows.",
+    "タスクを実行しました。Windows で設定を確認してください。",
+    "작업을 실행했습니다. Windows에서 설정을 확인하세요.",
+    "Đã chạy. Kiểm tra lại thiết lập trong Windows.",
+    "任务已运行。请在 Windows 中验证设置。"
+  ]
+}

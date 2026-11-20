@@ -1,0 +1,250 @@
+<ui:FluentWindow x:Class="AioOptimize.MainWindow"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+                 xmlns:local="clr-namespace:AioOptimize"
+                 Title="Meowize" Icon="Assets/Meowize.ico" Width="1280" Height="860" MinWidth="670" MinHeight="490"
+                 WindowStartupLocation="CenterScreen" ExtendsContentIntoTitleBar="True"
+                 Background="{DynamicResource AppBackground}" Foreground="{DynamicResource TextMain}"
+                 FontFamily="Segoe UI" UseLayoutRounding="True" SnapsToDevicePixels="True"
+                 PreviewKeyDown="WindowKeyDown" Closing="WindowClosing" SizeChanged="WindowSizeChanged">
+    <Grid x:Name="Shell" Background="{DynamicResource AppBackground}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="42" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition x:Name="NavigationWidth" Width="210" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition x:Name="LogWidth" Width="326" />
+        </Grid.ColumnDefinitions>
+
+        <ui:TitleBar Grid.ColumnSpan="3" Title="Meowize" Background="{DynamicResource SidebarBackground}" />
+
+        <Border Grid.Row="1" Grid.RowSpan="2" Style="{StaticResource CardSurface}" Margin="10,12,0,12">
+            <DockPanel LastChildFill="True" Margin="9,16,9,11">
+                <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Margin="2,0,0,26">
+                    <Border Width="38" Height="38" CornerRadius="11" Background="#F1D1AF" Padding="4">
+                        <Image Source="Assets/Meowize.png" Stretch="Uniform" RenderOptions.BitmapScalingMode="HighQuality" />
+                    </Border>
+                    <StackPanel x:Name="BrandLabel" Margin="10,0,0,0" VerticalAlignment="Center">
+                        <TextBlock Text="Meowize" FontWeight="SemiBold" FontSize="16" />
+                        <TextBlock Text="Windows" Style="{StaticResource MutedText}" FontSize="11" Margin="0,1,0,0" />
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel DockPanel.Dock="Bottom">
+                    <Border Height="1" Background="{DynamicResource Stroke}" Margin="3,0,3,11" />
+                    <ui:Button x:Name="SupportButton" Appearance="Transparent" HorizontalAlignment="Stretch"
+                               HorizontalContentAlignment="Left" Padding="9,7" Margin="0,0,0,4"
+                               Click="ShowSupport" ToolTip="{local:Tr Support}" AutomationProperties.Name="{local:Tr Support}">
+                        <StackPanel Orientation="Horizontal">
+                            <ui:SymbolIcon Symbol="QuestionCircle24" FontSize="19" />
+                            <TextBlock x:Name="SupportLabel" Text="{local:Tr Support}" Margin="11,0,0,0" />
+                        </StackPanel>
+                    </ui:Button>
+                    <ui:Button x:Name="PreferencesButton" Appearance="Transparent" HorizontalAlignment="Stretch"
+                               HorizontalContentAlignment="Left" Padding="9,7"
+                               Click="ShowPreferences" ToolTip="{local:Tr Settings}" AutomationProperties.Name="{local:Tr Settings}">
+                        <StackPanel Orientation="Horizontal">
+                            <ui:SymbolIcon Symbol="Settings24" FontSize="19" />
+                            <TextBlock x:Name="PreferencesLabel" Text="{local:Tr Settings}" Margin="11,0,0,0" />
+                        </StackPanel>
+                    </ui:Button>
+                </StackPanel>
+                <ListBox x:Name="Navigation" Background="Transparent" BorderThickness="0" Padding="0"
+                         ItemContainerStyle="{StaticResource NavigationItem}"
+                         KeyboardNavigation.TabNavigation="Once" ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                         SelectionChanged="Navigate" AutomationProperties.Name="{local:Tr Navigation}"
+                         AutomationProperties.AutomationId="Navigation" />
+            </DockPanel>
+        </Border>
+
+        <Grid Grid.Row="1" Grid.Column="1" x:Name="Workspace">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid Margin="23,23,23,15">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <StackPanel>
+                    <TextBlock x:Name="PageTitle" FontSize="33" FontWeight="SemiBold"
+                               TextWrapping="Wrap" AutomationProperties.HeadingLevel="Level1" />
+                    <TextBlock x:Name="PageDescription" Margin="0,5,12,0" Style="{StaticResource MutedText}" FontSize="13" />
+                </StackPanel>
+                <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Top" Margin="8,1,0,0">
+                    <ui:Button x:Name="AdminButton" Style="{StaticResource ActionButton}"
+                               Appearance="Secondary" Click="RequestAdmin" ToolTip="{local:Tr OpenAdmin}"
+                               AutomationProperties.Name="{local:Tr OpenAdmin}">
+                        <StackPanel Orientation="Horizontal">
+                            <ui:SymbolIcon Symbol="Shield24" Margin="0,0,7,0" FontSize="16" />
+                            <TextBlock x:Name="AdminLabel" Text="{local:Tr AdminShort}" />
+                        </StackPanel>
+                    </ui:Button>
+                    <ui:Button x:Name="ThemeToggle" Style="{StaticResource ActionButton}" Appearance="Secondary"
+                               Click="ToggleTheme" Margin="8,0,0,0" ToolTip="{local:Tr LightTheme}"
+                               AutomationProperties.Name="{local:Tr LightTheme}">
+                        <ui:SymbolIcon x:Name="ThemeIcon" Symbol="WeatherSunny24" FontSize="18" />
+                    </ui:Button>
+                    <ui:Button x:Name="ToggleLogButton" Style="{StaticResource ActionButton}" Appearance="Secondary"
+                               Click="ToggleLog" Margin="8,0,0,0" ToolTip="{local:Tr ToggleLog}"
+                               AutomationProperties.Name="{local:Tr ToggleLog}">
+                        <ui:SymbolIcon Symbol="History24" FontSize="18" />
+                    </ui:Button>
+                </StackPanel>
+            </Grid>
+            <Border Grid.Row="1" Style="{StaticResource CardSurface}" Padding="6"
+                    Margin="23,0,23,13" CornerRadius="16">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="147" />
+                    </Grid.ColumnDefinitions>
+                    <ui:TextBox x:Name="SearchTasks" PlaceholderText="{local:Tr Search}"
+                                MinHeight="33" Margin="0,0,7,0" TextChanged="FilterChanged"
+                                ToolTip="{local:Tr SearchKey}"
+                                FocusVisualStyle="{StaticResource UiFocusStyle}"
+                                AutomationProperties.Name="{local:Tr Search}">
+                        <ui:TextBox.Icon>
+                            <ui:SymbolIcon Symbol="Search24" />
+                        </ui:TextBox.Icon>
+                    </ui:TextBox>
+                    <ComboBox x:Name="SeverityFilter" Grid.Column="1" SelectedIndex="0" MinHeight="33"
+                              SelectionChanged="FilterChanged" ToolTip="{local:Tr FilterRisk}"
+                              FocusVisualStyle="{StaticResource UiFocusStyle}"
+                              AutomationProperties.Name="{local:Tr FilterRisk}">
+                        <ComboBoxItem Content="{local:Tr AllRisks}" AutomationProperties.AutomationId="Filter_All" />
+                        <ComboBoxItem Content="{local:Tr Safe}" AutomationProperties.AutomationId="Filter_Safe" />
+                        <ComboBoxItem Content="{local:Tr Caution}" AutomationProperties.AutomationId="Filter_Caution" />
+                        <ComboBoxItem Content="{local:Tr Warning}" AutomationProperties.AutomationId="Filter_Warning" />
+                    </ComboBox>
+                </Grid>
+            </Border>
+            <ScrollViewer x:Name="PageScroll" Grid.Row="2" HorizontalScrollBarVisibility="Disabled"
+                          VerticalScrollBarVisibility="Auto" Padding="23,0,23,15"
+                          KeyboardNavigation.TabNavigation="Continue" PanningMode="VerticalOnly">
+                <StackPanel x:Name="PageBody" />
+            </ScrollViewer>
+        </Grid>
+
+        <Border x:Name="RunBar" Grid.Row="2" Grid.Column="1" Padding="14,9" Margin="23,0,23,12"
+                Style="{StaticResource CardSurface}">
+            <DockPanel LastChildFill="True">
+                <ui:Button x:Name="RunButton" DockPanel.Dock="Right" Style="{StaticResource ActionButton}" Appearance="Primary"
+                           Click="ReviewBatch" Margin="10,0,0,0" MinWidth="135" MinHeight="40"
+                           AutomationProperties.AutomationId="ReviewBatch">
+                    <StackPanel Orientation="Horizontal">
+                        <ui:SymbolIcon Symbol="Play24" FontSize="17" Margin="0,0,7,0" />
+                        <TextBlock Text="{local:Tr ReviewRun}" />
+                    </StackPanel>
+                </ui:Button>
+                <ui:Button x:Name="StopButton" DockPanel.Dock="Right" Style="{StaticResource ActionButton}"
+                           Appearance="Secondary" Click="StopAfterStep" Visibility="Collapsed" Content="{local:Tr StopAfter}" />
+                <StackPanel VerticalAlignment="Center">
+                    <TextBlock x:Name="RunSummary" Text="{local:Tr SelectedTasks}" FontSize="13" FontWeight="SemiBold"
+                               TextWrapping="Wrap" AutomationProperties.AutomationId="SelectionCount" />
+                    <WrapPanel Margin="0,4,0,0">
+                        <CheckBox x:Name="AutoShutdown"
+                                  AutomationProperties.AutomationId="AutoShutdown"
+                                  AutomationProperties.Name="{local:Tr AutoShutdown}"
+                                  AutomationProperties.HelpText="{local:Tr AutoShutdownHelp}"
+                                  FocusVisualStyle="{StaticResource UiFocusStyle}">
+                            <StackPanel Orientation="Horizontal">
+                                <ui:SymbolIcon Symbol="ErrorCircle24" Foreground="{DynamicResource RiskWarning}"
+                                               FontSize="14" Margin="0,0,5,0" />
+                                <TextBlock Text="{local:Tr AutoShutdown}" />
+                            </StackPanel>
+                        </CheckBox>
+                        <Border x:Name="AutoShutdownReference" Margin="9,0,0,0" VerticalAlignment="Center" />
+                    </WrapPanel>
+                </StackPanel>
+            </DockPanel>
+        </Border>
+
+        <Border x:Name="LogPanel" Grid.Row="1" Grid.RowSpan="2" Grid.Column="2" Margin="0,12,12,12"
+                Style="{StaticResource CardSurface}" Background="{DynamicResource Surface}">
+            <Grid Margin="15,16,15,13">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <DockPanel>
+                    <ui:Button DockPanel.Dock="Right" x:Name="CloseLogButton" Appearance="Transparent"
+                               ToolTip="{local:Tr HideLog}" Click="ToggleLog" AutomationProperties.Name="{local:Tr HideLog}">
+                        <ui:SymbolIcon Symbol="Dismiss24" FontSize="17" />
+                    </ui:Button>
+                    <ui:Button DockPanel.Dock="Right" x:Name="CopyLogButton" Appearance="Transparent"
+                               ToolTip="{local:Tr CopyLog}" Click="CopyLog" AutomationProperties.Name="{local:Tr CopyLog}">
+                        <ui:SymbolIcon Symbol="Copy24" FontSize="17" />
+                    </ui:Button>
+                    <StackPanel VerticalAlignment="Center">
+                        <TextBlock Text="{local:Tr Log}" FontWeight="SemiBold" FontSize="17" />
+                        <TextBlock x:Name="ModeLabel" Text="{local:Tr Session}" Style="{StaticResource MutedText}" Margin="0,3,0,0" />
+                    </StackPanel>
+                </DockPanel>
+                <Border Grid.Row="1" Style="{StaticResource CardSurface}" Margin="0,13,0,9" Padding="12,10">
+                    <StackPanel>
+                        <DockPanel LastChildFill="True">
+                            <TextBlock DockPanel.Dock="Right" x:Name="ProgressLabel" Text="" Style="{StaticResource MutedText}" />
+                            <TextBlock x:Name="StatusLabel" Text="{local:Tr Ready}" Foreground="{DynamicResource Accent}"
+                                       FontSize="13" FontWeight="SemiBold" TextWrapping="Wrap"
+                                       AutomationProperties.AutomationId="RunStatus" />
+                        </DockPanel>
+                        <ProgressBar x:Name="JobProgress" Visibility="Collapsed" Height="4" Margin="0,9,0,0"
+                                     Minimum="0" Maximum="100" Foreground="{DynamicResource Accent}"
+                                     AutomationProperties.Name="{local:Tr Progress}" />
+                    </StackPanel>
+                </Border>
+                <ListBox Grid.Row="2" x:Name="Activity" Background="Transparent" BorderThickness="0"
+                         Padding="0" Margin="-4,0" ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                         ScrollViewer.CanContentScroll="True" VirtualizingPanel.ScrollUnit="Pixel"
+                         VirtualizingPanel.VirtualizationMode="Recycling" AutomationProperties.Name="{local:Tr Log}">
+                    <ListBox.ItemContainerStyle>
+                        <Style TargetType="ListBoxItem" BasedOn="{StaticResource {x:Type ListBoxItem}}">
+                            <Setter Property="Padding" Value="4,6" />
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                        </Style>
+                    </ListBox.ItemContainerStyle>
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Margin="0,0,3,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="53" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="{Binding Time}" FontFamily="Consolas" FontSize="11" VerticalAlignment="Top"
+                                           Foreground="{DynamicResource TextMuted}" Margin="0,1,5,0" />
+                                <TextBlock Grid.Column="1" Text="{Binding Text}" FontSize="12" TextWrapping="Wrap">
+                                    <TextBlock.Style>
+                                        <Style TargetType="TextBlock">
+                                            <Setter Property="Foreground" Value="{DynamicResource TextMain}" />
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding Level}" Value="ok">
+                                                    <Setter Property="Foreground" Value="{DynamicResource Accent}" />
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding Level}" Value="warn">
+                                                    <Setter Property="Foreground" Value="{DynamicResource Warning}" />
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding Level}" Value="error">
+                                                    <Setter Property="Foreground" Value="{DynamicResource Error}" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </TextBlock.Style>
+                                </TextBlock>
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+                <TextBlock x:Name="LogHint" Grid.Row="3" Margin="0,9,0,0" Style="{StaticResource MutedText}"
+                           Text="{local:Tr LogKey}" />
+            </Grid>
+        </Border>
+    </Grid>
+</ui:FluentWindow>
