@@ -134,11 +134,17 @@ function Install-Nvidia([string] $Version) {
     Start-VendorTool $file 'CN=NVIDIA Corporation(?:,|$)' '-s' -Wait
 }
 
-function Install-Winget([string[]] $Packages) {
-    $app = Get-AppxPackage Microsoft.DesktopAppInstaller -ErrorAction SilentlyContinue | Select-Object -First 1
-    if (-not $app.InstallLocation) { throw 'Chưa có Windows Package Manager (App Installer).' }
+function Get-WingetExecutable {
+    if (-not (Get-Command Get-AppxPackage -ErrorAction Ignore)) { return }
+    $app = Get-AppxPackage Microsoft.DesktopAppInstaller -ErrorAction Stop | Select-Object -First 1
+    if (-not $app.InstallLocation) { return }
     $winget = Join-Path $app.InstallLocation 'winget.exe'
-    if (-not [IO.File]::Exists($winget)) { throw 'Không tìm thấy winget trong App Installer.' }
+    if ([IO.File]::Exists($winget)) { $winget }
+}
+
+function Install-Winget([string[]] $Packages) {
+    $winget = Get-WingetExecutable
+    if (-not $winget) { throw 'Không tìm thấy winget trong App Installer.' }
     $count = 0
     foreach ($package in $Packages) {
         Write-GuiLog "Đang xử lý $package." 'info'

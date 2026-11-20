@@ -72,6 +72,31 @@ foreach ($file in Get-ChildItem -LiteralPath $backend -File -Filter '*.ps1') {
 . (Join-Path $backend 'Legacy.ps1')
 . (Join-Path $backend 'Operations.ps1')
 . (Join-Path $backend 'Downloads.ps1')
+
+& {
+    function Get-WingetExecutable {}
+    function Get-ActiveAdapters {}
+    function Get-CompatibleBackups {}
+    function Test-Path { $false }
+
+    $amd = [pscustomobject]@{ Name = 'AMD Radeon Graphics'; PNPDeviceID = 'PCI\VEN_1002&DEV_0000' }
+    $rtx = [pscustomobject]@{ Name = 'NVIDIA GeForce RTX 5080'; PNPDeviceID = 'PCI\VEN_10DE&DEV_0000' }
+    $olderRtx = [pscustomobject]@{ Name = 'NVIDIA GeForce RTX 4070'; PNPDeviceID = 'PCI\VEN_10DE&DEV_0001' }
+    $unavailable = Get-TaskAvailability @($amd)
+    Assert ($unavailable.btnDriverNvidia581 -eq 'CompatNoNvidia' -and
+        $unavailable.btnDriverNvidia566 -eq 'CompatNoNvidia') 'A PC without NVIDIA must not offer NVIDIA installers.'
+    Assert ($unavailable.WingetApps -eq 'CompatNoWinget' -and
+        $unavailable.btnPostInstall -eq 'CompatNoWinget') 'Both WinGet entries must require WinGet.'
+    Assert ($unavailable.btnApplyDns -in @('CompatNoAdapter','CompatNoDnsTools') -and
+        $unavailable.btnRestoreReg -eq 'CompatNoBackup') 'DNS and restore must require their prerequisites.'
+
+    $newGpu = Get-TaskAvailability @($rtx)
+    Assert ($newGpu.btnDriverNvidia566 -eq 'CompatNvidia566' -and
+        -not $newGpu.ContainsKey('btnDriverNvidia581')) 'RTX 50-only PCs must filter the older driver.'
+    Assert (-not (Get-TaskAvailability @($rtx, $olderRtx)).ContainsKey('btnDriverNvidia566')) 'An older NVIDIA GPU may still use 566.36.'
+    Assert (-not (Get-TaskAvailability $null).ContainsKey('btnDriverNvidia566')) 'An unsuccessful GPU probe should leave normal validation available.'
+}
+
 $backupFixture = Join-Path ([IO.Path]::GetTempPath()) ('meowize-backups-' + [guid]::NewGuid().ToString('N'))
 $namedBackup = 'Manual_20261120_000000'
 try {
@@ -107,6 +132,15 @@ $entryPoint = Join-Path $backend 'Run-Task.ps1'
 foreach ($id in @('HardwareSummary', 'BackupList')) {
     $response = & $powerShell -NoProfile -NonInteractive -File $entryPoint -TaskId $id
     Assert ($LASTEXITCODE -eq 0 -and $response.Count -ge 2 -and $response[-1] -match '"level":"ok"') "Read-only worker check failed for $id."
+    if ($id -eq 'HardwareSummary') {
+        $frames = $response | Where-Object { $_ -match '^THPO\t' } |
+            ForEach-Object { $_.Substring(5) | ConvertFrom-Json -AsHashtable }
+        $report = ($frames | Where-Object kind -EQ 'data').data
+        Assert ($report.Availability -is [Collections.IDictionary]) 'The hardware summary must include a compatibility report.'
+        foreach ($blockedId in $report.Availability.Keys) {
+            Assert ($entries.id -ccontains $blockedId -and $uiText.Contains($report.Availability[$blockedId])) "Invalid availability entry for $blockedId."
+        }
+    }
 }
 $response = & $powerShell -NoProfile -NonInteractive -File $entryPoint -TaskId btnFpsBoost
 Assert ($LASTEXITCODE -eq 1 -and $response -match '"level":"error"') 'A restricted action ran without confirmation.'

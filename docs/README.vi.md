@@ -1,53 +1,89 @@
-# Meowize
+<h1 align="center">
+  <a href="https://github.com/Fuzuto/Meowize-Optimize/releases/latest"><img src="media/meowize-banner.png" alt="Meowize — Tinh chỉnh và chẩn đoán Windows" width="1000"></a>
+</h1>
 
-[English](../README.md) · **Tiếng Việt** · [Bản phát hành](https://github.com/Fuzuto/AIO-Optimize/releases/latest)
+🇺🇸 [English](../README.md) · 🇻🇳 **Tiếng Việt** · 🇯🇵 [日本語](README.ja.md) · 🇰🇷 [한국어](README.ko.md) · 🇨🇳 [简体中文](README.zh-CN.md)
 
-Meowize là công cụ tinh chỉnh và chẩn đoán Windows miễn phí do Lê Hiếu Trung (FuryZ) bảo trì. Danh mục tác vụ được đối chiếu với THPO v1.3 của Ngô Thanh Hải (Haisosad), revision `396552f4cbc20dbaa00cecf0677e68a185f96a66`. [GitHub của FuryZ](https://github.com/Fuzuto) · [Bảng đối chiếu tác vụ](../REDESIGN-PLAN.md)
+**Windows 11 x64** · ZIP chạy trực tiếp · **51 tác vụ 1-Click** · **66 công cụ riêng lẻ**
 
-![Màn hình 1-Click ở chế độ tối](media/dark-mode.png)
+Meowize là công cụ Windows miễn phí dành cho người muốn tối ưu FPS và giữ nhịp khung hình ổn định trong **VALORANT**, **Counter-Strike 2** và **Overwatch**. Bạn có thể xem từng thiết lập trước khi áp dụng, cài nhanh driver và ứng dụng, rồi kiểm tra cấu hình mạng ngay trong cùng giao diện.
 
-## Mở ứng dụng
+## Bắt đầu
 
-1. Tải ZIP Windows x64 từ [GitHub Releases](https://github.com/Fuzuto/AIO-Optimize/releases/latest).
-2. Giải nén toàn bộ ZIP và mở `Meowize.exe` trong thư mục vừa giải nén. Bản phát hành đã kèm .NET Desktop Runtime.
-3. Chọn vùng ở lần mở đầu tiên. Chọn các tác vụ rồi bấm **Xem và chạy** để đọc danh sách, mức độ và tác động trước khi xác nhận.
+1. Tải bản ZIP Windows x64. [Bản phát hành mới nhất](https://github.com/Fuzuto/Meowize-Optimize/releases/latest)
+2. Giải nén toàn bộ ZIP rồi mở `Meowize.exe`. Gói đã kèm .NET Desktop Runtime.
+3. Chọn vùng, mở **1-Click** và chọn **Gaming**. Bấm **Xem và chạy** để đọc danh sách tác vụ và tác động trước khi xác nhận.
 
-Dùng chế độ mô phỏng để thử luồng chọn preset, chạy batch và xem nhật ký với dữ liệu giả. Chạy lệnh sau trong thư mục đã giải nén.
+Chạy `.\Meowize.exe --preview` trong PowerShell tại thư mục đã giải nén để thử với tác vụ mô phỏng. Trước khi thay đổi thật, **Cứu hộ & Báo cáo → Snapshot hệ thống** có thể tạo điểm khôi phục và bản sao Registry.
 
-```powershell
-.\Meowize.exe --preview
-```
+## Gaming và FPS
 
-Ở phiên thường, các trang chẩn đoán và báo cáo dùng dữ liệu máy thật. Nút **Quản trị** mở ứng dụng qua UAC và chuyển lại trang, lựa chọn batch, DNS và tùy chọn tắt máy. Màn hình xem trước liệt kê thứ tự và các mục phụ thuộc vào cài đặt Windows. Có thể dừng batch sau bước hiện tại hoặc hủy đếm ngược tắt máy.
+Preset **Gaming** gồm **36 trên 51** tác vụ cho hệ thống, game, mạng và dọn dẹp. Mở **Gaming & FPS** để thử từng mục khi cần đo riêng tác động của một thay đổi.
 
-## Hành vi của bản mới
+| Trong Meowize | Thiết lập được áp dụng |
+| --- | --- |
+| **Unpark CPU** | Yêu cầu mức tối thiểu **100%** lõi CPU không bị park trong gói điện đang dùng. [Tài liệu core parking của Microsoft](https://learn.microsoft.com/en-us/windows-hardware/customize/power-settings/options-for-core-parking-cpmincores) |
+| **FPS Boost** | Áp dụng một nhóm tinh chỉnh gồm gói điện hiệu năng và cấu hình khởi động. Đọc chi tiết **Cảnh báo** trước khi chạy. |
+| **Ưu tiên CPU cho game** | Đặt độ ưu tiên CPU cho danh sách tiến trình có sẵn, trong đó có VALORANT, CS2 và Overwatch. |
 
-- Lần đầu mở, chọn ngôn ngữ trên màn hình có cờ. English là mặc định. Các lựa chọn khác gồm 日本語, 한국어, Tiếng Việt và 简体中文. Có thể đổi trong **Settings**.
-- Nút **X** và **Alt+F4** đều hỏi lưu lựa chọn. Có thể ghi nhớ cách lưu hoặc bỏ qua và bật lại lời nhắc trong **Settings**. Chọn ngôn ngữ được lưu ngay. Chế độ mô phỏng lưu riêng.
-- Nút mặt trời hoặc mặt trăng đổi giao diện sáng và tối. Hiệu ứng Acrylic dùng trên Windows 11 từ build 22621 khi hiệu ứng trong suốt được bật. [Tài liệu Windows DWM](https://learn.microsoft.com/en-us/windows/win32/api/dwmapi/ne-dwmapi-dwm_systembackdrop_type)
-- 51 tác vụ 1‑Click, 66 nút chạy lẻ, bốn nhóm checklist, năm lựa chọn DNS và các preset giữ đúng danh mục THPO. Bản gốc có 62 nút đã tạo và bốn thân handler chưa có nút.
-- Tên tác vụ có biểu tượng ↗ mở mã nguồn công khai, tài liệu chính thức hoặc trang nhà cung cấp tương ứng. Checkbox và nút chạy vẫn điều khiển tác vụ.
-- Ô tìm kiếm và bộ lọc mức độ áp dụng cho trang hiện tại. Bản 1‑Click hiển thị số mục đã chọn theo mức độ và báo khi có mục đã chọn nằm ngoài bộ lọc.
-- **An toàn** (Safe, xanh lá) dùng cho thao tác ảnh hưởng thấp như đọc thông tin, sao lưu hoặc xuất tệp. **Cẩn trọng** (Caution, vàng) đánh dấu thao tác có thể đổi thiết lập, tệp hoặc ứng dụng. **Cảnh báo** (Warning, đỏ) dành cho tác vụ có thể ảnh hưởng đến bảo mật, thiết bị, kết nối hoặc phiên đang làm việc. Màn xác nhận cho biết tác động của từng mục cảnh báo.
-- Các mục đổi bảo vệ thời gian thực, VBS/Memory Integrity, Windows Update và Game Bar Presence mở trang cài đặt tương ứng. Batch liệt kê các mục cần thao tác trong Windows. Nút **Bật lại Defender** gọi API Windows và kiểm tra lại trạng thái.
-- Hai bản driver NVIDIA và các bộ cài có điểm vào riêng. Tệp chạy cần có chữ ký hợp lệ của nhà phát hành mong đợi để ứng dụng mở tự động. Tệp tải hoặc giải nén được giữ lại và báo rõ vị trí khi cần kiểm tra chữ ký.
-- Snapshot Registry mới lưu tại `C:\Meowize_Backup`. Cứu hộ vẫn liệt kê snapshot tương thích ở `C:\THPO_Backup`. Sao lưu nhánh dùng `D:\Meowize_Backup` nếu có ổ D hoặc `C:\Meowize_Backup\BranchExports`.
-- Giao diện dùng [WPF UI 4.3.0](https://www.nuget.org/packages/WPF-UI/4.3.0) cho cửa sổ, nút, bộ biểu tượng và theme. Hiệu ứng được dùng khi Windows bật Animation effects. Ctrl+L hiện/ẩn nhật ký.
+![Trang Gaming & FPS với các mục FPS Boost, Unpark CPU và ưu tiên CPU](media/gaming-tools.png)
 
-## Giấy phép và nguồn
+### Đo FPS và thời gian khung hình
 
-Phần mã mới thuộc quyền của Lê Hiếu Trung (FuryZ) được cấp phép MIT. Phần chuyển từ THPO giữ ghi công tác giả gốc. Bản tham chiếu THPO chưa có giấy phép phần mềm được xác nhận. [Giấy phép MIT](../LICENSE) · [Ghi công và giấy phép bên thứ ba](../THIRD-PARTY-NOTICES.txt)
+| FPS mục tiêu | 60 | 144 | 240 | 360 |
+| --- | ---: | ---: | ---: | ---: |
+| Thời gian mỗi khung hình | 16,67 ms | 6,94 ms | 4,17 ms | 2,78 ms |
 
-### KeyGate
+Bảng trên tính theo `1.000 ÷ FPS` để làm mốc tham chiếu. Khi so sánh trước và sau, ghi lại cùng một đoạn **60 giây** trong phòng tập hoặc replay, giữ nguyên độ phân giải, đồ họa và giới hạn FPS. Thay đổi từng mục rồi so FPS trung bình, 1% low và các đỉnh thời gian khung hình. Theo dõi nhiệt độ CPU khi thử các gói điện khác nhau. [Intel PresentMon](https://github.com/GameTechDev/PresentMon)
 
-KeyGate mặc định tắt. Chủ sở hữu có thể tạo tệp `keygate.json` cạnh EXE với thuộc tính `offline` gồm `salt` và `hash` dạng Base64. Salt dài 16–64 byte. Hash dài 32 byte và được dẫn xuất từ mật khẩu đã bỏ khoảng trắng đầu/cuối bằng PBKDF2‑SHA256 với 210.000 vòng. Nếu khai báo `onlineUrl`, URL HTTPS có thể trả về object `{ "salt": "...", "hash": "..." }` để dùng cấu hình trực tuyến. Cấu hình ngoại tuyến vẫn dùng được khi mất mạng. Tùy chọn ghi nhớ mã hóa token bằng DPAPI cho tài khoản Windows hiện tại.
+## Cài nhanh driver và ứng dụng
 
-## Build và kiểm thử
+| Chọn trong app | Bạn nhận được gì |
+| --- | --- |
+| **Ứng dụng & Công cụ → NVIDIA WHQL → Cài đặt** | Meowize tải bộ cài đã chọn từ NVIDIA và kiểm tra chữ ký nhà phát hành trước khi chạy. Đối chiếu GPU với danh sách hỗ trợ của NVIDIA. [581.80 WHQL](https://www.nvidia.com/en-us/drivers/details/257497/) · [566.36 WHQL](https://www.nvidia.com/en-us/drivers/details/237719/) |
+| **Ứng dụng & Công cụ → Cài 3 ứng dụng qua Winget** | Cài Google Chrome, Discord và 7-Zip trong một lượt. WinGet đi kèm Windows App Installer. [Tài liệu WinGet](https://learn.microsoft.com/en-us/windows/package-manager/winget/) |
+| **1-Click → Cài 6 ứng dụng qua Winget** | Thêm UniKey, UltraViewer và Zalo vào bộ ba trên. |
 
-```powershell
-dotnet publish '.\app\AioOptimize.csproj' -c Release -r win-x64 --self-contained true -o '.\artifacts\Meowize-Windows-x64'
-pwsh -NoProfile -File '.\tests\Verify-Thpo.ps1'
-pwsh -NoProfile -File '.\tests\Smoke-Preview.ps1' -App '.\artifacts\Meowize-Windows-x64\Meowize.exe' -Screenshots '.\artifacts'
-```
+<details>
+<summary>Xem các nút cài đặt trong Meowize</summary>
 
-Bài đối chiếu cần bản tham chiếu `upstream\THPO`. Bài kiểm thử giao diện dùng Windows UI Automation và chế độ mô phỏng. Các thao tác Registry/BCD/driver, sửa hệ thống và khởi động lại thực tế cần kiểm chứng trên VM có snapshot hoặc máy thử phù hợp.
+![Trang Ứng dụng và công cụ với hai bản driver NVIDIA và bộ cài WinGet](media/quick-install.png)
+
+</details>
+
+## Mạng và bufferbloat
+
+**Mạng & Driver** có năm lựa chọn DNS, tinh chỉnh TCP/IP, quản lý điện năng của card mạng và công cụ khôi phục kết nối. Ví dụ, chọn Cloudflare **1.1.1.1 / 1.0.0.1** rồi bấm **Áp dụng** để đặt DNS IPv4 cho các adapter đang hoạt động. [Địa chỉ DNS Cloudflare](https://developers.cloudflare.com/1.1.1.1/ip-addresses/)
+
+Để đo bufferbloat, so ping khi đường truyền rảnh với ping lúc đang tải xuống hoặc tải lên trên cùng kết nối. Chẳng hạn, **18 ms khi rảnh** và **74 ms khi có tải** là mức tăng **+56 ms**. Nếu nghẽn xảy ra tại router, hãy kiểm tra tùy chọn Smart Queue Management (SQM) của router rồi đo lại sau khi chỉnh. [Khuyến nghị quản lý hàng đợi của IETF](https://datatracker.ietf.org/doc/html/rfc7567)
+
+<details>
+<summary>Xem phần DNS và cấu hình card mạng</summary>
+
+![Trang Mạng và Driver với DNS Cloudflare, tiết kiệm điện adapter và tinh chỉnh TCP/IP](media/network-tools.png)
+
+</details>
+
+## Kiểm tra trước khi chạy
+
+**🟢 An toàn** dành cho thao tác ảnh hưởng thấp như đọc hoặc xuất dữ liệu. **🟡 Cẩn trọng** đánh dấu thay đổi thiết lập, tệp hoặc ứng dụng. **🔴 Cảnh báo** dành cho tác vụ có tác động lớn hơn như cài driver, sửa cấu hình khởi động hoặc khởi động lại. Bấm tên mục có dấu **↗** để mở tài liệu tham khảo.
+
+Bản dựng từ nhánh `main` kiểm tra điều kiện như GPU, WinGet và adapter mạng đang hoạt động. Rê chuột lên mục bị làm mờ để đọc lý do. Nếu có tài liệu liên quan, bấm **Vì sao mục này không khả dụng ↗** để xem hướng dẫn. Preset chỉ chọn các mục đủ điều kiện.
+
+Màn chọn vùng dùng tiếng Anh mặc định. Đổi ngôn ngữ trong **Cài đặt** và chuyển giao diện sáng hoặc tối bằng nút mặt trời hoặc mặt trăng. **X** và **Alt+F4** dùng cùng lựa chọn lưu khi thoát.
+
+<details>
+<summary>Sao lưu, quyền quản trị và thiết lập nâng cao</summary>
+
+- Snapshot Registry mới nằm trong `C:\Meowize_Backup`. Trang **Cứu hộ & Báo cáo** cũng đọc được snapshot cũ tương thích. Sao lưu nhánh ưu tiên `D:\Meowize_Backup`, hoặc dùng thư mục `BranchExports` trong thư mục sao lưu trên ổ C.
+- Nút **Quản trị** mở app qua UAC và chuyển tiếp trang, các mục đang chọn, DNS và tùy chọn tắt máy. Có thể dừng batch sau tác vụ hiện tại hoặc hủy đếm ngược tắt máy. **Ctrl+L** hiện hoặc ẩn nhật ký.
+- Acrylic hoạt động trên Windows 11 từ build 22621 khi bật hiệu ứng trong suốt. [Tài liệu Windows DWM](https://learn.microsoft.com/en-us/windows/win32/api/dwmapi/ne-dwmapi-dwm_systembackdrop_type)
+- KeyGate mặc định tắt. Để bật, đặt `keygate.json` cạnh EXE với `offline.salt` từ 16–64 byte và `offline.hash` dài 32 byte, đều ở dạng Base64. Hash dùng PBKDF2-SHA256 với 210.000 vòng trên mật khẩu đã bỏ khoảng trắng ở hai đầu. `onlineUrl` là tùy chọn HTTPS trả về object có `salt` và `hash`. Tùy chọn ghi nhớ dùng DPAPI cho tài khoản Windows hiện tại.
+
+</details>
+
+## Build và giấy phép
+
+Dùng .NET 10 SDK trên Windows. Hướng dẫn build và kiểm thử có trong README tiếng Anh. [Build từ mã nguồn](../README.md#build-from-source)
+
+**Lê Hiếu Trung (FuryZ)** bảo trì dự án. Giấy phép MIT áp dụng cho phần đóng góp mới của Meowize. [GitHub](https://github.com/Fuzuto) · [Giấy phép MIT](../LICENSE) · [Thông báo bên thứ ba](../THIRD-PARTY-NOTICES.txt)

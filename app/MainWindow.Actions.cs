@@ -36,12 +36,15 @@ public partial class MainWindow
     private DateTimeOffset? _shutdownDeadline;
     private Button? _shutdownCancel;
     private Mutex? _mutationLock;
+    private Task? _hardwareProbe;
+    private DateTimeOffset _lastHardwareProbe;
+    private bool _checkingTaskAvailability;
 
     private async void ReviewBatch(object sender, RoutedEventArgs e)
     {
-        if (_busy || _shutdownDeadline is not null)
+        if (!await ReadyForTaskReviewAsync())
             return;
-        var items = _catalog.Batch.Where(item => _selection.Contains(item.Id)).ToArray();
+        var items = _catalog.Batch.Where(item => _selection.Contains(item.Id) && IsAvailable(item.Id)).ToArray();
         if (items.Length == 0)
             return;
 
@@ -108,6 +111,11 @@ public partial class MainWindow
 
     private async Task RunBatchAsync(Operation[] items, bool autoShutdown)
     {
+        if (items.FirstOrDefault(item => !IsAvailable(item.Id)) is { } unavailable)
+        {
+            AddActivity($"{unavailable.DisplayTitle} · {UnavailableReason(unavailable.Id)}", "warn");
+            return;
+        }
         if (!BeginJob(T("TaskCount", items.Length), true, changesMachine: true))
             return;
         var warnings = 0;
@@ -176,8 +184,13 @@ public partial class MainWindow
 
     private async Task HandleOperationAsync(Operation item)
     {
-        if (_busy || _shutdownDeadline is not null)
+        if (!await ReadyForTaskReviewAsync())
             return;
+        if (UnavailableReason(item.Id) is { } reason)
+        {
+            Dialog(item.DisplayTitle, Label(reason, "BodyText"));
+            return;
+        }
         if (item.Mode == "settings")
         {
             OpenSetting(item);
@@ -242,6 +255,8 @@ public partial class MainWindow
     {
         if (_preview)
             return SimulateAsync(operation);
+        if (UnavailableReason(operation.Id) is { } reason)
+            return Task.FromResult(new WorkerResult("unavailable", reason));
         return CommandRunner.RunAsync(operation.Id, input, WorkerUpdate, confirmed: true);
     }
 
@@ -288,8 +303,36 @@ public partial class MainWindow
         }
     }
 
-    private async Task LoadHardwareAsync()
+    private async Task<bool> ReadyForTaskReviewAsync()
     {
+        if (_busy || _shutdownDeadline is not null || _checkingTaskAvailability)
+            return false;
+        _checkingTaskAvailability = true;
+        try
+        {
+            await LoadHardwareAsync();
+            return IsLoaded && !_busy && _shutdownDeadline is null;
+        }
+        finally
+        {
+            _checkingTaskAvailability = false;
+        }
+    }
+
+    private Task LoadHardwareAsync(bool refresh = false)
+    {
+        if (_hardwareProbe is { IsCompleted: false })
+            return _hardwareProbe;
+        var now = DateTimeOffset.UtcNow;
+        if (_hardwareReady && (_preview || (!refresh && now - _lastHardwareProbe < TimeSpan.FromSeconds(15))))
+            return Task.CompletedTask;
+        _lastHardwareProbe = now;
+        return _hardwareProbe = ReadHardwareAsync();
+    }
+
+    private async Task ReadHardwareAsync()
+    {
+        var availabilityChanged = false;
         if (_preview)
         {
             _machine["CPU"] = "AMD Ryzen 7 7800X3D";
@@ -303,9 +346,15 @@ public partial class MainWindow
             {
                 var result = await CommandRunner.RunAsync("HardwareSummary", null, update =>
                 {
-                    if (update is { Kind: "data", Data.ValueKind: JsonValueKind.Object })
-                        foreach (var property in update.Data.EnumerateObject())
+                    if (update is not { Kind: "data", Data.ValueKind: JsonValueKind.Object })
+                        return;
+                    foreach (var property in update.Data.EnumerateObject())
+                    {
+                        if (property.Name == "Availability")
+                            availabilityChanged = ApplyAvailability(property.Value);
+                        else if (property.Value.ValueKind is JsonValueKind.String or JsonValueKind.Null)
                             _machine[property.Name] = property.Value.GetString() ?? T("NoData");
+                    }
                 });
                 if (result.Status != "ok")
                     AddActivity(result.Text, "warn");
@@ -316,7 +365,7 @@ public partial class MainWindow
             }
         }
         _hardwareReady = true;
-        if (_page == "dashboard")
+        if (IsLoaded && (availabilityChanged || _page == "dashboard"))
             RenderPage();
     }
 
@@ -364,6 +413,7 @@ public partial class MainWindow
 
     private void EndJob(string status)
     {
+        var refreshAvailability = _mutationLock is not null;
         if (_mutationLock is not null)
         {
             _mutationLock.ReleaseMutex();
@@ -376,6 +426,8 @@ public partial class MainWindow
         StopButton.Visibility = Visibility.Collapsed;
         StatusLabel.Text = status;
         UpdateControls();
+        if (refreshAvailability)
+            _ = LoadHardwareAsync(refresh: true);
     }
 
     private void UpdateControls()

@@ -1,4 +1,74 @@
 {
+  "CompatibilityHelp": [
+    "Why this is unavailable",
+    "利用できない理由",
+    "사용할 수 없는 이유",
+    "Vì sao mục này không khả dụng",
+    "查看不可用的原因"
+  ],
+  "CompatNoNvidia": [
+    "This driver requires an NVIDIA GPU detected by Windows.",
+    "このドライバーを使うには、Windows が NVIDIA GPU を認識している必要があります。",
+    "이 드라이버를 사용하려면 Windows에서 NVIDIA GPU가 감지되어야 합니다.",
+    "Driver này yêu cầu Windows nhận diện được GPU NVIDIA.",
+    "此驱动要求 Windows 检测到 NVIDIA GPU。"
+  ],
+  "CompatNvidia566": [
+    "The detected GeForce RTX 50 Series GPU requires a newer compatible driver than 566.36.",
+    "検出された GeForce RTX 50 シリーズ GPU には、566.36 より新しい対応ドライバーが必要です。",
+    "감지된 GeForce RTX 50 시리즈 GPU에는 566.36보다 새로운 호환 드라이버가 필요합니다.",
+    "GPU GeForce RTX 50 Series trên máy cần driver tương thích mới hơn bản 566.36.",
+    "检测到的 GeForce RTX 50 系列 GPU 需要比 566.36 更新的兼容驱动。"
+  ],
+  "CompatNoWinget": [
+    "WinGet is unavailable. Install or update Windows App Installer for this account.",
+    "WinGet を利用できません。このアカウントで Windows のアプリ インストーラーをインストールするか更新してください。",
+    "WinGet을 사용할 수 없습니다. 현재 계정에서 Windows 앱 설치 관리자를 설치하거나 업데이트하세요.",
+    "WinGet chưa khả dụng. Hãy cài đặt hoặc cập nhật Windows App Installer cho tài khoản này.",
+    "WinGet 不可用。请为当前账户安装或更新 Windows 应用安装程序。"
+  ],
+  "CompatNoDnsTools": [
+    "Changing DNS requires the Windows network adapter and DNS client PowerShell commands.",
+    "DNS を変更するには、Windows のネットワークアダプターと DNS クライアントの PowerShell コマンドが必要です。",
+    "DNS를 변경하려면 Windows 네트워크 어댑터와 DNS 클라이언트 PowerShell 명령이 필요합니다.",
+    "Đổi DNS cần các lệnh PowerShell quản lý adapter mạng và máy khách DNS của Windows.",
+    "更改 DNS 需要 Windows 网络适配器和 DNS 客户端的 PowerShell 命令。"
+  ],
+  "CompatNoAdapter": [
+    "Connect to a network first. Changing DNS requires an active Windows network adapter.",
+    "まずネットワークに接続してください。DNS を変更するには、有効なネットワークアダプターが必要です。",
+    "먼저 네트워크에 연결하세요. DNS를 변경하려면 활성 네트워크 어댑터가 필요합니다.",
+    "Hãy kết nối mạng trước. Đổi DNS cần một adapter mạng đang hoạt động.",
+    "请先连接网络。更改 DNS 需要处于活动状态的网络适配器。"
+  ],
+  "CompatNoRiotCache": [
+    "There are no Riot Client or VALORANT folders to clean for this Windows account.",
+    "この Windows アカウントには、削除対象の Riot Client や VALORANT のフォルダーがありません。",
+    "현재 Windows 계정에 정리할 Riot Client 또는 VALORANT 폴더가 없습니다.",
+    "Tài khoản Windows này chưa có thư mục Riot Client hoặc VALORANT cần dọn.",
+    "当前 Windows 账户没有可清理的 Riot Client 或 VALORANT 文件夹。"
+  ],
+  "CompatNoBackup": [
+    "Create a compatible Registry snapshot before using Restore Registry.",
+    "レジストリを復元する前に、対応するレジストリのスナップショットを作成してください。",
+    "레지스트리를 복원하기 전에 호환되는 레지스트리 스냅샷을 만드세요.",
+    "Hãy tạo bản sao Registry tương thích trước khi dùng Khôi phục Registry.",
+    "请先创建兼容的注册表快照，再使用注册表恢复。"
+  ],
+  "CompatNoDefender": [
+    "This action requires the Microsoft Defender Antivirus PowerShell commands.",
+    "この操作には Microsoft Defender ウイルス対策の PowerShell コマンドが必要です。",
+    "이 작업에는 Microsoft Defender 바이러스 백신 PowerShell 명령이 필요합니다.",
+    "Tác vụ này yêu cầu các lệnh PowerShell của Microsoft Defender Antivirus.",
+    "此操作需要 Microsoft Defender 防病毒的 PowerShell 命令。"
+  ],
+  "CompatLegacyFirmware": [
+    "Windows started in legacy BIOS mode. Restarting into firmware requires a UEFI boot.",
+    "Windows はレガシ BIOS モードで起動しています。ファームウェアへの再起動には UEFI 起動が必要です。",
+    "Windows가 레거시 BIOS 모드로 시작되었습니다. 펌웨어로 재시작하려면 UEFI 모드로 부팅해야 합니다.",
+    "Windows đang khởi động theo chế độ BIOS cũ. Tác vụ này yêu cầu máy khởi động ở chế độ UEFI.",
+    "Windows 以传统 BIOS 模式启动。重新启动到固件设置需要 UEFI 启动模式。"
+  ],
   "CatalogReadError": [
     "Meowize could not load the task catalog.",
     "Meowize はタスク一覧を読み込めませんでした。",

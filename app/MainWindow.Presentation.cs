@@ -134,9 +134,10 @@ public partial class MainWindow
 
     private TextBlock LinkedTitle(Operation operation, string style, string prefix = "", bool inReview = false) =>
         ReferenceLink(operation.DisplayTitle, operation.Reference.Source, operation.Reference.Kind, style, prefix,
-            (inReview ? "ReviewSource_" : "Source_") + operation.Id);
+            (inReview ? "ReviewSource_" : "Source_") + operation.Id, UnavailableReason(operation.Id));
 
-    private TextBlock ReferenceLink(string name, string url, string kind, string style, string prefix = "", string? automationId = null)
+    private TextBlock ReferenceLink(string name, string url, string kind, string style, string prefix = "",
+        string? automationId = null, string? contextualHelp = null)
     {
         var heading = Label("", style);
         if (prefix.Length > 0)
@@ -146,13 +147,16 @@ public partial class MainWindow
             heading.Inlines.Add(new Run(name));
             return heading;
         }
+        var help = $"{T(kind)} · {uri.Host}";
+        if (contextualHelp is not null)
+            help = $"{contextualHelp}\n{help}";
         var link = new Hyperlink(new Run(name + " ↗"))
         {
-            NavigateUri = uri, ToolTip = $"{T(kind)} · {uri.Host}", Focusable = true
+            NavigateUri = uri, ToolTip = help, Focusable = true
         };
         link.SetResourceReference(ForegroundProperty, "Accent");
         AutomationProperties.SetName(link, T("OpenReference", name));
-        AutomationProperties.SetHelpText(link, $"{T(kind)} · {uri.Host}");
+        AutomationProperties.SetHelpText(link, help);
         if (automationId is not null)
             AutomationProperties.SetAutomationId(link, automationId);
         link.RequestNavigate += (_, e) =>

@@ -155,9 +155,9 @@ function Get-DesktopPath {
     return $path
 }
 
-function Read-Hardware {
+function Read-Hardware([object[]] $VideoControllers = @(Get-CimInstance Win32_VideoController -ErrorAction SilentlyContinue)) {
     $cpu = @(Get-CimInstance Win32_Processor -ErrorAction SilentlyContinue | ForEach-Object Name)
-    $gpu = @(Get-CimInstance Win32_VideoController -ErrorAction SilentlyContinue | ForEach-Object Name)
+    $gpu = @($VideoControllers | ForEach-Object Name)
     $ram = (Get-CimInstance Win32_ComputerSystem -ErrorAction SilentlyContinue).TotalPhysicalMemory
     $os = (Get-CimInstance Win32_OperatingSystem -ErrorAction SilentlyContinue).Caption
     @{
@@ -213,6 +213,52 @@ $riotPaths = @(
 )
 $shaderPaths = @('NVIDIA\DXCache', 'NVIDIA\GLCache', 'AMD\DxCache', 'AMD\GLCache', 'D3DSCache') | ForEach-Object { Join-Path $env:LOCALAPPDATA $_ }
 
+function Get-ActiveAdapters {
+    Get-NetAdapter -ErrorAction Stop | Where-Object Status -EQ 'Up'
+}
+
+function Get-TaskAvailability([object[]] $VideoControllers) {
+    $blocked = @{}
+    # An unsuccessful probe provides no evidence that a task is unavailable.
+    if ($null -ne $VideoControllers) {
+        $nvidia = @($VideoControllers | Where-Object PNPDeviceID -Match '^PCI\\VEN_10DE')
+        if ($nvidia.Count -eq 0) {
+            $blocked.btnDriverNvidia581 = 'CompatNoNvidia'
+            $blocked.btnDriverNvidia566 = 'CompatNoNvidia'
+        } elseif (-not ($nvidia | Where-Object Name -NotMatch '\bRTX\s+50\d{2}\b')) {
+            $blocked.btnDriverNvidia566 = 'CompatNvidia566'
+        }
+    }
+    try {
+        if (-not (Get-WingetExecutable)) {
+            $blocked.WingetApps = 'CompatNoWinget'
+            $blocked.btnPostInstall = 'CompatNoWinget'
+        }
+    } catch {}
+    try {
+        if (-not (Get-Command Get-NetAdapter -ErrorAction Ignore) -or
+            -not (Get-Command Set-DnsClientServerAddress -ErrorAction Ignore)) {
+            $blocked.btnApplyDns = 'CompatNoDnsTools'
+        } elseif (-not (Get-ActiveAdapters)) {
+            $blocked.btnApplyDns = 'CompatNoAdapter'
+        }
+    } catch {}
+    try {
+        if ($true -notin @(Test-Path -LiteralPath $riotPaths -PathType Container -ErrorAction Stop)) {
+            $blocked.CleanRiot = 'CompatNoRiotCache'
+            $blocked.btnClearRiotLog = 'CompatNoRiotCache'
+        }
+    } catch {}
+    try {
+        if (-not (Get-CompatibleBackups)) { $blocked.btnRestoreReg = 'CompatNoBackup' }
+    } catch {}
+    if (-not (Get-Command Set-MpPreference -ErrorAction Ignore) -or
+        -not (Get-Command Get-MpComputerStatus -ErrorAction Ignore)) {
+        $blocked.btnEnableDefender = 'CompatNoDefender'
+    }
+    return $blocked
+}
+
 function Repair-System {
     Write-GuiLog 'Đang chạy DISM RestoreHealth.' 'info'
     Invoke-ExactNative 'DISM.exe' @('/Online','/Cleanup-Image','/RestoreHealth')
@@ -226,7 +272,11 @@ function Repair-System {
 
 $workerTasks = @{
     HardwareSummary = {
-        Write-Frame 'data' '' '' $null (Read-Hardware)
+        $video = $null
+        try { $video = @(Get-CimInstance Win32_VideoController -ErrorAction Stop) } catch {}
+        $hardware = Read-Hardware $video
+        $hardware.Availability = Get-TaskAvailability $video
+        Write-Frame 'data' '' '' $null $hardware
     }
     StartupRead = {
         $items = @(foreach ($scope in @('User','Machine')) {
@@ -297,7 +347,7 @@ $workerTasks = @{
         if ($null -eq $payload.Index -or $payload.Index -isnot [int] -or $payload.Index -lt 0 -or $payload.Index -ge $options.Count) {
             throw 'Mục DNS không hợp lệ.'
         }
-        $adapters = @(Get-NetAdapter | Where-Object Status -EQ 'Up')
+        $adapters = @(Get-ActiveAdapters)
         if (-not $adapters.Count) { throw 'Không có adapter mạng đang hoạt động.' }
         foreach ($adapter in $adapters) {
             Set-DnsClientServerAddress -InterfaceIndex $adapter.InterfaceIndex -ServerAddresses $options[$payload.Index]

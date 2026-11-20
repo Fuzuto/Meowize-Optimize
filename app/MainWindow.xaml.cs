@@ -136,6 +136,11 @@ public partial class MainWindow : FluentWindow
             AddActivity(T("CatalogLoaded"), "ok");
             await LoadHardwareAsync();
         };
+        Activated += async (_, _) =>
+        {
+            if (_windowReady && !_busy)
+                await LoadHardwareAsync();
+        };
     }
 
     private void Navigate(object sender, SelectionChangedEventArgs e)
@@ -152,6 +157,8 @@ public partial class MainWindow : FluentWindow
         }
         RenderPage();
         PageScroll.ScrollToHome();
+        if (_windowReady && !_busy)
+            _ = LoadHardwareAsync();
         if (_windowReady)
             Enter(PageBody, 7, 175);
     }
@@ -325,6 +332,7 @@ public partial class MainWindow : FluentWindow
         content.Children.Add(text);
         var row = new Border { Padding = new(9, 3, 6, 3), BorderThickness = new(0, 1, 0, 0), Child = content };
         row.SetResourceReference(Border.BorderBrushProperty, "Stroke");
+        MarkUnavailable(row, text, operation, box);
         return row;
     }
 
@@ -335,7 +343,7 @@ public partial class MainWindow : FluentWindow
             if (_busy)
                 return;
             _selection.Clear();
-            _selection.UnionWith(_catalog.Preset(id));
+            _selection.UnionWith(_catalog.Preset(id).Where(IsAvailable));
             _activePreset = id;
             _suppressCheckboxEvents = true;
             foreach (var field in _checks)
@@ -351,7 +359,7 @@ public partial class MainWindow : FluentWindow
 
     private void ChangeSelection(string id, bool selected)
     {
-        if (_suppressCheckboxEvents)
+        if (_suppressCheckboxEvents || !IsAvailable(id))
             return;
         if (selected)
             _selection.Add(id);
@@ -434,6 +442,7 @@ public partial class MainWindow : FluentWindow
                 row.BorderThickness = new(0, 1, 0, 0);
                 row.SetResourceReference(Border.BorderBrushProperty, "Stroke");
             }
+            MarkUnavailable(row, text, operation, action);
             rows.Children.Add(row);
         }
         if (rows.Children.Count > 0)
@@ -480,7 +489,9 @@ public partial class MainWindow : FluentWindow
             ShowProviderReference();
         };
         ShowProviderReference();
-        return Card(root, new Thickness(14), new Thickness(0, 0, 0, 12));
+        var card = Card(root, new Thickness(14), new Thickness(0, 0, 0, 12));
+        MarkUnavailable(card, root, operation, choose, combo);
+        return card;
     }
 
     private Border BuildHardwareCard()
