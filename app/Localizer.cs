@@ -27,6 +27,9 @@ public sealed class Localizer : INotifyPropertyChanged
 
     private readonly Dictionary<string, string[]> _ui = Read<Dictionary<string, string[]>>("Ui");
     private readonly Dictionary<string, TaskCopy> _tasks = Read<Dictionary<string, TaskCopy>>("Tasks");
+    private readonly Dictionary<string, string[]> _details = Read<TaskDetails[]>("TaskDetails")
+        .SelectMany(group => group.Ids.Select(id => (Id: id, group.Text)))
+        .ToDictionary(item => item.Id, item => item.Text, StringComparer.Ordinal);
     private int _language;
     internal static Localizer Current { get; } = new();
     internal static string Code => Languages[Current._language].Code;
@@ -52,6 +55,9 @@ public sealed class Localizer : INotifyPropertyChanged
     }
 
     internal static TaskCopy CopyFor(string id) => Current._tasks[id];
+    internal static string DetailsFor(string id) => Current._details[id][Current._language];
+    internal static bool HasDetails(string id) =>
+        Current._details.TryGetValue(id, out var values) && values.Length == Languages.Length;
 
     internal static string TaskText(string[] values) =>
         values[Current._language == 4 ? 3 : Current._language];
@@ -66,6 +72,7 @@ public sealed class Localizer : INotifyPropertyChanged
 }
 
 internal sealed record TaskCopy(string[] Title, string[] Description, string[]? RiskNote, string Kind, string Source);
+internal sealed record TaskDetails(string[] Ids, string[] Text);
 
 [MarkupExtensionReturnType(typeof(object))]
 public sealed class TrExtension(string key) : MarkupExtension

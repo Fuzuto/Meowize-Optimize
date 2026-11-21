@@ -14,6 +14,7 @@ internal sealed record Operation(
 {
     internal string DisplayTitle => Localizer.IsVietnamese ? Title : Localizer.TaskText(Localizer.CopyFor(Id).Title);
     internal string DisplayDescription => Localizer.IsVietnamese ? Description : Localizer.TaskText(Localizer.CopyFor(Id).Description);
+    internal string DisplayDetails => Localizer.DetailsFor(Id);
     internal string? DisplayRiskNote => Localizer.IsVietnamese ? RiskNote :
         Localizer.CopyFor(Id).RiskNote is { } note ? Localizer.TaskText(note) : null;
     internal TaskCopy Reference => Localizer.CopyFor(Id);
@@ -32,7 +33,8 @@ internal sealed record Catalog(Operation[] Batch, Operation[] Tools)
         var entries = catalog.Batch.Concat(catalog.Tools).ToArray();
         if (catalog.Batch.Length != 51 || catalog.Tools.Length != 66 ||
             entries.Select(entry => entry.Id).Distinct(StringComparer.Ordinal).Count() != entries.Length ||
-            entries.Any(entry => entry.Mode is not ("legacy" or "worker" or "desktop" or "settings") ||
+            entries.Any(entry => !Localizer.HasDetails(entry.Id) ||
+                entry.Mode is not ("legacy" or "worker" or "desktop" or "settings") ||
                 entry.Risk is not (TaskRisk.Safe or TaskRisk.Caution or TaskRisk.Warning) ||
                 entry.Risk == TaskRisk.Warning && string.IsNullOrWhiteSpace(entry.RiskNote)))
         {

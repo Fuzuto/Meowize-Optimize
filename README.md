@@ -5,7 +5,7 @@
 <p align="center">
   <strong><a href="https://github.com/Fuzuto/Meowize-Optimize/releases/latest">Download for Windows</a></strong>
   &nbsp;·&nbsp; <a href="#quick-start">Quick start</a>
-  &nbsp;·&nbsp; <a href="#measure-fps-and-frame-time">Measure FPS</a>
+  &nbsp;·&nbsp; <a href="docs/features.en.md">Feature guide</a>
 </p>
 
 <p align="center">
@@ -28,15 +28,20 @@ Meowize is a free Windows toolkit built to help you tune FPS and frame pacing in
 
 From PowerShell in the extracted folder, run `.\Meowize.exe --preview` to try the flow with simulated tasks. For real changes, **Recovery & reports → System snapshot** can create a restore point and a Registry backup.
 
+In builds from `main`, select **ⓘ How it works** next to any task to see the button to use, which settings or files it touches, and whether it needs administrator access or a restart. The batch review shows the same changes in run order. [All 117 task descriptions](docs/features.en.md)
+
 ## Gaming and FPS
 
 The **Gaming** preset covers **36 of 51** tasks for system setup, gaming, networking and cleanup. Use the individual actions in **Gaming & FPS** when you want to measure one change at a time.
 
 | In the app | What it changes |
 | --- | --- |
+| **Mouse and keyboard buffers** | Sets `MouseDataQueueSize` and `KeyboardDataQueueSize` to `20`, enables Game Mode for the current account, and requests HAGS with `HwSchMode = 2`. [Microsoft keyboard and mouse class drivers](https://learn.microsoft.com/en-us/windows-hardware/drivers/hid/keyboard-and-mouse-hid-client-drivers) |
 | **Unpark CPU cores** | Requests a 100% minimum for unparked cores on the active Windows power plan. [Microsoft core parking documentation](https://learn.microsoft.com/en-us/windows-hardware/customize/power-settings/options-for-core-parking-cpmincores) |
 | **FPS Boost profile** | Applies a group of changes that includes a performance power plan and boot settings. Review the **Warning** details before applying it. |
 | **Game CPU priority** | Sets CPU priority for a predefined list of game executables, including VALORANT, CS2 and Overwatch. |
+
+To use the buffer tweak on its own, open **Gaming & FPS → Mouse and keyboard buffers**, inspect the details, then choose **Run** and confirm. It is also listed under **1-Click → Gaming and latency**. Restart Windows and check both the mouse and keyboard.
 
 ![Gaming & FPS page with FPS Boost, Unpark CPU cores, and Game CPU priority](docs/media/gaming-tools.png)
 
@@ -107,6 +112,8 @@ pwsh -NoProfile -File .\tests\Smoke-Preview.ps1 -App .\artifacts\Meowize-Windows
 
 The preview test covers navigation, presets, themes, language switching and simulated tasks.
 
+After editing task descriptions, regenerate the localized feature guides with `pwsh -File .\tools\Update-TaskGuides.ps1`.
+
 ## License
 
-Maintained by **Lê Hiếu Trung (FuryZ)**. The MIT license covers new Meowize contributions. [GitHub profile](https://github.com/Fuzuto) · [MIT license](LICENSE) · [Third-party notices](THIRD-PARTY-NOTICES.txt)
+Maintained by **Lê Hiếu Trung (FuryZ)**. The MIT license covers new Meowize contributions. [GitHub profile](https://github.com/Fuzuto) · [MIT license](LICENSE)

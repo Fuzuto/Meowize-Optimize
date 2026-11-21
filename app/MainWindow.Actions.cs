@@ -77,6 +77,9 @@ public partial class MainWindow
             text.VerticalAlignment = VerticalAlignment.Center;
             reviewRow.Children.Add(text);
             list.Children.Add(reviewRow);
+            var steps = Label(item.DisplayDetails, "MutedText");
+            steps.Margin = new(21, 0, 8, 7);
+            list.Children.Add(steps);
             if (item.Risk == TaskRisk.Warning)
             {
                 var note = Label(RiskHelp(item), "MutedText");
@@ -207,7 +210,7 @@ public partial class MainWindow
                 RequestAdmin(this, new RoutedEventArgs());
             return;
         }
-        var description = item.DisplayDescription;
+        string? description = null;
         object? input = null;
         if (item.Id == "btnApplyDns")
         {
@@ -223,10 +226,8 @@ public partial class MainWindow
             description = $"{T("RestoreConfirm", backup.Name)}\n{string.Join("\n", backup.Paths)}\n{T("SnapshotBefore")}";
             input = new { backup.Id };
         }
-        if (item.Id == "btnDiagZip")
-            description += "\n" + T("ZipPrivacy");
         var confirm = item.Impact == "Change" || item.Id is "btnApplyDns" or "btnDiagZip" or "btnDDU" or "btnAppsDesktop" or "btnUnparkApp";
-        if (confirm && !Dialog(item.DisplayTitle, DescribeRisk(item, description + (item.Restart ? "\n" + T("MayRestart") : "")),
+        if (confirm && !Dialog(item.DisplayTitle, DescribeRisk(item, description),
             T(_preview ? "Simulate" : "Continue")))
             return;
         if (!BeginJob(item.DisplayTitle, false, changesMachine: item.Impact == "Change"))

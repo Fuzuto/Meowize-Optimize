@@ -27,6 +27,15 @@ Assert (@($entries | Where-Object { $_.risk -eq 'Warning' -and [string]::IsNullO
 $uiText = Get-Content -LiteralPath (Join-Path $root 'app\Localization\Ui.json') -Raw -Encoding UTF8 | ConvertFrom-Json -AsHashtable
 $taskText = Get-Content -LiteralPath (Join-Path $root 'app\Localization\Tasks.json') -Raw -Encoding UTF8 | ConvertFrom-Json -AsHashtable
 Assert (-not (Compare-Object $entries.id @($taskText.Keys) -CaseSensitive)) 'Task translations differ from the catalog IDs.'
+$taskDetails = Get-Content -LiteralPath (Join-Path $root 'app\Localization\TaskDetails.json') -Raw -Encoding UTF8 | ConvertFrom-Json -AsHashtable
+$detailIds = @($taskDetails | ForEach-Object ids)
+Assert ($detailIds.Count -eq $entries.Count -and -not (Compare-Object $entries.id $detailIds -CaseSensitive)) 'Details must cover every task exactly once.'
+foreach ($detail in $taskDetails) {
+    Assert ($detail.text.Count -eq 5 -and -not ($detail.text | Where-Object { [string]::IsNullOrWhiteSpace($_) })) "Missing task detail for $($detail.ids -join ', ')."
+}
+$buffer = $taskDetails | Where-Object { $_.ids -contains 'btnInputQueue' }
+Assert ($buffer.ids -contains 'InputQueue' -and -not ($buffer.text | Where-Object { $_ -notmatch 'MouseDataQueueSize' -or $_ -notmatch 'KeyboardDataQueueSize' -or $_ -notmatch '(?<!\d)20(?!\d)' })) 'Both input buffer entry points must document the same queue settings.'
+& (Join-Path $root 'tools\Update-TaskGuides.ps1') -Check
 foreach ($entry in $entries) {
     $copy = $taskText[$entry.id]
     Assert ($copy.title.Count -eq 4 -and $copy.description.Count -eq 4 -and
@@ -87,7 +96,7 @@ foreach ($file in Get-ChildItem -LiteralPath $backend -File -Filter '*.ps1') {
         $unavailable.btnDriverNvidia566 -eq 'CompatNoNvidia') 'A PC without NVIDIA must not offer NVIDIA installers.'
     Assert ($unavailable.WingetApps -eq 'CompatNoWinget' -and
         $unavailable.btnPostInstall -eq 'CompatNoWinget') 'Both WinGet entries must require WinGet.'
-    Assert ($unavailable.btnApplyDns -in @('CompatNoAdapter','CompatNoDnsTools') -and
+    Assert ($unavailable.btnApplyDns -in @('CompatNoAdapter','CompatNoDnsTools') -and $unavailable.DnsCloud -eq $unavailable.btnApplyDns -and
         $unavailable.btnRestoreReg -eq 'CompatNoBackup') 'DNS and restore must require their prerequisites.'
 
     $newGpu = Get-TaskAvailability @($rtx)

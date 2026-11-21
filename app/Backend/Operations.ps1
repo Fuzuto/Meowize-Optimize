@@ -239,8 +239,10 @@ function Get-TaskAvailability([object[]] $VideoControllers) {
         if (-not (Get-Command Get-NetAdapter -ErrorAction Ignore) -or
             -not (Get-Command Set-DnsClientServerAddress -ErrorAction Ignore)) {
             $blocked.btnApplyDns = 'CompatNoDnsTools'
+            $blocked.DnsCloud = 'CompatNoDnsTools'
         } elseif (-not (Get-ActiveAdapters)) {
             $blocked.btnApplyDns = 'CompatNoAdapter'
+            $blocked.DnsCloud = 'CompatNoAdapter'
         }
     } catch {}
     try {

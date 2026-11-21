@@ -16,15 +16,27 @@ Meowize là công cụ Windows miễn phí dành cho người muốn tối ưu F
 
 Chạy `.\Meowize.exe --preview` trong PowerShell tại thư mục đã giải nén để thử với tác vụ mô phỏng. Trước khi thay đổi thật, **Cứu hộ & Báo cáo → Snapshot hệ thống** có thể tạo điểm khôi phục và bản sao Registry.
 
+Trong bản dựng từ `main`, bấm **ⓘ Cách hoạt động** cạnh mỗi mục để xem nút cần bấm, thiết lập hoặc tệp bị thay đổi, quyền quản trị và yêu cầu khởi động lại. Màn xem lại 1-Click cho biết các thay đổi theo thứ tự chạy. [Hướng dẫn đủ 117 tác vụ](features.vi.md)
+
 ## Gaming và FPS
 
 Preset **Gaming** gồm **36 trên 51** tác vụ cho hệ thống, game, mạng và dọn dẹp. Mở **Gaming & FPS** để thử từng mục khi cần đo riêng tác động của một thay đổi.
 
 | Trong Meowize | Thiết lập được áp dụng |
 | --- | --- |
+| **Buffer chuột và bàn phím** | Đặt `MouseDataQueueSize` và `KeyboardDataQueueSize` về `20`, bật Game Mode cho tài khoản hiện tại và yêu cầu HAGS bằng `HwSchMode = 2`. [Tài liệu trình điều khiển chuột và bàn phím của Microsoft](https://learn.microsoft.com/en-us/windows-hardware/drivers/hid/keyboard-and-mouse-hid-client-drivers) |
 | **Unpark CPU** | Yêu cầu mức tối thiểu **100%** lõi CPU không bị park trong gói điện đang dùng. [Tài liệu core parking của Microsoft](https://learn.microsoft.com/en-us/windows-hardware/customize/power-settings/options-for-core-parking-cpmincores) |
 | **FPS Boost** | Áp dụng một nhóm tinh chỉnh gồm gói điện hiệu năng và cấu hình khởi động. Đọc chi tiết **Cảnh báo** trước khi chạy. |
 | **Ưu tiên CPU cho game** | Đặt độ ưu tiên CPU cho danh sách tiến trình có sẵn, trong đó có VALORANT, CS2 và Overwatch. |
+
+Để chạy riêng, mở **Gaming & FPS → Buffer chuột và bàn phím**, xem chi tiết rồi bấm **Chạy** và xác nhận. Trong batch, mục này nằm ở **1-Click → Gaming và độ trễ**. Khởi động lại Windows rồi thử cả chuột lẫn bàn phím.
+
+<details>
+<summary>Xem hộp chi tiết Buffer chuột trong Meowize</summary>
+
+![Hộp chi tiết Buffer chuột hiển thị hai giá trị Registry, Game Mode, HAGS và quyền quản trị](media/input-buffer-details.vi.png)
+
+</details>
 
 ![Trang Gaming & FPS với các mục FPS Boost, Unpark CPU và ưu tiên CPU](media/gaming-tools.png)
 
@@ -86,4 +98,4 @@ Màn chọn vùng dùng tiếng Anh mặc định. Đổi ngôn ngữ trong **C�
 
 Dùng .NET 10 SDK trên Windows. Hướng dẫn build và kiểm thử có trong README tiếng Anh. [Build từ mã nguồn](../README.md#build-from-source)
 
-**Lê Hiếu Trung (FuryZ)** bảo trì dự án. Giấy phép MIT áp dụng cho phần đóng góp mới của Meowize. [GitHub](https://github.com/Fuzuto) · [Giấy phép MIT](../LICENSE) · [Thông báo bên thứ ba](../THIRD-PARTY-NOTICES.txt)
+**Lê Hiếu Trung (FuryZ)** bảo trì dự án. Giấy phép MIT áp dụng cho phần đóng góp mới của Meowize. [GitHub](https://github.com/Fuzuto) · [Giấy phép MIT](../LICENSE)

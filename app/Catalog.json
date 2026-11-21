@@ -158,7 +158,7 @@
     {
       "id": "InputQueue",
       "title": "Buffer chuột và bàn phím",
-      "description": "Buffer chuột/phím, Game Mode và HAGS",
+      "description": "Đặt hai hàng đợi đầu vào về 20, bật Game Mode và yêu cầu HAGS",
       "page": "gaming",
       "category": "Gaming",
       "mode": "legacy",
@@ -296,7 +296,7 @@
     {
       "id": "MSIMode",
       "title": "Chế độ ngắt MSI",
-      "description": "Chế độ interrupt MSI của GPU và NIC",
+      "description": "Ghi cờ MSI cho các thiết bị PCI khớp trong Registry",
       "page": "gaming",
       "category": "Gaming",
       "mode": "legacy",
@@ -307,7 +307,7 @@
       "sourceLine": 5887,
       "displayOrder": 2889,
       "risk": "Warning",
-      "riskNote": "Đổi chế độ ngắt của GPU hoặc card mạng. Thiết bị có thể hoạt động không ổn định."
+      "riskNote": "Phạm vi gồm mọi thiết bị PCI khớp. Đổi chế độ ngắt có thể gây mất ổn định."
     },
     {
       "id": "HAGS",
@@ -333,7 +333,7 @@
       "mode": "legacy",
       "impact": "Change",
       "admin": true,
-      "restart": false,
+      "restart": true,
       "selected": true,
       "sourceLine": 5967,
       "displayOrder": 2897,
@@ -478,8 +478,8 @@
     },
     {
       "id": "Talon2",
-      "title": "Ứng dụng AI Windows",
-      "description": "Copilot, Recall, Paint AI và Notepad AI",
+      "title": "Chính sách Copilot và Recall",
+      "description": "Ghi chính sách Windows Copilot và phân tích dữ liệu AI",
       "page": "talon",
       "category": "Talon",
       "mode": "legacy",
@@ -490,7 +490,7 @@
       "sourceLine": 6327,
       "displayOrder": 2945,
       "risk": "Warning",
-      "riskNote": "Gỡ ứng dụng Windows. Có thể cần cài lại ứng dụng để khôi phục tính năng."
+      "riskNote": "Chính sách có thể ảnh hưởng đến tính năng Copilot và Recall của các tài khoản trên máy."
     },
     {
       "id": "Talon3",
@@ -525,7 +525,7 @@
     {
       "id": "Talon5",
       "title": "File Explorer",
-      "description": "This PC, Gallery, Home và thiết lập Explorer",
+      "description": "Mở vào This PC và bỏ ghim Gallery trong File Explorer",
       "page": "talon",
       "category": "Talon",
       "mode": "legacy",
@@ -539,8 +539,8 @@
     },
     {
       "id": "Talon6",
-      "title": "Start và Widgets",
-      "description": "Bing Search, Widgets và đề xuất trong Start",
+      "title": "Tìm kiếm và Widgets",
+      "description": "Thiết lập tìm kiếm Bing, gợi ý tìm kiếm và Widgets",
       "page": "talon",
       "category": "Talon",
       "mode": "legacy",
@@ -789,6 +789,21 @@
   ],
   "tools": [
     {
+      "id": "btnInputQueue",
+      "title": "Buffer chuột và bàn phím",
+      "description": "Đặt hai hàng đợi đầu vào về 20, bật Game Mode và yêu cầu HAGS",
+      "page": "gaming",
+      "category": "",
+      "mode": "legacy",
+      "impact": "Change",
+      "admin": true,
+      "restart": true,
+      "selected": false,
+      "sourceLine": 10555,
+      "displayOrder": 10555,
+      "risk": "Caution"
+    },
+    {
       "id": "btnFpsBoost",
       "title": "FPS Boost",
       "description": "Chạy profile FPS Boost đầy đủ",
@@ -914,7 +929,7 @@
     {
       "id": "btnMSIMode",
       "title": "Chế độ ngắt MSI",
-      "description": "MSI cho GPU và adapter mạng",
+      "description": "Ghi cờ MSI cho các thiết bị PCI khớp trong Registry",
       "page": "gaming",
       "category": "",
       "mode": "legacy",
@@ -925,7 +940,7 @@
       "sourceLine": 7705,
       "displayOrder": 7705,
       "risk": "Warning",
-      "riskNote": "Đổi chế độ ngắt của GPU hoặc card mạng. Thiết bị có thể hoạt động không ổn định."
+      "riskNote": "Phạm vi gồm mọi thiết bị PCI khớp. Đổi chế độ ngắt có thể gây mất ổn định."
     },
     {
       "id": "btnHAGS",
@@ -975,8 +990,8 @@
     },
     {
       "id": "btnTimerRes",
-      "title": "Timer và multimedia",
-      "description": "Timer và multimedia scheduler",
+      "title": "Lập lịch đa phương tiện",
+      "description": "Tinh chỉnh cấu hình hệ thống và tác vụ Games của multimedia scheduler",
       "page": "gaming",
       "category": "",
       "mode": "legacy",
@@ -1034,21 +1049,6 @@
       "displayOrder": 8085,
       "risk": "Caution",
       "riskNote": "Đóng một số tiến trình nền. Lưu công việc trong ứng dụng trước khi chạy."
-    },
-    {
-      "id": "btnInputQueue",
-      "title": "Buffer chuột và bàn phím",
-      "description": "Buffer chuột/phím, Game Mode và HAGS",
-      "page": "gaming",
-      "category": "",
-      "mode": "legacy",
-      "impact": "Change",
-      "admin": true,
-      "restart": true,
-      "selected": false,
-      "sourceLine": 10555,
-      "displayOrder": 10555,
-      "risk": "Caution"
     },
     {
       "id": "btnDisableVBS",

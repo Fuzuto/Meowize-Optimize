@@ -4,6 +4,7 @@ using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Media;
 using Wpf.Ui.Controls;
+using Button = Wpf.Ui.Controls.Button;
 using TextBlock = System.Windows.Controls.TextBlock;
 using static AioOptimize.Localizer;
 
@@ -80,15 +81,58 @@ public partial class MainWindow
         return grid;
     }
 
-    private static StackPanel DescribeRisk(Operation operation, string description)
+    private Button TaskInfoButton(Operation operation, bool batch = false)
+    {
+        var button = ActionButton("", ControlAppearance.Transparent, (_, _) =>
+        {
+            var run = batch ? T(operation.Mode == "settings" ? "TaskUseBatchSettings" : "TaskUseBatch") :
+                operation.Id == "btnApplyDns" ? T("TaskUseDns") :
+                T("TaskUseAction", operation.Mode == "settings" ? T("OpenSettings") : OperationLabel(operation.Id));
+            var body = DescribeRisk(operation, run);
+            if (operation.Admin)
+                body.Children.Add(Label(T("TaskRequiresAdmin"), "MutedText"));
+            if (UnavailableReason(operation.Id) is { } reason)
+                body.Children.Add(Label(reason, "MutedText"));
+            var reference = operation.Reference;
+            var link = ReferenceLink(T(reference.Kind), reference.Source, reference.Kind, "BodyText");
+            link.Margin = new(0, 9, 0, 0);
+            body.Children.Add(link);
+            Dialog(operation.DisplayTitle, body);
+        });
+        button.Icon = Symbol("Info24", 16);
+        button.Padding = new(7);
+        button.MinHeight = 32;
+        button.MinWidth = 32;
+        button.VerticalAlignment = VerticalAlignment.Center;
+        button.Margin = new(4, 0, 4, 0);
+        button.ToolTip = T("TaskDetails");
+        AutomationProperties.SetAutomationId(button, "Info_" + operation.Id);
+        AutomationProperties.SetName(button, T("TaskDetailsFor", operation.DisplayTitle));
+        AutomationProperties.SetHelpText(button, operation.DisplayDetails);
+        return button;
+    }
+
+    private static StackPanel DescribeRisk(Operation operation, string? context = null)
     {
         var body = new StackPanel();
         var badge = RiskBadge(operation.Risk, operation.DisplayRiskNote);
         badge.HorizontalAlignment = HorizontalAlignment.Left;
         badge.Margin = new(0, 0, 0, 9);
         body.Children.Add(badge);
-        body.Children.Add(Label(description, "BodyText"));
-        if (operation.DisplayRiskNote is { Length: > 0 } note && note != description)
+        if (!string.IsNullOrWhiteSpace(context))
+        {
+            var intro = Label(context, "BodyText");
+            intro.Margin = new(0, 0, 0, 8);
+            body.Children.Add(intro);
+        }
+        body.Children.Add(Label(operation.DisplayDetails, "BodyText"));
+        if (operation.Restart)
+        {
+            var restart = Label(T("TaskMayRestart"), "MutedText");
+            restart.Margin = new(0, 8, 0, 0);
+            body.Children.Add(restart);
+        }
+        if (operation.DisplayRiskNote is { Length: > 0 } note)
         {
             var riskNote = Label(note, "MutedText");
             riskNote.Margin = new(0, 8, 0, 0);

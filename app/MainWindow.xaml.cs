@@ -171,8 +171,11 @@ public partial class MainWindow : FluentWindow
         if (level > 0 && operation.Risk != (TaskRisk)level)
             return false;
         var query = SearchKey(SearchTasks.Text.Trim());
-        return query.Length == 0 || SearchKey(operation.DisplayTitle).Contains(query, StringComparison.OrdinalIgnoreCase) ||
-            SearchKey(operation.DisplayDescription).Contains(query, StringComparison.OrdinalIgnoreCase);
+        if (query.Length == 0)
+            return true;
+        var content = SearchKey($"{operation.DisplayTitle} {operation.DisplayDescription} {operation.DisplayDetails}");
+        return query.Split((char[]?)null, StringSplitOptions.RemoveEmptyEntries)
+            .All(word => content.Contains(word, StringComparison.OrdinalIgnoreCase));
     }
 
     private static string SearchKey(string text) =>
@@ -310,6 +313,9 @@ public partial class MainWindow : FluentWindow
         DockPanel.SetDock(badge, Dock.Right);
         var content = new DockPanel { LastChildFill = true };
         content.Children.Add(badge);
+        var info = TaskInfoButton(operation, batch: true);
+        DockPanel.SetDock(info, Dock.Right);
+        content.Children.Add(info);
 
         var box = new CheckBox
         {
@@ -435,6 +441,9 @@ public partial class MainWindow : FluentWindow
             badge.Margin = new(0, 0, 9, 0);
             DockPanel.SetDock(badge, Dock.Right);
             line.Children.Add(badge);
+            var info = TaskInfoButton(operation);
+            DockPanel.SetDock(info, Dock.Right);
+            line.Children.Add(info);
             line.Children.Add(text);
             var row = new Border { Padding = new(13, 4, 13, 4), Child = line };
             if (rows.Children.Count > 0)
@@ -456,6 +465,9 @@ public partial class MainWindow : FluentWindow
         var badge = RiskBadge(operation.Risk, operation.DisplayRiskNote);
         DockPanel.SetDock(badge, Dock.Right);
         header.Children.Add(badge);
+        var info = TaskInfoButton(operation);
+        DockPanel.SetDock(info, Dock.Right);
+        header.Children.Add(info);
         header.Children.Add(LinkedTitle(operation, "SectionLabel"));
         root.Children.Add(header);
         var panel = new DockPanel { LastChildFill = true, Margin = new(0, 10, 0, 0) };

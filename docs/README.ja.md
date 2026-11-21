@@ -16,15 +16,20 @@ Meowize は、**VALORANT**、**Counter-Strike 2**、**Overwatch** などで FPS 
 
 展開先の PowerShell から `.\Meowize.exe --preview` を実行すると、操作をシミュレーションできます。実際に変更する前に、**回復とレポート → システムスナップショット** から復元ポイントとレジストリのバックアップを作成できます。
 
+`main` のビルドでは、各項目の **ⓘ 動作の詳細** から操作手順、変更する設定やファイル、管理者権限や再起動の要否を確認できます。一括実行の確認画面にも実行順に表示されます。[全 117 項目のガイド](features.ja.md)
+
 ## ゲームと FPS
 
 **Gaming** プリセットは **51 項目のうち 36 項目** が対象です。個別の効果を測るには **ゲームと FPS** で項目をひとつずつ試せます。
 
 | アプリ内の項目 | 内容 |
 | --- | --- |
+| **マウスとキーボードのバッファー** | `MouseDataQueueSize` と `KeyboardDataQueueSize` を `20` に設定します。このユーザーのゲーム モードを有効にし、`HwSchMode = 2` で HAGS を要求します。[Microsoft の入力クラス ドライバー解説](https://learn.microsoft.com/en-us/windows-hardware/drivers/hid/keyboard-and-mouse-hid-client-drivers) |
 | **CPU コアパーキングを解除** | 使用中の電源プランで、パーキングされないコアの最小割合を 100% に設定します。[Microsoft のコアパーキング解説](https://learn.microsoft.com/en-us/windows-hardware/customize/power-settings/options-for-core-parking-cpmincores) |
 | **FPS Boost プロファイル** | パフォーマンス向けの電源設定と起動設定を含む変更をまとめて適用します。事前に **警告** の詳細を確認してください。 |
 | **ゲームの CPU 優先度** | VALORANT、CS2、Overwatch など、定義済みのゲーム実行ファイルの CPU 優先度を設定します。 |
+
+個別に実行する場合は **ゲームと FPS → マウスとキーボードのバッファー** を開き、詳細を確認してから **実行** を選びます。**1-Click → ゲームと遅延** にもあります。Windows を再起動してマウスとキーボードを確認してください。
 
 ![FPS Boost、コアパーキング解除、CPU 優先度を確認できる画面](media/gaming-tools.png)
 
@@ -76,4 +81,4 @@ Meowize は、**VALORANT**、**Counter-Strike 2**、**Overwatch** などで FPS 
 
 Windows の .NET 10 SDK を使います。[ビルドとテストの手順](../README.md#build-from-source)
 
-メンテナーは **Lê Hiếu Trung (FuryZ)** です。MIT ライセンスは Meowize への新規の貢献に適用されます。[GitHub](https://github.com/Fuzuto) · [MIT ライセンス](../LICENSE) · [サードパーティー通知](../THIRD-PARTY-NOTICES.txt)
+メンテナーは **Lê Hiếu Trung (FuryZ)** です。MIT ライセンスは Meowize への新規の貢献に適用されます。[GitHub](https://github.com/Fuzuto) · [MIT ライセンス](../LICENSE)

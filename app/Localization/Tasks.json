@@ -371,13 +371,13 @@
       "鼠标和键盘缓冲区"
     ],
     "description": [
-      "Tune input queues and enable Game Mode and HAGS.",
-      "入力キューを調整し、ゲームモードと HAGS を有効にします。",
-      "입력 대기열을 조정하고 게임 모드와 HAGS를 켭니다.",
-      "调整输入队列并启用游戏模式和 HAGS。"
+      "Set both input queues to 20, enable Game Mode and request HAGS.",
+      "両方の入力キューを 20 にし、ゲーム モードを有効にして HAGS を要求します。",
+      "입력 대기열 두 개를 20으로 설정하고 게임 모드를 켜며 HAGS를 요청합니다.",
+      "将两个输入队列设为 20，启用游戏模式并请求启用 HAGS。"
     ],
     "kind": "Docs",
-    "source": "https://support.xbox.com/en-US/help/games-apps/game-setup-and-play/use-game-mode-gaming-on-pc"
+    "source": "https://learn.microsoft.com/en-us/windows-hardware/drivers/hid/keyboard-and-mouse-hid-client-drivers"
   },
   "btnInputQueue": {
     "title": [
@@ -387,13 +387,13 @@
       "鼠标和键盘缓冲区"
     ],
     "description": [
-      "Tune input queues and enable Game Mode and HAGS.",
-      "入力キューを調整し、ゲームモードと HAGS を有効にします。",
-      "입력 대기열을 조정하고 게임 모드와 HAGS를 켭니다.",
-      "调整输入队列并启用游戏模式和 HAGS。"
+      "Set both input queues to 20, enable Game Mode and request HAGS.",
+      "両方の入力キューを 20 にし、ゲーム モードを有効にして HAGS を要求します。",
+      "입력 대기열 두 개를 20으로 설정하고 게임 모드를 켜며 HAGS를 요청합니다.",
+      "将两个输入队列设为 20，启用游戏模式并请求启用 HAGS。"
     ],
     "kind": "Docs",
-    "source": "https://support.xbox.com/en-US/help/games-apps/game-setup-and-play/use-game-mode-gaming-on-pc"
+    "source": "https://learn.microsoft.com/en-us/windows-hardware/drivers/hid/keyboard-and-mouse-hid-client-drivers"
   },
   "DisableVBS": {
     "title": [
@@ -673,18 +673,18 @@
       "MSI 中断模式"
     ],
     "description": [
-      "Change interrupt settings for GPUs and network adapters.",
-      "GPU とネットワークアダプターの割り込みを変更します。",
-      "GPU와 네트워크 어댑터의 인터럽트 설정을 변경합니다.",
-      "更改 GPU 和网络适配器的中断设置。"
+      "Write MSI flags for matching PCI device entries.",
+      "該当する PCI デバイスに MSI フラグを書き込みます。",
+      "일치하는 PCI 장치 항목에 MSI 플래그를 기록합니다.",
+      "为匹配的 PCI 设备条目写入 MSI 标志。"
     ],
     "kind": "Docs",
     "source": "https://learn.microsoft.com/en-us/windows-hardware/drivers/kernel/introduction-to-message-signaled-interrupts",
     "riskNote": [
-      "Changing GPU or network adapter interrupts may cause instability.",
-      "GPU やネットワークアダプターの割り込みを変更すると不安定になることがあります。",
-      "GPU 또는 네트워크 어댑터의 인터럽트 변경으로 불안정해질 수 있습니다.",
-      "更改 GPU 或网络适配器中断可能导致不稳定。"
+      "Changing interrupts for matching PCI devices may cause instability.",
+      "該当する PCI デバイスの割り込みを変更すると不安定になることがあります。",
+      "일치하는 PCI 장치의 인터럽트 변경으로 불안정해질 수 있습니다.",
+      "更改匹配 PCI 设备的中断设置可能导致不稳定。"
     ]
   },
   "btnMSIMode": {
@@ -695,18 +695,18 @@
       "MSI 中断模式"
     ],
     "description": [
-      "Change interrupt settings for GPUs and network adapters.",
-      "GPU とネットワークアダプターの割り込みを変更します。",
-      "GPU와 네트워크 어댑터의 인터럽트 설정을 변경합니다.",
-      "更改 GPU 和网络适配器的中断设置。"
+      "Write MSI flags for matching PCI device entries.",
+      "該当する PCI デバイスに MSI フラグを書き込みます。",
+      "일치하는 PCI 장치 항목에 MSI 플래그를 기록합니다.",
+      "为匹配的 PCI 设备条目写入 MSI 标志。"
     ],
     "kind": "Docs",
     "source": "https://learn.microsoft.com/en-us/windows-hardware/drivers/kernel/introduction-to-message-signaled-interrupts",
     "riskNote": [
-      "Changing GPU or network adapter interrupts may cause instability.",
-      "GPU やネットワークアダプターの割り込みを変更すると不安定になることがあります。",
-      "GPU 또는 네트워크 어댑터의 인터럽트 변경으로 불안정해질 수 있습니다.",
-      "更改 GPU 或网络适配器中断可能导致不稳定。"
+      "Changing interrupts for matching PCI devices may cause instability.",
+      "該当する PCI デバイスの割り込みを変更すると不安定になることがあります。",
+      "일치하는 PCI 장치의 인터럽트 변경으로 불안정해질 수 있습니다.",
+      "更改匹配 PCI 设备的中断设置可能导致不稳定。"
     ]
   },
   "HAGS": {
@@ -1039,24 +1039,24 @@
   },
   "Talon2": {
     "title": [
-      "Windows AI apps",
-      "Windows の AI アプリ",
-      "Windows AI 앱",
-      "Windows AI 应用"
+      "Copilot and Recall policies",
+      "Copilot と Recall のポリシー",
+      "Copilot 및 Recall 정책",
+      "Copilot 与 Recall 策略"
     ],
     "description": [
-      "Remove or adjust selected Copilot and AI features.",
-      "指定の Copilot と AI 機能を削除または調整します。",
-      "지정된 Copilot과 AI 기능을 제거하거나 조정합니다.",
-      "移除或调整指定的 Copilot 和 AI 功能。"
+      "Write Windows Copilot and AI data analysis policies.",
+      "Windows Copilot と AI データ分析のポリシーを書き込みます。",
+      "Windows Copilot 및 AI 데이터 분석 정책을 기록합니다.",
+      "写入 Windows Copilot 和 AI 数据分析策略。"
     ],
     "kind": "Docs",
-    "source": "https://learn.microsoft.com/en-us/powershell/module/appx/remove-appxpackage",
+    "source": "https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-windowsai",
     "riskNote": [
-      "Removing Windows apps may require reinstalling them to restore features.",
-      "Windows アプリを削除すると、機能の復元に再インストールが必要な場合があります。",
-      "Windows 앱을 제거하면 기능을 복원하기 위해 다시 설치해야 할 수 있습니다.",
-      "移除 Windows 应用后，可能需要重新安装才能恢复相关功能。"
+      "These policies can change Copilot and Recall features across Windows accounts.",
+      "これらのポリシーは、Windows の複数のアカウントで Copilot と Recall に影響することがあります。",
+      "이 정책은 여러 Windows 계정의 Copilot 및 Recall 기능에 영향을 줄 수 있습니다.",
+      "这些策略可能影响多个 Windows 账户的 Copilot 和 Recall 功能。"
     ]
   },
   "Talon3": {
@@ -1115,26 +1115,26 @@
       "文件资源管理器设置"
     ],
     "description": [
-      "Adjust This PC, Gallery, and Home.",
-      "PC、ギャラリー、ホームの表示を調整します。",
-      "내 PC, 갤러리 및 홈을 조정합니다.",
-      "调整此电脑、库与主页。"
+      "Open Explorer to This PC and unpin Gallery.",
+      "エクスプローラーを「PC」で開き、ギャラリーの固定を外します。",
+      "파일 탐색기를 내 PC에서 열고 갤러리 고정을 해제합니다.",
+      "将文件资源管理器设为打开此电脑，并取消固定图库。"
     ],
     "kind": "Docs",
     "source": "https://support.microsoft.com/en-us/windows/file-explorer-in-windows-ef370130-1cca-9dc5-e0df-2f7416fe1cb1"
   },
   "Talon6": {
     "title": [
-      "Start and Widgets",
-      "スタートとウィジェット",
-      "시작 메뉴 및 위젯",
-      "开始菜单与小组件"
+      "Search and Widgets",
+      "検索とウィジェット",
+      "검색 및 위젯",
+      "搜索与小组件"
     ],
     "description": [
-      "Adjust Start recommendations, Bing search, and Widgets.",
-      "スタートのおすすめ、Bing 検索、ウィジェットを調整します。",
-      "시작 추천, Bing 검색 및 위젯을 조정합니다.",
-      "调整开始菜单推荐、Bing 搜索和小组件。"
+      "Adjust Bing search, search suggestions and Widgets.",
+      "Bing 検索、検索候補、ウィジェットを調整します。",
+      "Bing 검색, 검색 추천 및 위젯을 조정합니다.",
+      "调整 Bing 搜索、搜索建议和小组件。"
     ],
     "kind": "Docs",
     "source": "https://learn.microsoft.com/en-us/windows/configuration/start/"
@@ -1587,19 +1587,19 @@
   },
   "btnTimerRes": {
     "title": [
-      "Timer and multimedia settings",
-      "タイマーとマルチメディア設定",
-      "타이머 및 멀티미디어 설정",
-      "计时器与多媒体设置"
+      "Multimedia Scheduler",
+      "マルチメディア スケジューラ",
+      "멀티미디어 스케줄러",
+      "多媒体调度器"
     ],
     "description": [
-      "Tune timer settings and multimedia scheduling.",
-      "タイマー設定とマルチメディアスケジューリングを調整します。",
-      "타이머와 멀티미디어 스케줄링을 조정합니다.",
-      "调整计时器设置和多媒体调度。"
+      "Tune the multimedia system profile and its Games task.",
+      "マルチメディア システム プロファイルと Games タスクを調整します。",
+      "멀티미디어 시스템 프로필과 Games 작업을 조정합니다.",
+      "调整多媒体系统配置和 Games 任务。"
     ],
     "kind": "Docs",
-    "source": "https://learn.microsoft.com/en-us/windows/win32/api/timeapi/nf-timeapi-timebeginperiod"
+    "source": "https://learn.microsoft.com/en-us/windows/win32/procthread/multimedia-class-scheduler-service"
   },
   "btnTalonFull": {
     "title": [
@@ -1823,7 +1823,7 @@
       "下载并安装 581.80 WHQL 驱动。"
     ],
     "kind": "Vendor",
-    "source": "https://www.nvidia.com/en-us/drivers/",
+    "source": "https://www.nvidia.com/en-us/drivers/details/257497/",
     "riskNote": [
       "The display may flicker. Windows may need to restart.",
       "画面がちらつく場合があります。Windows の再起動が必要になることがあります。",
@@ -1845,7 +1845,7 @@
       "下载并安装 566.36 WHQL 驱动。"
     ],
     "kind": "Vendor",
-    "source": "https://www.nvidia.com/en-us/drivers/",
+    "source": "https://www.nvidia.com/en-us/drivers/details/237719/",
     "riskNote": [
       "The display may flicker. Windows may need to restart.",
       "画面がちらつく場合があります。Windows の再起動が必要になることがあります。",

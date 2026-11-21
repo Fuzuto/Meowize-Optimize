@@ -425,7 +425,7 @@ $legacyTasks = @{
             reg add "HKLM\SYSTEM\CurrentControlSet\Services\mouclass\Parameters" /v "MouseDataQueueSize" /t REG_DWORD /d 20 /f 2>$null | Out-Null
             Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\kbdclass\Parameters" -Name "KeyboardDataQueueSize" -Value 20 -ErrorAction SilentlyContinue
             reg add "HKLM\SYSTEM\CurrentControlSet\Services\kbdclass\Parameters" /v "KeyboardDataQueueSize" /t REG_DWORD /d 20 /f 2>$null | Out-Null
-            Write-GuiLog "  [+] Da bat Windows Game Mode, HAGS va set Mouse/Keyboard DataQueueSize = 20." $colorSuccess
+            Write-GuiLog "  [+] Da yeu cau Game Mode, HAGS va Mouse/Keyboard DataQueueSize = 20. Khoi dong lai de kiem tra." $colorSuccess
         }
     FlipModel = {
             reg add "HKCU\Software\Microsoft\DirectX\UserGpuPreferences" /v "DirectXUserGlobalSettings" /t REG_SZ /d "SwapEffectUpgradeEnable=1;" /f 2>$null | Out-Null
@@ -775,7 +775,7 @@ $legacyTasks = @{
         Set-ItemProperty -Path $tasksPath -Name "Scheduling Category" -Value "High" -Type String -ErrorAction SilentlyContinue
         Set-ItemProperty -Path $tasksPath -Name "SFIO Priority" -Value "High" -Type String -ErrorAction SilentlyContinue
     }
-    Write-GuiLog "[OK] Da toi uu Timer Resolution & Multimedia Profile." $colorSuccess
+    Write-GuiLog "[OK] Da ghi cac thiet lap Multimedia SystemProfile va Games." $colorSuccess
 }
     btnMouseFix = {
     Set-ItemProperty -Path "HKCU:\Control Panel\Mouse" -Name "MouseSpeed" -Value "0"
@@ -800,8 +800,7 @@ $legacyTasks = @{
     reg add "HKLM\SYSTEM\CurrentControlSet\Services\mouclass\Parameters" /v "MouseDataQueueSize" /t REG_DWORD /d 20 /f 2>$null | Out-Null
     Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\kbdclass\Parameters" -Name "KeyboardDataQueueSize" -Value 20 -ErrorAction SilentlyContinue
     reg add "HKLM\SYSTEM\CurrentControlSet\Services\kbdclass\Parameters" /v "KeyboardDataQueueSize" /t REG_DWORD /d 20 /f 2>$null | Out-Null
-    Write-GuiLog "[OK] Da bat Windows Game Mode, HAGS va giam Mouse/Keyboard DataQueueSize ve 20 packets." $colorSuccess
-    Show-Popup "Da toi uu Buffer Chuot & Ban phim ve 20 packets (0 delay) va bat Game Mode!" -title "THPO v1.3"
+    Write-GuiLog "[OK] Da yeu cau Game Mode, HAGS va Mouse/Keyboard DataQueueSize = 20. Khoi dong lai de kiem tra." $colorSuccess
 }
     btnFlipModel = {
     Write-GuiLog "=== EP DIRECTX PRESENTATION FLIP MODEL (SWAPEFFECTUPGRADEENABLE) ===" $colorAccent
@@ -1062,7 +1061,7 @@ $legacyTasks = @{
     Write-GuiLog "=== KIEM TRA TUONG THICH ===" $colorAccent
     Write-GuiLog "[i] CPU: $cpuName" $colorCyan
     if ($isXeon)  { Write-GuiLog "[!] CPU Xeon: Chu y power plan va MPO." $colorWarn }
-    if ($isRyzen) { Write-GuiLog "[i] CPU AMD Ryzen: Ho tro hoan hao cac tweak gaming." $colorSuccess }
-    if ($isIntel -and -not $isXeon) { Write-GuiLog "[i] CPU Intel Consumer: Ho tro day du cac tweak." $colorSuccess }
+    if ($isRyzen) { Write-GuiLog "[i] Nhan dien AMD Ryzen theo ten CPU. Kiem tra yeu cau cua tung tuy chon." $colorCyan }
+    if ($isIntel -and -not $isXeon) { Write-GuiLog "[i] Nhan dien Intel theo ten CPU. Kiem tra yeu cau cua tung tuy chon." $colorCyan }
 }
 }

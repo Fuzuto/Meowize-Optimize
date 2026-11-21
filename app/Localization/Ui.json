@@ -1,4 +1,60 @@
 {
+  "TaskDetails": [
+    "How it works",
+    "動作の詳細",
+    "작동 방식",
+    "Cách hoạt động",
+    "工作原理"
+  ],
+  "TaskDetailsFor": [
+    "How {0} works",
+    "{0} の動作の詳細",
+    "{0} 작동 방식",
+    "Cách hoạt động của {0}",
+    "{0} 的工作原理"
+  ],
+  "TaskUseBatch": [
+    "Select this task in 1-Click, then choose Review and run.",
+    "1-Click でこの項目を選び、「確認して実行」を選択します。",
+    "1-Click에서 이 항목을 선택한 뒤 검토 후 실행을 누르세요.",
+    "Chọn mục này trong 1-Click, rồi bấm Xem và chạy.",
+    "在 1-Click 中选择此任务，然后点击检查并运行。"
+  ],
+  "TaskUseBatchSettings": [
+    "Select this task in 1-Click. Use Open Windows settings in the review to visit the Windows page.",
+    "1-Click でこの項目を選び、確認画面の「Windows の設定を開く」から該当ページを表示します。",
+    "1-Click에서 이 항목을 선택하세요. 검토 화면에서 Windows 설정 열기를 누르면 관련 페이지로 이동합니다.",
+    "Chọn mục này trong 1-Click. Tại màn xem lại, bấm Mở cài đặt Windows để đến đúng trang.",
+    "在 1-Click 中选择此任务，再在检查页面点击打开 Windows 设置。"
+  ],
+  "TaskUseDns": [
+    "Choose a DNS provider, select Apply and review the addresses before confirming.",
+    "DNS プロバイダーを選んで「適用」を押し、確認画面でアドレスを確認します。",
+    "DNS 공급자를 선택하고 적용을 누른 뒤 주소를 확인하세요.",
+    "Chọn nhà cung cấp DNS, bấm Áp dụng rồi xem lại địa chỉ trước khi xác nhận.",
+    "选择 DNS 提供商，点击应用，并在确认前检查地址。"
+  ],
+  "TaskUseAction": [
+    "Choose {0} on the task row.",
+    "項目の「{0}」を選択します。",
+    "항목에서 {0}을 선택하세요.",
+    "Bấm {0} ở dòng tác vụ.",
+    "点击任务行中的{0}。"
+  ],
+  "TaskRequiresAdmin": [
+    "Administrator access required.",
+    "管理者権限が必要です。",
+    "관리자 권한이 필요합니다.",
+    "Cần quyền quản trị.",
+    "需要管理员权限。"
+  ],
+  "TaskMayRestart": [
+    "Windows may need to restart for this change to take effect.",
+    "この変更を反映するには、Windows の再起動が必要な場合があります。",
+    "이 변경을 적용하려면 Windows를 다시 시작해야 할 수 있습니다.",
+    "Có thể cần khởi động lại Windows để áp dụng thay đổi.",
+    "此更改可能需要重启 Windows 才会生效。"
+  ],
   "CompatibilityHelp": [
     "Why this is unavailable",
     "利用できない理由",

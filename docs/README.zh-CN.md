@@ -16,15 +16,20 @@ Meowize 是一款免费的 Windows 工具，面向 **VALORANT**、**Counter-Stri
 
 在解压后的目录中用 PowerShell 运行 `.\Meowize.exe --preview`，即可体验模拟任务。实际修改前，可用 **恢复与报告 → 系统快照** 创建还原点和注册表备份。
 
+在 `main` 分支构建的版本中，点击任务旁的 **ⓘ 工作原理**，即可查看使用步骤、会修改的设置和文件，以及是否需要管理员权限或重启。批量检查页面也会按运行顺序显示这些改动。 [全部 117 项功能指南](features.zh-CN.md)
+
 ## 游戏与 FPS
 
 **Gaming** 预设包含 **51 项中的 36 项**，涵盖系统、游戏、网络和清理。要比较某项改动的效果，可在 **游戏与 FPS** 中逐项尝试。
 
 | 应用内选项 | 作用 |
 | --- | --- |
+| **鼠标和键盘缓冲区** | 将 `MouseDataQueueSize` 和 `KeyboardDataQueueSize` 设为 `20`，为当前账户启用游戏模式，并通过 `HwSchMode = 2` 请求启用 HAGS。 [Microsoft 鼠标与键盘类驱动文档](https://learn.microsoft.com/en-us/windows-hardware/drivers/hid/keyboard-and-mouse-hid-client-drivers) |
 | **取消 CPU 核心停放** | 将当前 Windows 电源计划中未停放核心的最低比例设置为 100%。 [Microsoft 核心停放文档](https://learn.microsoft.com/en-us/windows-hardware/customize/power-settings/options-for-core-parking-cpmincores) |
 | **FPS Boost 配置** | 应用包含性能电源设置和启动设置的一组改动。运行前请查看 **警告** 详情。 |
 | **游戏 CPU 优先级** | 为预设列表中的游戏进程设置 CPU 优先级，其中包括 VALORANT、CS2 和 Overwatch。 |
+
+如需单独执行，打开 **游戏与 FPS → 鼠标和键盘缓冲区**，检查详情后点击 **运行** 并确认。也可在 **1-Click → 游戏与延迟** 中找到该任务。重启 Windows 后检查鼠标和键盘。
 
 ![游戏与 FPS 页面，显示 FPS Boost、取消核心停放及游戏 CPU 优先级](media/gaming-tools.png)
 
@@ -76,4 +81,4 @@ Meowize 是一款免费的 Windows 工具，面向 **VALORANT**、**Counter-Stri
 
 在 Windows 上使用 .NET 10 SDK。 [构建和测试步骤](../README.md#build-from-source)
 
-项目由 **Lê Hiếu Trung (FuryZ)** 维护。MIT 许可证适用于 Meowize 的新增贡献。 [GitHub](https://github.com/Fuzuto) · [MIT 许可证](../LICENSE) · [第三方声明](../THIRD-PARTY-NOTICES.txt)
+项目由 **Lê Hiếu Trung (FuryZ)** 维护。MIT 许可证适用于 Meowize 的新增贡献。 [GitHub](https://github.com/Fuzuto) · [MIT 许可证](../LICENSE)
