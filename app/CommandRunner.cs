@@ -20,21 +20,17 @@ internal static class CommandRunner
     {
         var script = Path.Combine(AppContext.BaseDirectory, "Backend", "Run-Task.ps1");
         var powerShell = SystemTool(@"WindowsPowerShell\v1.0\powershell.exe");
-        if (!File.Exists(script) || !File.Exists(powerShell))
+        if (!File.Exists(powerShell))
             return new("error", T("WorkerMissing"));
-        foreach (var file in new[] { "Run-Task.ps1", "Legacy.ps1", "Operations.ps1", "Downloads.ps1" })
-        {
-            var local = Path.Combine(AppContext.BaseDirectory, "Backend", file);
-            using var expected = Assembly.GetExecutingAssembly().GetManifestResourceStream("AioOptimize.Backend." + file);
-            if (expected is null || !File.Exists(local))
-                return new("error", T("BackendMissing", file));
-            using var contents = File.OpenRead(local);
-            if (!SHA256.HashData(contents).AsSpan().SequenceEqual(SHA256.HashData(expected)))
-                return new("error", T("BackendChanged", file));
-        }
+
+        using var entryPoint = OpenVerifiedScript("Run-Task.ps1");
+        using var legacy = OpenVerifiedScript("Legacy.ps1");
+        using var operations = OpenVerifiedScript("Operations.ps1");
+        using var downloads = OpenVerifiedScript("Downloads.ps1");
 
         var start = StartInfo(powerShell);
-        foreach (var argument in new[] { "-NoLogo", "-NoProfile", "-NonInteractive", "-File", script, "-TaskId", id })
+        // A downloaded ZIP can mark the bundled scripts as remote. Scope the policy to this verified worker.
+        foreach (var argument in new[] { "-NoLogo", "-NoProfile", "-NonInteractive", "-ExecutionPolicy", "Bypass", "-File", script, "-TaskId", id })
             start.ArgumentList.Add(argument);
         if (confirmed)
             start.ArgumentList.Add("-Confirmed");
@@ -81,7 +77,11 @@ internal static class CommandRunner
         if (!string.IsNullOrWhiteSpace(diagnostic))
             onEvent(new("log", diagnostic.Trim(), "warn", null, default));
         if (final is null)
-            return new("error", T("MissingResult", process.ExitCode));
+        {
+            var firstLine = diagnostic.Trim().Split('\n', 2)[0].Trim();
+            var startupError = T("MissingResult", process.ExitCode);
+            return new("error", firstLine.Length > 0 ? startupError + "\n" + firstLine : startupError);
+        }
         var status = final.Level ?? "error";
         if (process.ExitCode != 0 && status == "ok")
             status = "error";
@@ -93,6 +93,28 @@ internal static class CommandRunner
             _ => "WorkerDone"
         };
         return new(status, string.IsNullOrEmpty(final.Text) ? T(summary) : final.Text);
+    }
+
+    private static FileStream OpenVerifiedScript(string file)
+    {
+        var path = Path.Combine(AppContext.BaseDirectory, "Backend", file);
+        using var expected = Assembly.GetExecutingAssembly().GetManifestResourceStream("AioOptimize.Backend." + file);
+        if (expected is null || !File.Exists(path))
+            throw new InvalidDataException(T("BackendMissing", file));
+
+        // Keep the verified files open for reading until PowerShell exits.
+        var stream = File.OpenRead(path);
+        try
+        {
+            if (!SHA256.HashData(stream).AsSpan().SequenceEqual(SHA256.HashData(expected)))
+                throw new InvalidDataException(T("BackendChanged", file));
+            return stream;
+        }
+        catch
+        {
+            stream.Dispose();
+            throw;
+        }
     }
 
     internal static async Task<string> CaptureAsync(string file, params string[] args)

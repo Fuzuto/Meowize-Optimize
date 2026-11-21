@@ -54,23 +54,22 @@
 
 function Test-Publisher([string] $Path, [string] $Publisher) {
     $signature = Get-AuthenticodeSignature -LiteralPath (Resolve-PlainPath $Path)
-    return ($signature.Status -eq 'Valid' -and $signature.SignerCertificate.Subject -match $Publisher)
+    return ($signature.Status -eq 'Valid' -and $signature.SignerCertificate.GetNameInfo('SimpleName', $false) -match $Publisher)
 }
 
 function Start-VendorTool([string] $File, [string] $Publisher, [string] $Arguments, [switch] $Wait) {
     if (-not (Test-Publisher $File $Publisher)) {
-        $script:resultStatus = 'manual'
-        $script:resultText = "Đã tải tệp. Chưa xác minh được chữ ký nhà phát hành: $File"
-        return
+        throw "Chưa xác minh được chữ ký nhà phát hành: $File"
     }
+    Write-GuiLog "Đã xác minh chữ ký của $([IO.Path]::GetFileName($File))." 'info'
     if ($Wait) {
         $process = Start-Process -FilePath $File -WorkingDirectory ([IO.Path]::GetDirectoryName($File)) -ArgumentList $Arguments -PassThru -Wait
         if ($process.ExitCode -notin @(0, 1641, 3010)) { throw "Bộ cài trả về mã lỗi $($process.ExitCode)." }
         if ($process.ExitCode -in @(1641, 3010)) { Write-GuiLog 'Bộ cài yêu cầu khởi động lại.' 'warn' }
     } else {
         Start-Process -FilePath $File -WorkingDirectory ([IO.Path]::GetDirectoryName($File))
+        Write-GuiLog "Đã mở $([IO.Path]::GetFileName($File))." 'info'
     }
-    Write-GuiLog "Đã xác minh chữ ký của $([IO.Path]::GetFileName($File))." 'info'
 }
 
 function Expand-ToolArchive([string] $Archive, [string] $Name) {
@@ -108,20 +107,13 @@ function Expand-ToolArchive([string] $Archive, [string] $Name) {
     return $path
 }
 
-function Open-PortableTool([uri] $Uri, [string] $Name, [string] $Pattern, [string] $Publisher) {
+function Open-PortableTool([uri] $Uri, [string] $Name, [string] $ExecutableName, [string] $Publisher) {
     Write-GuiLog "Đang tải $Name." 'info'
     $file = Save-VendorFile $Uri @($Uri.DnsSafeHost) "$Name.zip" 100MB
     $folder = Expand-ToolArchive $file $Name
-    $executables = @(Get-ChildItem -LiteralPath $folder -Filter $Pattern -File -Recurse | Sort-Object FullName)
-    foreach ($executable in $executables) {
-        if (Test-Publisher $executable.FullName $Publisher) {
-            Start-VendorTool $executable.FullName $Publisher
-            return
-        }
-    }
-    $script:resultStatus = 'manual'
-    $script:resultText = "Đã giải nén $Name tại $folder. Chưa xác minh được chữ ký tệp chạy."
-    Write-GuiLog $script:resultText 'warn'
+    $executables = @(Get-ChildItem -LiteralPath $folder -Filter $ExecutableName -File -Recurse)
+    if ($executables.Count -ne 1) { throw "Không tìm thấy đúng một tệp $ExecutableName tại $folder." }
+    Start-VendorTool $executables[0].FullName $Publisher
 }
 
 function Install-Nvidia([string] $Version) {
@@ -131,7 +123,7 @@ function Install-Nvidia([string] $Version) {
     Write-GuiLog "Đang tải driver NVIDIA $Version." 'info'
     $file = Save-VendorFile $url @('us.download.nvidia.com', 'download.nvidia.com') "NVIDIA_$Version.exe" 2GB
     Write-GuiLog 'Đang kiểm tra chữ ký và chạy bộ cài.' 'info'
-    Start-VendorTool $file 'CN=NVIDIA Corporation(?:,|$)' '-s' -Wait
+    Start-VendorTool $file '^NVIDIA Corporation$' '-s' -Wait
 }
 
 function Get-WingetExecutable {
@@ -160,20 +152,29 @@ $downloadTasks = @{
     btnDDU = {
         $uri = 'https://www.wagnardsoft.com/DDU/download/DDU%20v18.0.8.6.exe'
         $file = Save-VendorFile $uri @('www.wagnardsoft.com', 'wagnardsoft.com') 'DDU-18.0.8.6.exe' 100MB
-        Start-VendorTool $file 'CN=Wagnardsoft[^,]*(?:,|$)'
+        Start-VendorTool $file '^Wagnardsoft\b'
     }
     btnDriverNvidia581 = { Install-Nvidia '581.80' }
     btnDriverNvidia566 = { Install-Nvidia '566.36' }
     btnAppsDesktop = {
-        Open-PortableTool 'https://download.cpuid.com/cpu-z/cpu-z_2.11-en.zip' 'CPU-Z' '*x64.exe' 'CN=CPUID[^,]*(?:,|$)'
-        Open-PortableTool 'https://download.cpuid.com/hwmonitor/hwmonitor_1.55.zip' 'HWMonitor' '*x64.exe' 'CN=CPUID[^,]*(?:,|$)'
+        $issues = @(
+            try { Open-PortableTool 'https://download.cpuid.com/cpu-z/cpu-z_2.11-en.zip' 'CPU-Z' 'cpuz_x64.exe' '^CPUID$' }
+            catch { "CPU-Z: $($_.Exception.Message)" }
+            try { Open-PortableTool 'https://download.cpuid.com/hwmonitor/hwmonitor_1.55.zip' 'HWMonitor' 'HWMonitor_x64.exe' '^CPUID$' }
+            catch { "HWMonitor: $($_.Exception.Message)" }
+        )
+        if ($issues.Count -eq 2) { throw ($issues -join "`n") }
+        if ($issues.Count) {
+            $script:resultStatus = 'partial'
+            $script:resultText = $issues[0]
+        }
     }
     btnUnparkApp = {
-        Open-PortableTool 'https://coderbag.com/assets/downloads/disable-cpu-core-parking/Unpark-CPU-App.zip' 'UnparkCpu' '*.exe' 'CN=CoderBag[^,]*(?:,|$)'
+        Open-PortableTool 'https://coderbag.com/assets/downloads/disable-cpu-core-parking/Unpark-CPU-App.zip' 'UnparkCpu' 'UnparkCpu.exe' '^CoderBag, LLC$'
     }
     btnInstallCpp = {
         $file = Save-VendorFile 'https://aka.ms/vs/17/release/vc_redist.x64.exe' @('aka.ms','download.visualstudio.microsoft.com') 'vc_redist.x64.exe' 100MB
-        Start-VendorTool $file 'CN=Microsoft Corporation(?:,|$)' '/install /passive /norestart' -Wait
+        Start-VendorTool $file '^Microsoft Corporation$' '/install /passive /norestart' -Wait
     }
     btnPostInstall = { Install-Winget @('Google.Chrome', 'Discord.Discord', '7zip.7zip') }
     WingetApps = { Install-Winget @('Google.Chrome', 'Discord.Discord', '7zip.7zip', 'UniKey.UniKey', 'DucFabulous.UltraViewer', 'VNGCorp.Zalo') }

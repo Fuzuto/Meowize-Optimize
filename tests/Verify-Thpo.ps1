@@ -83,6 +83,77 @@ foreach ($file in Get-ChildItem -LiteralPath $backend -File -Filter '*.ps1') {
 . (Join-Path $backend 'Downloads.ps1')
 
 & {
+    $originalPlan = '381b4222-f694-41f0-9685-ff5bb260df2e'
+    $power = @{ Active = $originalPlan; Copy = $null; Name = $null; RejectActivation = $false; WrongDc = $false }
+    $writes = [Collections.Generic.List[string]]::new()
+
+    function powercfg {
+        $global:LASTEXITCODE = 0
+        switch ($args[0]) {
+            '/list' {
+                "GUID: $originalPlan (Balanced)"
+                if ($power.Copy) { "GUID: $($power.Copy) ($($power.Name))" }
+            }
+            '/getactivescheme' { "GUID: $($power.Active)" }
+            '/qh' {
+                if ($args.Count -eq 2) { 'CPMINCORES CPMAXCORES SYSCOOLPOL ASPM'; return }
+                'Maximum: 0x00000064'
+                'AC: 0x00000064'
+                if ($power.WrongDc) { 'DC: 0x00000004' } else { 'DC: 0x00000064' }
+            }
+            default { throw "Unexpected powercfg query: $args" }
+        }
+    }
+
+    function Invoke-ExactNative([string] $Name, [string[]] $Arguments) {
+        Assert ($Name -eq 'powercfg.exe') "Unexpected executable $Name."
+        $writes.Add($Arguments -join ' ')
+        switch ($Arguments[0]) {
+            '/duplicatescheme' { $power.Copy = $Arguments[2] }
+            '/changename' { $power.Name = $Arguments[2] }
+            '/setactive' { if (-not $power.RejectActivation) { $power.Active = $Arguments[1] } }
+        }
+    }
+    function Write-GuiLog {}
+
+    try {
+        Invoke-UnparkCores
+        Assert ($writes.Contains("/setacvalueindex $originalPlan SUB_PROCESSOR CPMINCORES 100") -and
+            $writes.Contains("/setdcvalueindex $originalPlan SUB_PROCESSOR CPMINCORES 100") -and
+            -not ($writes -match 'CP(?:MIN|MAX)CORES1')) 'Unpark should set supported AC and DC aliases on the active plan.'
+
+        $power.WrongDc = $true
+        $verificationError = try { Invoke-UnparkCores } catch { $_.Exception.Message }
+        Assert ($verificationError -match 'CPMAXCORES.*AC.*DC') 'Unpark should catch a DC setting that Windows did not save.'
+
+        $writes.Clear()
+        Set-FpsPowerPlan
+        Set-FpsPowerPlan
+        Assert ($power.Active -ne $originalPlan -and $power.Active -eq $power.Copy -and
+            @($writes -match '^/duplicatescheme ').Count -eq 1 -and
+            -not ($writes -match "^/setacvalueindex $originalPlan ")) 'FPS Boost must reuse its own plan and avoid writing to the previous plan.'
+
+        $power.Active = $originalPlan
+        $power.RejectActivation = $true
+        $verificationError = try { Set-FpsPowerPlan } catch { $_.Exception.Message }
+        Assert ($verificationError -match $power.Copy) 'FPS Boost must report a failure if Windows leaves another plan active.'
+    } finally {
+        Remove-Variable resultStatus,resultText -Scope Script -ErrorAction SilentlyContinue
+    }
+}
+
+& {
+    function Resolve-PlainPath([string] $Path) { $Path }
+    $certificate = [pscustomobject]@{ Subject = 'CN="CoderBag, LLC", O="CoderBag, LLC"' }
+    $certificate | Add-Member -MemberType ScriptMethod -Name GetNameInfo -Value { 'CoderBag, LLC' }
+    $signature = [pscustomobject]@{ Status = 'Valid'; SignerCertificate = $certificate }
+    function Get-AuthenticodeSignature { $signature }
+    Assert (Test-Publisher 'UnparkCpu.exe' '^CoderBag, LLC$') 'An otherwise valid publisher with a quoted common name must be recognized.'
+    $signature.Status = 'HashMismatch'
+    Assert (-not (Test-Publisher 'UnparkCpu.exe' '^CoderBag, LLC$')) 'A modified executable must still be rejected.'
+}
+
+& {
     function Get-WingetExecutable {}
     function Get-ActiveAdapters {}
     function Get-CompatibleBackups {}
@@ -139,7 +210,7 @@ foreach ($entry in $entries | Where-Object mode -In ('desktop','settings')) {
 $powerShell = Join-Path ([Environment]::SystemDirectory) 'WindowsPowerShell\v1.0\powershell.exe'
 $entryPoint = Join-Path $backend 'Run-Task.ps1'
 foreach ($id in @('HardwareSummary', 'BackupList')) {
-    $response = & $powerShell -NoProfile -NonInteractive -File $entryPoint -TaskId $id
+    $response = & $powerShell -NoProfile -NonInteractive -ExecutionPolicy Bypass -File $entryPoint -TaskId $id
     Assert ($LASTEXITCODE -eq 0 -and $response.Count -ge 2 -and $response[-1] -match '"level":"ok"') "Read-only worker check failed for $id."
     if ($id -eq 'HardwareSummary') {
         $frames = $response | Where-Object { $_ -match '^THPO\t' } |
@@ -151,6 +222,6 @@ foreach ($id in @('HardwareSummary', 'BackupList')) {
         }
     }
 }
-$response = & $powerShell -NoProfile -NonInteractive -File $entryPoint -TaskId btnFpsBoost
+$response = & $powerShell -NoProfile -NonInteractive -ExecutionPolicy Bypass -File $entryPoint -TaskId btnFpsBoost
 Assert ($LASTEXITCODE -eq 1 -and $response -match '"level":"error"') 'A restricted action ran without confirmation.'
 '51 batch actions, 66 standalone actions, localization, compatibility and PowerShell permission checks passed.'

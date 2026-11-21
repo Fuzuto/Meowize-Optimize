@@ -40,7 +40,9 @@ public partial class MainWindow
     private DateTimeOffset _lastHardwareProbe;
     private bool _checkingTaskAvailability;
 
-    private async void ReviewBatch(object sender, RoutedEventArgs e)
+    private async void ReviewBatch(object sender, RoutedEventArgs e) => await ReviewBatchAsync();
+
+    private async Task ReviewBatchAsync()
     {
         if (!await ReadyForTaskReviewAsync())
             return;
@@ -102,7 +104,7 @@ public partial class MainWindow
         {
             body.Children.Insert(0, Label(T("AdminBatch"), "MutedText"));
             if (Dialog(T("ReviewTasks"), body, T("OpenAdmin")))
-                RequestAdmin(this, new RoutedEventArgs());
+                RequestAdmin("batch");
             return;
         }
 
@@ -161,7 +163,7 @@ public partial class MainWindow
             var stopped = _stopping;
             EndJob(T(stopped ? "Stopped" : _preview ? "PreviewDone" :
                 warnings + settings.Count > 0 ? "CompletedNotices" : "Completed"));
-            AddActivity(T("Processed", finished, items.Length), stopped ? "warn" : "ok");
+            AddActivity(T("Processed", finished, items.Length), stopped || warnings + settings.Count > 0 ? "warn" : "ok");
             if (warnings > 0)
                 AddActivity(T("CheckCount", warnings), "warn");
             if (settings.Count > 0)
@@ -207,7 +209,7 @@ public partial class MainWindow
         if (item.Admin && !_admin && !_preview)
         {
             if (Dialog(T("Permissions"), DescribeRisk(item, T("AdminForTask", item.DisplayTitle)), T("OpenAdmin")))
-                RequestAdmin(this, new RoutedEventArgs());
+                RequestAdmin(item.Id);
             return;
         }
         string? description = null;
@@ -759,7 +761,9 @@ public partial class MainWindow
         });
     }
 
-    private void RequestAdmin(object sender, RoutedEventArgs e)
+    private void RequestAdmin(object sender, RoutedEventArgs e) => RequestAdmin();
+
+    private void RequestAdmin(string? review = null)
     {
         if (_admin || _preview || _busy || Environment.ProcessPath is not { } path)
             return;
@@ -768,6 +772,8 @@ public partial class MainWindow
             var state = CaptureState();
             var start = new ProcessStartInfo(path) { UseShellExecute = true, Verb = "runas" };
             start.ArgumentList.Add("--resume=" + state.Encode());
+            if (review is not null)
+                start.ArgumentList.Add("--review=" + review);
             using var process = Process.Start(start);
             if (process is not null)
             {

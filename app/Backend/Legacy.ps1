@@ -1,17 +1,50 @@
 ﻿# Ported from THPO v1.3 by Ngo Thanh Hai (Haisosad), revision 396552f4cbc20dbaa00cecf0677e68a185f96a66.
 # This file defines operations. The entry point in Run-Task.ps1 controls invocation and permissions.
 
-function Invoke-UnparkCores {
-    powercfg -setacvalueindex SCHEME_CURRENT SUB_PROCESSOR 0cc12610-097a-410a-ac78-05f302e078b9 100 2>$null | Out-Null
-    powercfg -setdcvalueindex SCHEME_CURRENT SUB_PROCESSOR 0cc12610-097a-410a-ac78-05f302e078b9 100 2>$null | Out-Null
-    powercfg -setacvalueindex SCHEME_CURRENT SUB_PROCESSOR ea062031-0e34-4ff1-9844-222a0887e127 100 2>$null | Out-Null
-    powercfg -setdcvalueindex SCHEME_CURRENT SUB_PROCESSOR ea062031-0e34-4ff1-9844-222a0887e127 100 2>$null | Out-Null
-    powercfg -setactive SCHEME_CURRENT 2>$null | Out-Null
+$powerSchemeGuid = '[a-f0-9]{8}-(?:[a-f0-9]{4}-){3}[a-f0-9]{12}'
+$coreParkingSettings = @('CPMAXCORES', 'CPMINCORES', 'CPMAXCORES1', 'CPMINCORES1')
+
+function Get-ActivePowerScheme {
+    $result = (powercfg /getactivescheme) -join "`n"
+    if ($LASTEXITCODE -ne 0 -or $result -notmatch $powerSchemeGuid) {
+        throw 'Không đọc được gói điện đang hoạt động.'
+    }
+    $Matches[0]
 }
 
-function Enable-UltimatePerformance {
-    powercfg /duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61 2>$null | Out-Null
-    powercfg /setactive e9a42b02-d5df-448d-aa00-03f14749eb61 2>$null | Out-Null
+function Get-PlanSettings([string] $Plan) {
+    $settings = (powercfg /qh $Plan) -join "`n"
+    if ($LASTEXITCODE -ne 0) { throw "Không đọc được thiết lập của gói điện $Plan." }
+    $settings
+}
+
+function Invoke-UnparkCores {
+    $plan = Get-ActivePowerScheme
+    $available = Get-PlanSettings $plan
+    $parking = $coreParkingSettings | Where-Object { $_ -notlike '*1' -or $available -match "\b$_\b" }
+    foreach ($setting in $parking) {
+        Invoke-ExactNative 'powercfg.exe' @('/setacvalueindex', $plan, 'SUB_PROCESSOR', $setting, '100')
+        Invoke-ExactNative 'powercfg.exe' @('/setdcvalueindex', $plan, 'SUB_PROCESSOR', $setting, '100')
+    }
+    Invoke-ExactNative 'powercfg.exe' @('/setactive', $plan)
+    if ((Get-ActivePowerScheme) -ne $plan) { throw "Windows chưa kích hoạt gói điện $plan." }
+
+    foreach ($setting in $parking) {
+        # A single-setting query ends with the AC and DC indexes in hexadecimal.
+        $values = @(powercfg /qh $plan SUB_PROCESSOR $setting | Where-Object { $_ -match '0x[0-9a-f]{8}\s*$' } | Select-Object -Last 2)
+        if ($LASTEXITCODE -ne 0 -or $values.Count -ne 2 -or ($values -notmatch '0x00000064\s*$')) {
+            throw "Windows chưa lưu mức 100% cho $setting trên cả AC và DC."
+        }
+    }
+    $script:resultStatus = 'ok'
+    $script:resultText = "Đã xác minh mức tối thiểu 100% lõi không bị park trên AC và DC của gói điện $plan."
+}
+
+function Remove-PlatformClockOverride {
+    $bootSettings = bcdedit /enum '{current}'
+    if ($LASTEXITCODE -eq 0 -and ($bootSettings -match '^\s*useplatformclock\s+')) {
+        bcdedit /deletevalue useplatformclock | Out-Null
+    }
 }
 
 function Invoke-KillBloatware {
@@ -67,8 +100,7 @@ function Disable-HPETDeviceManager {
             Write-GuiLog "  [i] Device Manager khong co HPET hoac da tat san." $colorYellow
         }
         # BCD settings
-        bcdedit /set useplatformclock false 2>$null | Out-Null
-        bcdedit /deletevalue useplatformclock 2>$null | Out-Null
+        Remove-PlatformClockOverride
         bcdedit /set useplatformtick yes 2>$null | Out-Null
         bcdedit /set disabledynamictick yes 2>$null | Out-Null
         Write-GuiLog "  [+] Da tat HPET trong BCD & Device Manager!" $colorSuccess
@@ -225,60 +257,53 @@ function Invoke-DisableULPS {
         $disabledCount++
     } catch {}
     try {
-        powercfg -attributes SUB_PROCESSOR 0E4F0A28-2E6F-467E-9F96-8F5CEDC56F3E -ATTRIBUTES 2>$null
-        powercfg -setacvalueindex SCHEME_CURRENT SUB_PROCESSOR 0E4F0A28-2E6F-467E-9F96-8F5CEDC56F3E 0 2>$null
-        powercfg -setdcvalueindex SCHEME_CURRENT SUB_PROCESSOR 0E4F0A28-2E6F-467E-9F96-8F5CEDC56F3E 0 2>$null
-        powercfg -setacvalueindex SCHEME_CURRENT SUB_PCIEXPRESS 50db5c2c-238f-4741-a18a-19c30f205162 0 2>$null
-        powercfg -setdcvalueindex SCHEME_CURRENT SUB_PCIEXPRESS 50db5c2c-238f-4741-a18a-19c30f205162 0 2>$null
-        powercfg -setactive SCHEME_CURRENT 2>$null
+        $plan = Get-ActivePowerScheme
+        Invoke-ExactNative 'powercfg.exe' @('/setacvalueindex', $plan, 'SUB_PCIEXPRESS', 'ASPM', '0')
+        Invoke-ExactNative 'powercfg.exe' @('/setdcvalueindex', $plan, 'SUB_PCIEXPRESS', 'ASPM', '0')
+        Invoke-ExactNative 'powercfg.exe' @('/setactive', $plan)
         $disabledCount++
     } catch {}
     Write-GuiLog "  [+] Da tat ULPS ($disabledCount thiet lap chong tut xung GPU/CPU)!" $colorSuccess
 }
 
+function Set-FpsPowerPlan {
+    $name = 'ThanhHaiPerformance'
+    $allPlans = (powercfg /list) -join "`n"
+    if ($LASTEXITCODE -ne 0) { throw 'Không đọc được danh sách gói điện Windows.' }
+
+    if ($allPlans -match "($powerSchemeGuid)[^\r\n]*\($name\)") {
+        $plan = $Matches[1]
+    } else {
+        # A fixed destination also lets a retry reuse a copy whose rename failed.
+        $plan = '47231c18-217d-4b3d-a1c2-c8ccc99fb80f'
+        if ($allPlans -notmatch $plan) {
+            $source = Get-ActivePowerScheme
+            Invoke-ExactNative 'powercfg.exe' @('/duplicatescheme', $source, $plan)
+        }
+        Invoke-ExactNative 'powercfg.exe' @('/changename', $plan, $name, 'Gaming power plan by Ngo Thanh Hai')
+    }
+
+    $available = Get-PlanSettings $plan
+    $parking = @($coreParkingSettings | Where-Object { $_ -notlike '*1' -or $available -match "\b$_\b" })
+    foreach ($setting in (@('PROCTHROTTLEMAX', 'PROCTHROTTLEMIN') + $parking)) {
+        Invoke-ExactNative 'powercfg.exe' @('/setacvalueindex', $plan, 'SUB_PROCESSOR', $setting, '100')
+    }
+    if ($available -match '\bSYSCOOLPOL\b') {
+        Invoke-ExactNative 'powercfg.exe' @('/setacvalueindex', $plan, 'SUB_PROCESSOR', 'SYSCOOLPOL', '0')
+    }
+    if ($available -match '\bASPM\b') {
+        Invoke-ExactNative 'powercfg.exe' @('/setacvalueindex', $plan, 'SUB_PCIEXPRESS', 'ASPM', '0')
+    }
+    Invoke-ExactNative 'powercfg.exe' @('/setacvalueindex', $plan, 'SUB_DISK', 'DISKIDLE', '0')
+    Invoke-ExactNative 'powercfg.exe' @('/setacvalueindex', $plan, 'SUB_SLEEP', 'STANDBYIDLE', '0')
+    Invoke-ExactNative 'powercfg.exe' @('/setacvalueindex', $plan, 'SUB_SLEEP', 'HIBERNATEIDLE', '0')
+    Invoke-ExactNative 'powercfg.exe' @('/setactive', $plan)
+    if ((Get-ActivePowerScheme) -ne $plan) { throw "Windows chưa kích hoạt gói điện $plan." }
+    Write-GuiLog "Đã xác minh gói điện đang dùng: $name ($plan)." 'info'
+}
+
 function Invoke-FpsBoostProfile {
-    Write-GuiLog "[*] Kich hoat Power Plan ThanhHaiPerformance & Toi uu 1% Low..." $colorAccent
-    try {
-        $allPlans = powercfg /list
-        $targetGuid = $null
-        foreach ($line in ($allPlans -split "`r?`n")) {
-            if ($line -match "ThanhHaiPerformance") {
-                if ($line -match '([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})') {
-                    $targetGuid = $matches[1]
-                    break
-                }
-            }
-        }
-        if (-not $targetGuid) {
-            $dupResult = powercfg -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61 2>$null
-            if ($dupResult -match '([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})') {
-                $targetGuid = $matches[1]
-            } else {
-                $dupResult = powercfg -duplicatescheme 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c 2>$null
-                if ($dupResult -match '([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})') {
-                    $targetGuid = $matches[1]
-                }
-            }
-            if ($targetGuid) {
-                powercfg -changename $targetGuid "ThanhHaiPerformance" "Goi dien nang toi uu Gaming Low Latency & 1% Low boi Ngo Thanh Hai"
-            } else {
-                $targetGuid = "SCHEME_CURRENT"
-            }
-        }
-        powercfg -setactive $targetGuid 2>$null
-        powercfg -change -disk-timeout-ac 0 2>$null
-        powercfg -change -standby-timeout-ac 0 2>$null
-        powercfg -change -hibernate-timeout-ac 0 2>$null
-        powercfg -setacvalueindex $targetGuid SUB_PROCESSOR PROCTHROTTLEMIN 100 2>$null
-        powercfg -setacvalueindex $targetGuid SUB_PROCESSOR PROCTHROTTLEMAX 100 2>$null
-        powercfg -setacvalueindex $targetGuid SUB_PROCESSOR CPMINCORES 100 2>$null
-        powercfg -setacvalueindex $targetGuid SUB_PROCESSOR CPMAXCORES 100 2>$null
-        powercfg -setacvalueindex $targetGuid SUB_PROCESSOR 0E4F0A28-2E6F-467E-9F96-8F5CEDC56F3E 0 2>$null
-        powercfg -setacvalueindex $targetGuid SUB_PROCESSOR SYSCOOLPOL 0 2>$null
-        powercfg -setacvalueindex $targetGuid SUB_PCIEXPRESS 50db5c2c-238f-4741-a18a-19c30f205162 0 2>$null
-        powercfg -setactive $targetGuid 2>$null
-        Write-GuiLog "  [+] Da kich hoat Power Plan: ThanhHaiPerformance" $colorSuccess
-    } catch {}
+    Set-FpsPowerPlan
     # Win32PrioritySeparation = 26 (0x1A - 3:1 Foreground Boost)
     try {
         Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\PriorityControl" -Name "Win32PrioritySeparation" -Value 26 -Type DWord -Force
@@ -312,7 +337,7 @@ function Invoke-FpsBoostProfile {
     try {
         bcdedit /set disabledynamictick yes 2>$null | Out-Null
         bcdedit /set useplatformtick yes 2>$null | Out-Null
-        bcdedit /deletevalue useplatformclock 2>$null | Out-Null
+        Remove-PlatformClockOverride
         bcdedit /set tscsyncpolicy Enhanced 2>$null | Out-Null
         Write-GuiLog "  [+] Da bat TSC Sync Enhanced & tat Dynamic Tick (Frametime pacing phang li)" $colorSuccess
     } catch {}
@@ -323,7 +348,7 @@ function Invoke-FpsBoostProfile {
         Set-ItemProperty -Path "HKCU:\System\GameConfigStore" -Name "GameDVR_HonorUserFSEBehaviorMode" -Value 1 -Type DWord -Force -ErrorAction SilentlyContinue
         Set-ItemProperty -Path "HKCU:\System\GameConfigStore" -Name "GameDVR_DXGIHonorFSEWindowsCompatible" -Value 1 -Type DWord -Force -ErrorAction SilentlyContinue
         Set-ItemProperty -Path "HKCU:\System\GameConfigStore" -Name "GameDVR_EFSEFeatureFlags" -Value 0 -Type DWord -Force -ErrorAction SilentlyContinue
-        Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\GameDVR" -Name "AllowGameDVR" -Value 0 -Type DWord -Force -ErrorAction SilentlyContinue
+        reg add 'HKLM\SOFTWARE\Policies\Microsoft\Windows\GameDVR' /v AllowGameDVR /t REG_DWORD /d 0 /f 2>$null | Out-Null
         Write-GuiLog "  [+] Da tat GameDVR & Ep Exclusive Fullscreen" $colorSuccess
     } catch {}
     # Mouse Acceleration Fix
@@ -440,7 +465,7 @@ $legacyTasks = @{
             Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\PriorityControl" -Name "Win32PrioritySeparation" -Value 38 -ErrorAction SilentlyContinue
             reg add "HKLM\SYSTEM\CurrentControlSet\Control\PriorityControl" /v "Win32PrioritySeparation" /t REG_DWORD /d 38 /f 2>$null | Out-Null
             bcdedit /set useplatformtick yes 2>$null | Out-Null
-            bcdedit /deletevalue useplatformclock 2>$null | Out-Null
+            Remove-PlatformClockOverride
             bcdedit /set disabledynamictick yes 2>$null | Out-Null
             Write-GuiLog "  [+] Da khoa Win32PrioritySeparation = 38 (0x26 hex) & BCD Timers Enhanced." $colorSuccess
         }
@@ -653,10 +678,7 @@ $legacyTasks = @{
             [System.GC]::Collect()
             Write-GuiLog "  [+] Da xa sach RAM vat ly bang Win32 API." $colorSuccess
         }
-    btnFpsBoost = {
-    Invoke-FpsBoostProfile
-    Show-Popup "Da kich hoat Power Plan ThanhHaiPerformance va toi uu 1% Low FPS!" -title "THPO v1.2"
-}
+    btnFpsBoost = { Invoke-FpsBoostProfile }
     btnKernelRam = {
     Write-GuiLog "=== KHOA KERNEL VAO RAM (DISABLE PAGING EXECUTIVE) ===" $colorAccent
     reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management" /v "DisablePagingExecutive" /t REG_DWORD /d 1 /f 2>$null | Out-Null
@@ -669,7 +691,7 @@ $legacyTasks = @{
     Write-GuiLog "=== DONG BO NHIP TIMERS (TSC SYNC ENHANCED) ===" $colorAccent
     bcdedit /set tscsyncpolicy Enhanced 2>$null | Out-Null
     bcdedit /set useplatformtick yes 2>$null | Out-Null
-    bcdedit /deletevalue useplatformclock 2>$null | Out-Null
+    Remove-PlatformClockOverride
     bcdedit /set disabledynamictick yes 2>$null | Out-Null
     Write-GuiLog "[OK] Da kich hoat TSC Sync Policy Enhanced tren tat ca cac core CPU!" $colorSuccess
     Show-Popup "Da dong bo TSC Timers Enhanced! Vui long khoi dong lai may." -title "THPO v1.2"
@@ -686,11 +708,7 @@ $legacyTasks = @{
     Disable-HPETDeviceManager
     Show-Popup "Da tat HPET trong Device Manager va BCD! Vui long khoi dong lai may." -title "THPO v1.2"
 }
-    btnUnparkCore = {
-    Write-GuiLog "=== UNPARK CORE ALL 100% ===" $colorAccent
-    Invoke-UnparkCores
-    Write-GuiLog "[OK] Da unpark toan bo nhan/luong CPU 100%!" $colorSuccess
-}
+    btnUnparkCore = { Invoke-UnparkCores }
     btnGamePriority = {
     Invoke-SetGamePriority
     Show-Popup "Da dang ky High Priority cho tat ca tua game eSports!" -title "THPO v1.2"

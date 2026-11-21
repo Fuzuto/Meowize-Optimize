@@ -80,7 +80,7 @@ public partial class MainWindow : FluentWindow
     private bool _handoffClosing;
     private bool _exitDialogOpen;
 
-    internal MainWindow(bool preview, WindowState state, Preferences preferences)
+    internal MainWindow(bool preview, WindowState state, Preferences preferences, string? review)
     {
         _preview = preview;
         _preferences = preferences;
@@ -135,6 +135,12 @@ public partial class MainWindow : FluentWindow
             }
             AddActivity(T("CatalogLoaded"), "ok");
             await LoadHardwareAsync();
+            if (!_admin || _preview || review is null)
+                return;
+            if (review == "batch")
+                await ReviewBatchAsync();
+            else if (_catalog.Tools.FirstOrDefault(item => item.Admin && item.Id == review) is { } operation)
+                await HandleOperationAsync(operation);
         };
         Activated += async (_, _) =>
         {

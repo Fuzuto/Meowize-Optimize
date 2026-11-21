@@ -48,7 +48,7 @@ function Invoke-Native([string] $Name, [string[]] $Arguments) {
     $executable = Join-Path $systemFolder $Name
     & $executable @Arguments
     if ($LASTEXITCODE -ne 0) {
-        $script:nativeErrors.Add("$Name ($LASTEXITCODE)")
+        $script:nativeErrors.Add("$Name $($Arguments -join ' ') ($LASTEXITCODE)")
     }
 }
 
@@ -106,11 +106,11 @@ public static class MemoryManager {
     $Error.Clear()
     if ($legacyTasks.ContainsKey($TaskId)) {
         $ErrorActionPreference = 'Continue'
-        & $legacyTasks[$TaskId] | ForEach-Object {
-            if ($_ -is [string] -and $_.Trim()) { Write-GuiLog $_ 'info' }
-        }
         if ($TaskId -notin $unprivileged) {
             $script:resultStatus = 'check'
+        }
+        & $legacyTasks[$TaskId] | ForEach-Object {
+            if ($_ -is [string] -and $_.Trim()) { Write-GuiLog $_ 'info' }
         }
     } elseif ($workerTasks.ContainsKey($TaskId)) {
         & $workerTasks[$TaskId]
@@ -127,7 +127,7 @@ public static class MemoryManager {
         }
     }
     Write-Frame 'result' $script:resultText $script:resultStatus
-    exit 0
+    exit ([int]($script:resultStatus -eq 'error'))
 } catch {
     Write-Frame 'result' $_.Exception.Message 'error'
     exit 1

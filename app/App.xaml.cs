@@ -31,7 +31,10 @@ public partial class App : Application
             var preview = e.Args.Contains("--preview", StringComparer.Ordinal);
             var resume = e.Args.FirstOrDefault(argument => argument.StartsWith("--resume=", StringComparison.Ordinal));
             var preferences = new Preferences(preview);
-            var state = WindowState.Read(resume?[9..]) ?? preferences.Value.Window ?? new();
+            var resumedState = WindowState.Read(resume?[9..]);
+            var state = resumedState ?? preferences.Value.Window ?? new();
+            var review = resumedState is null ? null :
+                e.Args.FirstOrDefault(argument => argument.StartsWith("--review=", StringComparison.Ordinal))?[9..];
             SetTheme(state.Light);
             var storedLanguage = Supports(state.Language) && resume is not null ? state.Language : preferences.Value.Language;
             if (!Supports(storedLanguage))
@@ -54,7 +57,7 @@ public partial class App : Application
                 Use(storedLanguage!);
             }
 
-            var window = new MainWindow(preview, state, preferences);
+            var window = new MainWindow(preview, state, preferences, review);
             MainWindow = window;
             if (!preview && !await KeyGate.AuthorizeAsync(window))
             {

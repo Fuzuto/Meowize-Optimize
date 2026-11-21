@@ -335,11 +335,11 @@
       "btnDisableULPS"
     ],
     "text": [
-      "Sets existing graphics-driver ULPS flags to 0, disables the HFS setting and changes PCIe link-state power management and selected CPU power settings in the active plan.",
-      "既存のグラフィックス ドライバーの ULPS フラグを 0 にし、HFS を無効にします。現在の電源プランで PCIe リンク状態と一部の CPU 電源設定も変更します。",
-      "그래픽 드라이버의 기존 ULPS 플래그를 0으로 설정하고 HFS를 끕니다. 현재 전원 옵션에서 PCIe 링크 상태 및 일부 CPU 전원 설정을 바꿉니다。",
-      "Đặt các cờ ULPS có sẵn của driver đồ họa về 0, tắt HFS và sửa quản lý điện PCIe link state cùng một số thiết lập nguồn CPU trong gói hiện tại.",
-      "将显卡驱动现有的 ULPS 标志置为 0，关闭 HFS，并调整当前电源计划的 PCIe 链路状态和部分 CPU 电源设置。"
+      "Sets existing graphics-driver ULPS flags to 0, disables HFS and turns off PCIe Link State Power Management in the active plan on both AC and battery.",
+      "既存のグラフィックス ドライバーの ULPS フラグを 0 にして HFS を無効にします。現在の電源プランの PCIe リンク状態の電源管理を AC 電源時とバッテリー時の両方で無効にします。",
+      "그래픽 드라이버의 기존 ULPS 플래그를 0으로 설정하고 HFS를 끕니다. 현재 전원 옵션에서 전원 연결 시와 배터리 사용 시 모두 PCIe 링크 상태 전원 관리를 끕니다.",
+      "Đặt các cờ ULPS có sẵn của driver đồ họa về 0, tắt HFS và tắt PCIe Link State Power Management trong gói điện hiện tại khi cắm sạc và khi dùng pin.",
+      "将显卡驱动现有的 ULPS 标志置为 0，关闭 HFS，并在当前电源计划的接通电源和电池模式下关闭 PCIe 链路状态电源管理。"
     ]
   },
   {

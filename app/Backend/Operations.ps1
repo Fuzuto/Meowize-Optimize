@@ -32,7 +32,7 @@ function Invoke-ExactNative([string] $Name, [string[]] $Arguments) {
     Invoke-Native $Name $Arguments | ForEach-Object {
         if ($_ -is [string] -and $_.Trim()) { Write-GuiLog $_ 'info' }
     }
-    if ($LASTEXITCODE -ne 0) { throw "$Name trả về mã lỗi $LASTEXITCODE." }
+    if ($LASTEXITCODE -ne 0) { throw "$Name $($Arguments -join ' ') trả về mã lỗi $LASTEXITCODE." }
 }
 
 function New-RestorePoint {

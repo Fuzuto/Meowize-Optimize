@@ -44,7 +44,7 @@
 | 🟡 [硬件加速 GPU 调度](https://devblogs.microsoft.com/directx/hardware-accelerated-gpu-scheduling/)<br>注意 | 通过 HwSchMode = 2 请求启用硬件加速 GPU 调度。Windows 需要受支持的图形硬件和兼容驱动。<br><br>需要管理员权限。<br><br>此更改可能需要重启 Windows 才会生效。 |
 | 🔴 [FPS Boost 配置](https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/powercfg-command-line-options)<br>警告 | 创建或激活性能电源计划并调整接通电源时的 CPU、核心停放、冷却和睡眠设置。还会修改 BCD 计时器、前台调度、MPO、多媒体优先级、Game DVR、鼠标加速及内核电源设置。<br><br>需要管理员权限。<br><br>此更改可能需要重启 Windows 才会生效。<br><br>一次应用多项更改，包括 BCD 启动设置。 |
 | 🟡 [取消 CPU 核心停放](https://learn.microsoft.com/en-us/windows-hardware/customize/power-settings/static-configuration-options-for-core-parking)<br>注意 | 将当前电源计划中未停放核心的最低比例设为 100%，同时用于接通电源和电池模式。<br><br>需要管理员权限。 |
-| 🟡 [ULPS 与 PCIe](https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/powercfg-command-line-options)<br>注意 | 将显卡驱动现有的 ULPS 标志置为 0，关闭 HFS，并调整当前电源计划的 PCIe 链路状态和部分 CPU 电源设置。<br><br>需要管理员权限。 |
+| 🟡 [ULPS 与 PCIe](https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/powercfg-command-line-options)<br>注意 | 将显卡驱动现有的 ULPS 标志置为 0，关闭 HFS，并在当前电源计划的接通电源和电池模式下关闭 PCIe 链路状态电源管理。<br><br>需要管理员权限。 |
 | 🟡 [鼠标加速](https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-systemparametersinfow)<br>注意 | 将当前 Windows 账户的 MouseSpeed、MouseThreshold1 和 MouseThreshold2 设为 0，以关闭指针加速。<br><br>需要管理员权限。 |
 | 🔴 [TSC 同步](https://learn.microsoft.com/en-us/windows-hardware/drivers/devtest/bcdedit--set)<br>警告 | 将 BCD 的时间戳计数器同步策略设为 Enhanced。<br><br>需要管理员权限。<br><br>此更改可能需要重启 Windows 才会生效。<br><br>更改 BCD 启动设置。请在重启后验证。 |
 | 🟡 [内核分页](https://learn.microsoft.com/en-us/windows/win32/memory/memory-management)<br>注意 | 在 Windows 注册表中设置 DisablePagingExecutive = 1 和 PowerThrottlingOff = 1。<br><br>需要管理员权限。 |
@@ -130,7 +130,7 @@
 | --- | --- |
 | 🔴 [Talon Suite](https://learn.microsoft.com/en-us/powershell/module/appx/remove-appxpackage)<br>警告 | 分九个阶段调整诊断与活动策略、Copilot 与 Recall、传递与建议、资源管理器、辅助功能、开始菜单与小组件、计划任务、后台应用以及内核和 GPU 超时。<br><br>需要管理员权限。<br><br>此更改可能需要重启 Windows 才会生效。<br><br>同时更改多个应用、服务和系统任务。 |
 | 🟡 [经典右键菜单](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_registry_provider)<br>注意 | 为当前用户添加经典右键菜单的资源管理器覆盖设置。重新启动资源管理器或重新登录后检查菜单。<br><br>需要管理员权限。 |
-| 🟡 [ULPS 与 PCIe](https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/powercfg-command-line-options)<br>注意 | 将显卡驱动现有的 ULPS 标志置为 0，关闭 HFS，并调整当前电源计划的 PCIe 链路状态和部分 CPU 电源设置。<br><br>需要管理员权限。 |
+| 🟡 [ULPS 与 PCIe](https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/powercfg-command-line-options)<br>注意 | 将显卡驱动现有的 ULPS 标志置为 0，关闭 HFS，并在当前电源计划的接通电源和电池模式下关闭 PCIe 链路状态电源管理。<br><br>需要管理员权限。 |
 | 🟡 [重新启用 Defender](https://learn.microsoft.com/en-us/windows/security/operating-system-security/system-security/windows-defender-security-center/windows-defender-security-center)<br>注意 | 通过 Microsoft Defender PowerShell 请求启用实时保护，并检查 RealTimeProtectionEnabled 是否为 true。<br><br>需要管理员权限。 |
 | 🔴 [实时防护](https://learn.microsoft.com/en-us/windows/security/operating-system-security/system-security/windows-defender-security-center/windows-defender-security-center)<br>警告 | 打开 Windows 安全中心的病毒和威胁防护设置，以便在该页面检查实时保护。<br><br>关闭实时防护会降低恶意软件检测能力。 |
 | 🟡 [Defender 扫描优先级](https://learn.microsoft.com/en-us/defender-endpoint/mdav-scan-best-practices)<br>注意 | 将 Defender 扫描的平均 CPU 使用率目标设为 20%，并启用低优先级扫描。<br><br>需要管理员权限。 |
@@ -171,7 +171,7 @@
 | 🔴 [NVIDIA 581.80 WHQL](https://www.nvidia.com/en-us/drivers/details/257497/)<br>警告 | 下载此行所示版本的 NVIDIA 桌面显卡驱动。签名有效时启动静默安装程序并等待退出代码。请先查阅支持的 GPU 列表。<br><br>需要管理员权限。<br><br>此更改可能需要重启 Windows 才会生效。<br><br>屏幕可能闪烁，Windows 可能需要重启。 |
 | 🔴 [NVIDIA 566.36 WHQL](https://www.nvidia.com/en-us/drivers/details/237719/)<br>警告 | 下载此行所示版本的 NVIDIA 桌面显卡驱动。签名有效时启动静默安装程序并等待退出代码。请先查阅支持的 GPU 列表。<br><br>需要管理员权限。<br><br>此更改可能需要重启 Windows 才会生效。<br><br>屏幕可能闪烁，Windows 可能需要重启。 |
 | 🟡 [CPU-Z 与 HWMonitor](https://www.cpuid.com/)<br>注意 | 从 CPUID 下载 CPU-Z 2.11 和 HWMonitor 1.55，解压至桌面的 Meowize_Tools，并打开通过 CPUID 签名验证的 x64 程序。 |
-| 🟡 [Unpark CPU App](https://coderbag.com/product/quickcpu)<br>注意 | 下载 CoderBag 的 Unpark CPU App，解压到桌面的 Meowize_Tools，并打开通过签名验证的程序。核心停放设置在该工具中选择。 |
+| 🟡 [Unpark CPU App](https://coderbag.com/Programming-C/Disable-CPU-Core-Parking-Utility)<br>注意 | 下载 CoderBag 的 Unpark CPU App，解压到桌面的 Meowize_Tools，并打开通过签名验证的程序。核心停放设置在该工具中选择。 |
 | 🟡 [Visual C++ x64](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist)<br>注意 | 从 Microsoft 下载 Visual C++ x64 可再发行组件，验证发布者签名后以被动模式运行安装程序，并禁用自动重启。<br><br>需要管理员权限。 |
 | 🟡 [用 WinGet 安装 3 个应用](https://github.com/microsoft/winget-cli)<br>注意 | 借助 Windows 应用安装程序中的 WinGet 依次安装 Google Chrome、Discord 和 7-Zip。进度与包错误可在活动日志中查看。<br><br>需要管理员权限。 |
 | 🟢 [Office 部署设置](https://learn.microsoft.com/en-us/microsoft-365-apps/deploy/overview-office-deployment-tool)<br>安全 | 在默认浏览器中打开 Microsoft Office 自定义工具，以便选择部署设置。 |
