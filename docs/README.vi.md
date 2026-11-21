@@ -16,7 +16,7 @@ Meowize là công cụ Windows miễn phí dành cho người muốn tối ưu F
 
 Chạy `.\Meowize.exe --preview` trong PowerShell tại thư mục đã giải nén để thử với tác vụ mô phỏng. Trước khi thay đổi thật, **Cứu hộ & Báo cáo → Snapshot hệ thống** có thể tạo điểm khôi phục và bản sao Registry.
 
-Trong bản dựng từ `main`, bấm **ⓘ Cách hoạt động** cạnh mỗi mục để xem nút cần bấm, thiết lập hoặc tệp bị thay đổi, quyền quản trị và yêu cầu khởi động lại. Màn xem lại 1-Click cho biết các thay đổi theo thứ tự chạy. [Hướng dẫn đủ 117 tác vụ](features.vi.md)
+Từ bản v1.4.0, bấm **ⓘ Cách hoạt động** cạnh mỗi mục để xem nút cần bấm, thiết lập hoặc tệp bị thay đổi, quyền quản trị và yêu cầu khởi động lại. Màn xem lại 1-Click cho biết các thay đổi theo thứ tự chạy. [Hướng dẫn đủ 117 tác vụ](features.vi.md)
 
 ## Gaming và FPS
 
@@ -80,7 +80,7 @@ Bảng trên tính theo `1.000 ÷ FPS` để làm mốc tham chiếu. Khi so sá
 
 **🟢 An toàn** dành cho thao tác ảnh hưởng thấp như đọc hoặc xuất dữ liệu. **🟡 Cẩn trọng** đánh dấu thay đổi thiết lập, tệp hoặc ứng dụng. **🔴 Cảnh báo** dành cho tác vụ có tác động lớn hơn như cài driver, sửa cấu hình khởi động hoặc khởi động lại. Bấm tên mục có dấu **↗** để mở tài liệu tham khảo.
 
-Bản dựng từ nhánh `main` kiểm tra điều kiện như GPU, WinGet và adapter mạng đang hoạt động. Rê chuột lên mục bị làm mờ để đọc lý do. Nếu có tài liệu liên quan, bấm **Vì sao mục này không khả dụng ↗** để xem hướng dẫn. Preset chỉ chọn các mục đủ điều kiện.
+Meowize kiểm tra điều kiện như GPU, WinGet và adapter mạng đang hoạt động. Rê chuột lên mục bị làm mờ để đọc lý do. Nếu có tài liệu liên quan, bấm **Vì sao mục này không khả dụng ↗** để xem hướng dẫn. Preset bỏ qua các mục bị làm mờ.
 
 Màn chọn vùng dùng tiếng Anh mặc định. Đổi ngôn ngữ trong **Cài đặt** và chuyển giao diện sáng hoặc tối bằng nút mặt trời hoặc mặt trăng. **X** và **Alt+F4** dùng cùng lựa chọn lưu khi thoát.
 

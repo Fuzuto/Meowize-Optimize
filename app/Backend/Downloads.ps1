@@ -14,7 +14,7 @@
             $request.AllowAutoRedirect = $false
             $request.Timeout = 20000
             $request.ReadWriteTimeout = 25000
-            $request.UserAgent = 'Meowize/1.3'
+            $request.UserAgent = 'Meowize/1.4'
             $response = [Net.HttpWebResponse]$request.GetResponse()
             if ([int]$response.StatusCode -eq 200) { break }
             $location = $response.Headers['Location']

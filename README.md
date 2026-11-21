@@ -28,7 +28,7 @@ Meowize is a free Windows toolkit built to help you tune FPS and frame pacing in
 
 From PowerShell in the extracted folder, run `.\Meowize.exe --preview` to try the flow with simulated tasks. For real changes, **Recovery & reports → System snapshot** can create a restore point and a Registry backup.
 
-In builds from `main`, select **ⓘ How it works** next to any task to see the button to use, which settings or files it touches, and whether it needs administrator access or a restart. The batch review shows the same changes in run order. [All 117 task descriptions](docs/features.en.md)
+Starting with v1.4.0, select **ⓘ How it works** next to any task to see the button to use, which settings or files it touches, and whether it needs administrator access or a restart. The batch review shows the same changes in run order. [All 117 task descriptions](docs/features.en.md)
 
 ## Gaming and FPS
 
@@ -85,7 +85,7 @@ Measure bufferbloat by comparing idle latency with latency during an upload or d
 
 **🟢 Safe** covers lower-impact tasks such as reads and exports. **🟡 Caution** marks changes to settings, files or apps. **🔴 Warning** marks higher-impact actions such as driver updates, boot changes and restarts. Select a task name with **↗** to open its reference.
 
-Builds from `main` check prerequisites such as the GPU, WinGet and active network adapters. Hover over a dimmed task to see the reason. **Why this is unavailable ↗** opens a relevant guide when available. Presets select the tasks that pass those checks.
+Meowize checks prerequisites such as the GPU, WinGet and active network adapters. Hover over a dimmed task to see the reason. **Why this is unavailable ↗** opens a relevant guide when available. Presets leave dimmed tasks out.
 
 The region picker starts in English. Change the language in **Settings**, switch themes with the sun or moon button, and choose whether to save your selections when closing with **X** or **Alt+F4**.
 
